@@ -22,12 +22,14 @@ public class DynamicSceneSwitcher : EditorWindow
         window.maxSize = new Vector2(600, 600);
 
         window.position = new Rect(100, 100, 300, 300);
+
+        window.RefreshSceneList();
     }
 
-	private void RefreshSceneList()
+    private void RefreshSceneList()
     {
-        // Get All Scenes in the Project
-		scenePaths = AssetDatabase.FindAssets("t:Scene").Select(AssetDatabase.GUIDToAssetPath).ToArray();
+        // Get All Scenes in the Folder Assets in the Project
+		scenePaths = AssetDatabase.FindAssets("t:Scene").Select(AssetDatabase.GUIDToAssetPath).Where(path => path.StartsWith("Assets/")).ToArray();
 	}
 
     private void SetupStyles()
@@ -62,36 +64,36 @@ public class DynamicSceneSwitcher : EditorWindow
     {
         SetupStyles();
 
-        RefreshSceneList();
-
-		GUILayout.Label("All scenes in the project:", labelStyle);
+        GUILayout.Label("All scenes in the project:", labelStyle);
 
         EditorGUILayout.Space(5);
 
         if (scenePaths == null || scenePaths.Length == 0)
         {
 			GUILayout.Label("No scene found");
-			return;
 		}
-
-        scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition, GUILayout.ExpandHeight(true));
-
-        foreach (string scenePath in scenePaths)
+        else
         {
-            if (GUILayout.Button(Path.GetFileNameWithoutExtension(scenePath), buttonStyle) 
-                && EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-            {
-                EditorSceneManager.OpenScene(scenePath);
-            }
-        }
+            scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition, GUILayout.ExpandHeight(true));
 
-        EditorGUILayout.EndScrollView();
+            foreach (string scenePath in scenePaths)
+            {
+                if (GUILayout.Button(Path.GetFileNameWithoutExtension(scenePath), buttonStyle)
+                    && EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                {
+                    EditorSceneManager.OpenScene(scenePath);
+                }
+            }
+
+            EditorGUILayout.EndScrollView();
+        }
 
         EditorGUILayout.Space(5);
 
         if (GUILayout.Button("REFRESH SCENES", buttonRefreshStyle))
         {
             RefreshSceneList();
+            Repaint();
         }
 
         EditorGUILayout.Space(5);

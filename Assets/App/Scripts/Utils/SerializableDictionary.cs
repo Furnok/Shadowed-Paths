@@ -15,27 +15,19 @@ public class SerializableDictionary<TKey, TValue> : ISerializationCallbackReceiv
     // Called before Saving (Convert Dictionary to Lists)
     public void OnBeforeSerialize()
     {
-        keys.Clear();
-        values.Clear();
-
-        foreach (var kvp in dictionary)
-        {
-            keys.Add(kvp.Key);
-            values.Add(kvp.Value);
-        }
+        keys = new List<TKey>(dictionary.Keys);
+        values = new List<TValue>(dictionary.Values);
     }
 
     // Called after Loading (Convert Lists back to Dictionary)
     public void OnAfterDeserialize()
     {
-        dictionary = new Dictionary<TKey, TValue>();
+        dictionary.Clear();
 
-        for (int i = 0; i < Math.Min(keys.Count, values.Count); i++)
+        int count = Mathf.Min(keys.Count, values.Count);
+        for (int i = 0; i < count; i++)
         {
-            if (!dictionary.ContainsKey(keys[i]))
-            {
-                dictionary.Add(keys[i], values[i]);
-            }
+            dictionary.TryAdd(keys[i], values[i]);
         }
     }
 }

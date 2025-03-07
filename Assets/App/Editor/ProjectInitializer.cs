@@ -1,7 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 using System.IO;
-using System;
 
 //[InitializeOnLoad]
 public static class ProjectInitializer

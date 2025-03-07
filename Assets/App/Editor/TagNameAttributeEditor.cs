@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEditorInternal;
 
 namespace App.Scripts.Utils
 {
@@ -8,35 +9,23 @@ namespace App.Scripts.Utils
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+            EditorGUI.BeginProperty(position, label, property);
+
             if (property.propertyType != SerializedPropertyType.String)
             {
                 EditorGUI.LabelField(position, label.text, "Use [TagName] with a string.");
+                EditorGUI.EndProperty();
                 return;
             }
 
             // Get All Unity Tags
-            string[] allTags = UnityEditorInternal.InternalEditorUtility.tags;
-
-            // Get Currently Stored Tag
-            string currentTag = property.stringValue;
+            string[] allTags = InternalEditorUtility.tags;
 
             // Find the Index of the Current Tag
-            int selectedIndex = System.Array.IndexOf(allTags, currentTag);
+            int selectedIndex = Mathf.Max(0, System.Array.IndexOf(allTags, property.stringValue));
 
-            if (selectedIndex == -1)
-            {
-                selectedIndex = 0; // Default to First Tag if not found
-            }
-
-            // Show Tag Dropdown
-            selectedIndex = EditorGUI.Popup(position, label.text, selectedIndex, allTags);
-
-            // Update Property if changed
-            if (selectedIndex >= 0 
-                && selectedIndex < allTags.Length)
-            {
-                property.stringValue = allTags[selectedIndex];
-            }
+            property.stringValue = allTags[EditorGUI.Popup(position, label.text, selectedIndex, allTags)];
+            EditorGUI.EndProperty();
         }
     }
 }
