@@ -73,7 +73,7 @@ public class DynamicSceneSwitcher : EditorWindow
 
         if (scenePaths == null || scenePaths.Length == 0)
         {
-			GUILayout.Label("No Scene found");
+			GUILayout.Label("No Scene Found");
 		}
         else
         {
