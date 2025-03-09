@@ -13,11 +13,11 @@ public class DynamicSceneSwitcher : EditorWindow
     private GUIStyle buttonStyle;
     private GUIStyle buttonRefreshStyle;
 
-    [MenuItem("Tools/Dynamic Scene Switcher")]
+    [MenuItem("Tools/Dynamic Scenes Switcher")]
     public static void ShowWindow()
     {
         // Create the UI
-        DynamicSceneSwitcher window = GetWindow<DynamicSceneSwitcher>("Scene Switcher");
+        DynamicSceneSwitcher window = GetWindow<DynamicSceneSwitcher>("Scenes Switcher");
         window.minSize = new Vector2(300, 300);
         window.maxSize = new Vector2(600, 600);
 

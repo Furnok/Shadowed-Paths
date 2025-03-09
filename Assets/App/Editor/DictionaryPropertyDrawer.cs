@@ -17,7 +17,7 @@ namespace App.Scripts.Utils
             if (keysProperty == null 
                 || valuesProperty == null)
             {
-                EditorGUI.LabelField(position, "Dictionary serialization error.");
+                EditorGUI.LabelField(position, "Dictionary Serialization Error.");
                 EditorGUI.EndProperty();
                 return;
             }

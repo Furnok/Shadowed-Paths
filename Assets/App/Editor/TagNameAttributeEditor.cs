@@ -13,7 +13,7 @@ namespace App.Scripts.Utils
 
             if (property.propertyType != SerializedPropertyType.String)
             {
-                EditorGUI.LabelField(position, label.text, "Use [TagName] with a string.");
+                EditorGUI.LabelField(position, label.text, "Use [TagName] with a String.");
                 EditorGUI.EndProperty();
                 return;
             }

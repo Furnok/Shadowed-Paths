@@ -13,7 +13,7 @@ namespace App.Scripts.Utils
 
             if (property.propertyType != SerializedPropertyType.String)
             {
-                EditorGUI.LabelField(position, label.text, "Use [SceneName] with a string.");
+                EditorGUI.LabelField(position, label.text, "Use [SceneName] with a String.");
                 EditorGUI.EndProperty();
                 return;
             }
@@ -22,7 +22,7 @@ namespace App.Scripts.Utils
 
             if (buildScenes.Length <= 0)
             {
-                EditorGUI.LabelField(position, label.text, "No scenes in Build Settings.");
+                EditorGUI.LabelField(position, label.text, "No scenes in the Build Settings.");
                 EditorGUI.EndProperty();
                 return;
             }
