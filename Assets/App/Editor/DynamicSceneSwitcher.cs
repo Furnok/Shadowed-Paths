@@ -22,8 +22,11 @@ public class DynamicSceneSwitcher : EditorWindow
         window.maxSize = new Vector2(600, 600);
 
         window.position = new Rect(100, 100, 300, 300);
+    }
 
-        window.RefreshSceneList();
+    private void OnEnable()
+    {
+        RefreshSceneList();
     }
 
     private void RefreshSceneList()
