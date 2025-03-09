@@ -67,13 +67,13 @@ public class DynamicSceneSwitcher : EditorWindow
     {
         SetupStyles();
 
-        GUILayout.Label("All scenes in the project:", labelStyle);
+        GUILayout.Label("All Scenes in the Project Assets:", labelStyle);
 
         EditorGUILayout.Space(5);
 
         if (scenePaths == null || scenePaths.Length == 0)
         {
-			GUILayout.Label("No scene found");
+			GUILayout.Label("No Scene found");
 		}
         else
         {
