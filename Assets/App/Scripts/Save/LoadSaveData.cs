@@ -24,6 +24,7 @@ namespace BT.Save
         private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
         private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
         private static readonly bool FileCrypted = true;
+		private static readonly bool HaveSettings = true;
 
         private void OnEnable()
         {
@@ -46,16 +47,19 @@ namespace BT.Save
                 Directory.CreateDirectory(SaveDirectory);
             }
 
-            string name = saveSettingsName;
+			if (HaveSettings)
+			{
+				string name = saveSettingsName;
 
-            if (FileAlreadyExist(name))
-            {
-                LoadFromJson(name, true);
-            }
-            else
-            {
-                SaveToJson(name, true);
-            }
+				if (FileAlreadyExist(name))
+				{
+					LoadFromJson(name, true);
+				}
+				else
+				{
+					SaveToJson(name, true);
+				}
+			}
         }
 
         private static string Encrypt(string plainText)
@@ -107,7 +111,7 @@ namespace BT.Save
 
             string decryptedInfoData = "";
 
-            if (isSettings)
+            if (isSettings && HaveSettings)
             {
                 decryptedInfoData = JsonUtility.ToJson(rsoSettingsSaved.Value);
             }
@@ -141,7 +145,7 @@ namespace BT.Save
                 {
                     string decryptedInfoData = Decrypt(encryptedJson);
 
-                    if (isSettings)
+                    if (isSettings && HaveSettings)
                     {
                         rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(decryptedInfoData);
                     }
