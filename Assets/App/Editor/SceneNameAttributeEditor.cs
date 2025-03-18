@@ -11,18 +11,13 @@ namespace App.Scripts.Utils
         {
             EditorGUI.BeginProperty(position, label, property);
 
-            if (property.propertyType != SerializedPropertyType.String)
-            {
-                EditorGUI.LabelField(position, label.text, "Use [SceneName] with a String.");
-                EditorGUI.EndProperty();
-                return;
-            }
+            SerializedProperty sceneGUIDProp = property.FindPropertyRelative("sceneGUID");
+            SerializedProperty sceneNameProp = property.FindPropertyRelative("sceneName");
 
             var buildScenes = EditorBuildSettings.scenes;
-
-            if (buildScenes.Length <= 0)
+            if (buildScenes.Length == 0)
             {
-                EditorGUI.LabelField(position, label.text, "No scenes in the Build Settings.");
+                EditorGUI.LabelField(position, label.text, "No scenes in Build Settings.");
                 EditorGUI.EndProperty();
                 return;
             }
@@ -31,17 +26,25 @@ namespace App.Scripts.Utils
             var scenePaths = buildScenes.Select(scene => scene.path).ToArray();
             var sceneNames = scenePaths.Select(System.IO.Path.GetFileNameWithoutExtension).ToArray();
 
-            string storedScenePath = AssetDatabase.GUIDToAssetPath(property.stringValue);
-            int selectedIndex = Mathf.Max(0, System.Array.IndexOf(scenePaths, storedScenePath));
+            string storedScenePath = AssetDatabase.GUIDToAssetPath(sceneGUIDProp.stringValue);
+            int selectedIndex = System.Array.IndexOf(scenePaths, storedScenePath);
 
-            // Find Scene Name if Path is Missing
-            if (selectedIndex == 0 && string.IsNullOrEmpty(storedScenePath))
+            if (selectedIndex < 0)
             {
-                string storedSceneName = System.IO.Path.GetFileNameWithoutExtension(storedScenePath);
-                selectedIndex = Mathf.Max(0, sceneNames.ToList().FindIndex(name => name == storedSceneName));
+                selectedIndex = sceneNames.ToList().FindIndex(name => name == sceneNameProp.stringValue);
             }
 
-            property.stringValue = AssetDatabase.AssetPathToGUID(scenePaths[EditorGUI.Popup(position, label.text, selectedIndex, sceneNames)]);
+            selectedIndex = Mathf.Max(0, selectedIndex);
+
+            // Find Scene Name
+            int newIndex = EditorGUI.Popup(position, label.text, selectedIndex, sceneNames);
+            if (newIndex != selectedIndex)
+            {
+                string selectedPath = scenePaths[newIndex];
+                sceneGUIDProp.stringValue = AssetDatabase.AssetPathToGUID(selectedPath);
+                sceneNameProp.stringValue = sceneNames[newIndex];
+            }
+
             EditorGUI.EndProperty();
         }
     }
