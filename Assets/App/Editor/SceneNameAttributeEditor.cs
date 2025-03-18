@@ -45,6 +45,14 @@ namespace App.Scripts.Utils
                 sceneNameProp.stringValue = sceneNames[newIndex];
             }
 
+            if (string.IsNullOrEmpty(sceneGUIDProp.stringValue) && string.IsNullOrEmpty(sceneNameProp.stringValue))
+            {
+                // Initialize with the first scene as the default selection
+                string defaultPath = buildScenes[0].path;
+                sceneGUIDProp.stringValue = AssetDatabase.AssetPathToGUID(defaultPath);
+                sceneNameProp.stringValue = System.IO.Path.GetFileNameWithoutExtension(defaultPath);
+            }
+
             EditorGUI.EndProperty();
         }
     }
