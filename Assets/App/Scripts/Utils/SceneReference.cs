@@ -7,6 +7,7 @@ public class SceneReference
     [SerializeField] private string sceneName = "";
     [SerializeField] private string sceneGUID = "";
 
-    public string GUID => sceneGUID;
     public string Name => sceneName;
+
+    public string GUID => sceneGUID;
 }
