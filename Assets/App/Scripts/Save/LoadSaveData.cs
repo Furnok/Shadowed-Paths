@@ -48,15 +48,13 @@ namespace BT.Save
 
 			if (HaveSettings)
 			{
-				string name = saveSettingsName;
-
-				if (FileAlreadyExist(name))
+				if (FileAlreadyExist(saveSettingsName))
 				{
-					LoadFromJson(name, true);
+					LoadFromJson(saveSettingsName, true);
 				}
 				else
 				{
-					SaveToJson(name, true);
+					SaveToJson(saveSettingsName, true);
 				}
 			}
         }
@@ -99,72 +97,39 @@ namespace BT.Save
 
         private bool FileAlreadyExist(string name)
         {
-            string filePath = GetFilePath(name);
-
-            return File.Exists(filePath);
+            return File.Exists(GetFilePath(name));
         }
 
         private void SaveToJson(string name, bool isSettings)
         {
             string filePath = GetFilePath(name);
 
-            string decryptedInfoData = "";
+            string dataToSave = isSettings && HaveSettings ? JsonUtility.ToJson(rsoSettingsSaved.Value) : JsonUtility.ToJson(rsoContentSaved.Value);
 
-            if (isSettings && HaveSettings)
-            {
-                decryptedInfoData = JsonUtility.ToJson(rsoSettingsSaved.Value);
-            }
-            else
-            {
-                decryptedInfoData = JsonUtility.ToJson(rsoContentSaved.Value);
-            }
-
-
-            if (FileCrypted)
-            {
-                string encryptedJson = Encrypt(decryptedInfoData);
-                File.WriteAllText(filePath, encryptedJson);
-            }
-            else
-            {
-                File.WriteAllText(filePath, decryptedInfoData);
-            }
-
+            File.WriteAllText(filePath, FileCrypted ? Encrypt(dataToSave) : dataToSave);
         }
 
         private void LoadFromJson(string name, bool isSettings)
         {
-            if (FileAlreadyExist(name))
+            if (!FileAlreadyExist(name)) return;
+
+            string filePath = GetFilePath(name);
+            string encryptedJson = File.ReadAllText(filePath);
+
+            if (FileCrypted)
             {
-                string filePath = GetFilePath(name);
-
-                string encryptedJson = File.ReadAllText(filePath);
-
-                if (FileCrypted)
-                {
-                    string decryptedInfoData = Decrypt(encryptedJson);
-
-                    if (isSettings && HaveSettings)
-                    {
-                        rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(decryptedInfoData);
-                    }
-                    else
-                    {
-                        rsoContentSaved.Value = JsonUtility.FromJson<ContentSaved>(decryptedInfoData);
-                    }
-                }
-                else
-                {
-                    if (isSettings)
-                    {
-                        rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(encryptedJson);
-                    }
-                    else
-                    {
-                        rsoContentSaved.Value = JsonUtility.FromJson<ContentSaved>(encryptedJson);
-                    }
-                }
+                encryptedJson = Decrypt(encryptedJson);
             }
+                
+
+            if (isSettings && HaveSettings)
+            {
+                rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(encryptedJson);
+            }
+            else
+            {
+                rsoContentSaved.Value = JsonUtility.FromJson<ContentSaved>(encryptedJson);
+            } 
         }
 
         private void ClearContent(string name)

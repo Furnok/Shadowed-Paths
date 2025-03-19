@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public static class Utils
 {
     #region COROUTINE
-    public static IEnumerator Delay(float delay, Action ev)
+    public static IEnumerator Delay(float delay, Action action = null)
     {
         yield return new WaitForSeconds(delay);
-        ev?.Invoke();
+        action?.Invoke();
     }
     #endregion
 

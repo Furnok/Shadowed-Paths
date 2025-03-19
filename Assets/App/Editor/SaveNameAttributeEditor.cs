@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,6 +8,20 @@ namespace App.Scripts.Save
     public class SaveNameAttributeEditor : PropertyDrawer
     {
         private static readonly int saveMax = 5;
+        private static readonly string[] saveNames = GenerateSaveNames();
+
+        private static string[] GenerateSaveNames()
+        {
+            string[] names = new string[saveMax + 1];
+            names[0] = "Settings";
+
+            for (int i = 1; i <= saveMax; i++)
+            {
+                names[i] = $"Save {i}";
+            }
+                
+            return names;
+        }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
@@ -15,23 +30,14 @@ namespace App.Scripts.Save
             if (property.propertyType != SerializedPropertyType.String)
             {
                 EditorGUI.LabelField(position, label.text, "Use [SaveName] with a String.");
-                EditorGUI.EndProperty();
-                return;
             }
-
-            // Set All Saves
-            string[] saveName = new string[saveMax + 1];
-            saveName[0] = "Settings";
-
-            for (int i = 1; i <= saveMax; i++)
+            else
             {
-                saveName[i] = $"Save {i}";
+                // Find the Index of the Current Save
+                int selectedIndex = Mathf.Max(0, Array.IndexOf(saveNames, property.stringValue));
+                property.stringValue = saveNames[EditorGUI.Popup(position, label.text, selectedIndex, saveNames)];
             }
 
-            // Find the Index of the Current Save
-            int selectedIndex = Mathf.Max(0, System.Array.IndexOf(saveName, property.stringValue));
-
-            property.stringValue = saveName[EditorGUI.Popup(position, label.text, selectedIndex, saveName)];
             EditorGUI.EndProperty();
         }
     }
