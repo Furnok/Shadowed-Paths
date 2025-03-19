@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace App.Scripts.Utils
 {
-    [CustomPropertyDrawer(typeof(SceneNameAttribute))]
+    [CustomPropertyDrawer(typeof(SceneReference))]
     public class TagsNameAttributeEditor : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             EditorGUI.BeginProperty(position, label, property);
 
+            // Get Property
             SerializedProperty sceneGUIDProp = property.FindPropertyRelative("sceneGUID");
             SerializedProperty sceneNameProp = property.FindPropertyRelative("sceneName");
 
@@ -36,7 +37,7 @@ namespace App.Scripts.Utils
 
             // Find Index based on GUID
             int selectedIndex = System.Array.IndexOf(sceneGUIDs, sceneGUIDProp.stringValue);
-            if (selectedIndex == -1) selectedIndex = 0; // Default to first scene if not found
+            if (selectedIndex == -1) selectedIndex = 0;
 
             // Display Dropdown
             int newIndex = EditorGUI.Popup(position, label.text, selectedIndex, sceneNames);
