@@ -671,9 +671,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveSettingsName: Settings
-  test:
-    keys: 00
-    values: 00000000
   rseLoad: {fileID: 11400000, guid: 4117e29ff3c195746b67e05df0e2e14d, type: 2}
   rseSave: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}
   rseClear: {fileID: 11400000, guid: 342dee36e9f1b0d438aa5dddd11f2c32, type: 2}
