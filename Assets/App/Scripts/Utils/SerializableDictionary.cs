@@ -3,39 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class SerializableDictionary<TKey, TValue> : ISerializationCallbackReceiver
+public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
     [SerializeField] private List<TKey> keys = new();
     [SerializeField] private List<TValue> values = new();
 
-    private readonly Dictionary<TKey, TValue> dictionary = new();
+    public void OnAfterDeserialize()
+    {
+        this.Clear();
 
-    public Dictionary<TKey, TValue> Dictionary => dictionary;
+        for (int i = 0; i < Mathf.Min(keys.Count, values.Count); i++)
+        {
+            this.Add(keys[i], values[i]);
+        }
+    }
 
-    // Called before Saving (Convert Dictionary to Lists)
     public void OnBeforeSerialize()
     {
         keys.Clear();
         values.Clear();
 
-        foreach (var kvp in dictionary)
+        foreach (var kvp in this)
         {
             keys.Add(kvp.Key);
             values.Add(kvp.Value);
-        }
-    }
-
-    // Called after Loading (Convert Lists back to Dictionary)
-    public void OnAfterDeserialize()
-    {
-        dictionary.Clear();
-
-        for (int i = 0; i < Mathf.Min(keys.Count, values.Count); i++)
-        {
-            if (!dictionary.ContainsKey(keys[i]))
-            {
-                dictionary.Add(keys[i], values[i]);
-            } 
         }
     }
 }
