@@ -47,7 +47,7 @@ MonoBehaviour:
   main:
     sceneName: Game
     sceneGUID: 45dab89d0be75d048aabfdd7784c7dfd
-  mainMenuName:
+  menuName:
     sceneName: Menu
     sceneGUID: 92c7bc17631015440a34ba1d5230c289
   levelsName:

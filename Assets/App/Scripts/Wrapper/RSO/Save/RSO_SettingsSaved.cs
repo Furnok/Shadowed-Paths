@@ -1,5 +1,5 @@
 using BT.Save;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RSO_SettingsSaved", menuName = "Data/RSO/SettingsSaved")]
+[CreateAssetMenu(fileName = "RSO_SettingsSaved", menuName = "Data/RSO/Save/SettingsSaved")]
 public class RSO_SettingsSaved : BT.ScriptablesObject.RuntimeScriptableObject<SettingsSaved> {}

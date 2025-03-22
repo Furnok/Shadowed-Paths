@@ -3,23 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    //[Header("Settings")]
-
     [Header("References")]
     [SerializeField] SceneReference main;
-    [SerializeField] SceneReference mainMenuName;
+    [SerializeField] SceneReference menuName;
     [SerializeField] SceneReference[] levelsName;
-
-    //[Header("Input")]
-
-    //[Header("Output")]
 
     private string currentLevel = "";
     private bool isLoading = false;
 
     private void Start()
     {
-        LoadLevel(mainMenuName.Name);
+        LoadLevel(menuName.Name);
     }
 
     private void LoadLevel(string sceneName)
