@@ -8,26 +8,24 @@ namespace App.Scripts.Save
     public class SaveNameAttributeEditor : PropertyDrawer
     {
         private static readonly int saveMax = 5;
+        private static readonly bool HaveSettings = true;
         private static readonly string[] saveNames = GenerateSaveNames();
 
         private static string[] GenerateSaveNames()
         {
-            string[] names = new string[saveMax + 1];
+            int offset = HaveSettings ? 1 : 0;
+            string[] names = new string[saveMax + offset];
 
-            if (saveMax <= 0)
-            {
-                names[0] = "Save";
-            }
-            else
+            if (HaveSettings)
             {
                 names[0] = "Settings";
             }
 
-            for (int i = 1; i <= saveMax; i++)
+            for (int i = 0; i < saveMax; i++)
             {
-                names[i] = $"Save {i}";
+                names[i + offset] = $"Save {i + 1}";
             }
-                
+
             return names;
         }
 
