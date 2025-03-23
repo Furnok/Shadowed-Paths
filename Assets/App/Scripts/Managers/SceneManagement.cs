@@ -10,6 +10,7 @@ public class SceneManagement : MonoBehaviour
 
     [Header("Inputs")]
     [SerializeField] private RSE_LoadLevel rseLoadLevel;
+    [SerializeField] private RSE_QuitGame rseQuitGame;
 
     [Header("Output")]
     [SerializeField] private RSO_CurrentLevel rsoCurrentLevel;
@@ -19,11 +20,13 @@ public class SceneManagement : MonoBehaviour
     private void OnEnable()
     {
         rseLoadLevel.action += LoadLevel;
+        rseQuitGame.action += QuitGame;
     }
 
     private void OnDisable()
     {
         rseLoadLevel.action -= LoadLevel;
+        rseQuitGame.action -= QuitGame;
     }
 
     private void Start()
@@ -57,5 +60,10 @@ public class SceneManagement : MonoBehaviour
 
             rsoCurrentLevel.Value = sceneName;
         }));
+    }
+
+    private void QuitGame()
+    {
+        Application.Quit();
     }
 }

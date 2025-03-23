@@ -56,4 +56,5 @@ MonoBehaviour:
   - sceneName: Dungeon1
     sceneGUID: 7fd466a850aa8314f9438efbe241f4c7
   rseLoadLevel: {fileID: 11400000, guid: cb1adfe4f5f82b34085ff931d3e4e98a, type: 2}
+  rseQuitGame: {fileID: 11400000, guid: 7aa2f1d0ee6863d44bfc8e6c5847ee27, type: 2}
   rsoCurrentLevel: {fileID: 11400000, guid: 19eebaadec018b64494273e354882bfc, type: 2}
