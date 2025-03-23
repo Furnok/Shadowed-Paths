@@ -13,7 +13,15 @@ namespace App.Scripts.Save
         private static string[] GenerateSaveNames()
         {
             string[] names = new string[saveMax + 1];
-            names[0] = "Settings";
+
+            if (saveMax <= 0)
+            {
+                names[0] = "Save";
+            }
+            else
+            {
+                names[0] = "Settings";
+            }
 
             for (int i = 1; i <= saveMax; i++)
             {
