@@ -22,6 +22,7 @@ namespace BT.Save
         
         private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
         private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
+        private static readonly bool saveActived = true;
         private static readonly bool FileCrypted = true;
 		private static readonly bool HaveSettings = true;
 
@@ -41,22 +42,25 @@ namespace BT.Save
 
         private void Start()
         {
-            if (!Directory.Exists(SaveDirectory))
+            if (saveActived)
             {
-                Directory.CreateDirectory(SaveDirectory);
-            }
+                if (!Directory.Exists(SaveDirectory))
+                {
+                    Directory.CreateDirectory(SaveDirectory);
+                }
 
-			if (HaveSettings)
-			{
-				if (FileAlreadyExist(saveSettingsName))
-				{
-					LoadFromJson(saveSettingsName, true);
-				}
-				else
-				{
-					SaveToJson(saveSettingsName, true);
-				}
-			}
+                if (HaveSettings)
+                {
+                    if (FileAlreadyExist(saveSettingsName))
+                    {
+                        LoadFromJson(saveSettingsName, true);
+                    }
+                    else
+                    {
+                        SaveToJson(saveSettingsName, true);
+                    }
+                }
+            }
         }
 
         private static string Encrypt(string plainText)
@@ -102,43 +106,52 @@ namespace BT.Save
 
         private void SaveToJson(string name, bool isSettings)
         {
-            string filePath = GetFilePath(name);
+            if (saveActived)
+            {
+                string filePath = GetFilePath(name);
 
-            string dataToSave = isSettings && HaveSettings ? JsonUtility.ToJson(rsoSettingsSaved.Value) : JsonUtility.ToJson(rsoContentSaved.Value);
+                string dataToSave = isSettings && HaveSettings ? JsonUtility.ToJson(rsoSettingsSaved.Value) : JsonUtility.ToJson(rsoContentSaved.Value);
 
-            File.WriteAllText(filePath, FileCrypted ? Encrypt(dataToSave) : dataToSave);
+                File.WriteAllText(filePath, FileCrypted ? Encrypt(dataToSave) : dataToSave);
+            }
         }
 
         private void LoadFromJson(string name, bool isSettings)
         {
-            if (!FileAlreadyExist(name)) return;
-
-            string filePath = GetFilePath(name);
-            string encryptedJson = File.ReadAllText(filePath);
-
-            if (FileCrypted)
+            if (saveActived)
             {
-                encryptedJson = Decrypt(encryptedJson);
+                if (!FileAlreadyExist(name)) return;
+
+                string filePath = GetFilePath(name);
+                string encryptedJson = File.ReadAllText(filePath);
+
+                if (FileCrypted)
+                {
+                    encryptedJson = Decrypt(encryptedJson);
+                }
+
+
+                if (isSettings && HaveSettings)
+                {
+                    rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(encryptedJson);
+                }
+                else
+                {
+                    rsoContentSaved.Value = JsonUtility.FromJson<ContentSaved>(encryptedJson);
+                }
             }
-                
-
-            if (isSettings && HaveSettings)
-            {
-                rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(encryptedJson);
-            }
-            else
-            {
-                rsoContentSaved.Value = JsonUtility.FromJson<ContentSaved>(encryptedJson);
-            } 
         }
 
         private void ClearContent(string name)
         {
-            if (FileAlreadyExist(name))
+            if (saveActived)
             {
-                string filePath = GetFilePath(name);
+                if (FileAlreadyExist(name))
+                {
+                    string filePath = GetFilePath(name);
 
-                File.Delete(filePath);
+                    File.Delete(filePath);
+                }
             }
         }    
     }   

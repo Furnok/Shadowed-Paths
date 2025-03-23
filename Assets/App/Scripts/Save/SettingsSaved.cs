@@ -3,6 +3,7 @@ namespace BT.Save
     [System.Serializable]
     public class SettingsSaved
     {
+        public string language = "EN";
         public bool fullScreen = true;
         public int resolutions = 0;
 
