@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ namespace App.Scripts.Save
     public class SaveNameAttributeEditor : PropertyDrawer
     {
         private static readonly int saveMax = 5;
+        private static readonly bool saveActived = true;
         private static readonly bool HaveSettings = true;
         private static readonly string[] saveNames = GenerateSaveNames();
 
@@ -17,14 +17,17 @@ namespace App.Scripts.Save
             int offset = HaveSettings ? 1 : 0;
             string[] names = new string[saveMax + offset];
 
-            if (HaveSettings)
+            if (saveActived)
             {
-                names[0] = "Settings";
-            }
+                if (HaveSettings)
+                {
+                    names[0] = "Settings";
+                }
 
-            for (int i = 0; i < saveMax; i++)
-            {
-                names[i + offset] = $"Save {i + 1}";
+                for (int i = 0; i < saveMax; i++)
+                {
+                    names[i + offset] = $"Save {i + 1}";
+                }
             }
 
             return names;
@@ -41,7 +44,7 @@ namespace App.Scripts.Save
                 return;
             }
 
-            if (saveMax == 0 && !HaveSettings)
+            if ((saveMax == 0 && !HaveSettings) || !saveActived)
             {
                 EditorGUI.LabelField(position, label.text, "Saves Desactivated");
                 EditorGUI.EndProperty();
