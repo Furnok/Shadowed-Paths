@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -36,13 +37,20 @@ namespace App.Scripts.Save
             if (property.propertyType != SerializedPropertyType.String)
             {
                 EditorGUI.LabelField(position, label.text, "Use [SaveName] with a String.");
+                EditorGUI.EndProperty();
+                return;
             }
-            else
+
+            if (saveMax == 0 && !HaveSettings)
             {
-                // Find the Index of the Current Save
-                int selectedIndex = Mathf.Max(0, Array.IndexOf(saveNames, property.stringValue));
-                property.stringValue = saveNames[EditorGUI.Popup(position, label.text, selectedIndex, saveNames)];
+                EditorGUI.LabelField(position, label.text, "Saves Desactivated");
+                EditorGUI.EndProperty();
+                return;
             }
+
+            // Find the Index of the Current Save
+            int selectedIndex = Mathf.Max(0, Array.IndexOf(saveNames, property.stringValue));
+            property.stringValue = saveNames[EditorGUI.Popup(position, label.text, selectedIndex, saveNames)];
 
             EditorGUI.EndProperty();
         }
