@@ -7,24 +7,21 @@ namespace App.Scripts.Save
     [CustomPropertyDrawer(typeof(SaveNameAttribute))]
     public class SaveNameAttributeEditor : PropertyDrawer
     {
-        private static readonly int saveMax = 5;
-        private static readonly bool saveActived = true;
-        private static readonly bool HaveSettings = true;
         private static readonly string[] saveNames = GenerateSaveNames();
 
         private static string[] GenerateSaveNames()
         {
-            int offset = HaveSettings ? 1 : 0;
-            string[] names = new string[saveMax + offset];
+            int offset = SaveConfig.HaveSettings ? 1 : 0;
+            string[] names = new string[SaveConfig.SaveMax + offset];
 
-            if (saveActived)
+            if (SaveConfig.saveActived)
             {
-                if (HaveSettings)
+                if (SaveConfig.HaveSettings)
                 {
                     names[0] = "Settings";
                 }
 
-                for (int i = 0; i < saveMax; i++)
+                for (int i = 0; i < SaveConfig.SaveMax; i++)
                 {
                     names[i + offset] = $"Save {i + 1}";
                 }
@@ -44,7 +41,7 @@ namespace App.Scripts.Save
                 return;
             }
 
-            if ((saveMax == 0 && !HaveSettings) || !saveActived)
+            if ((SaveConfig.SaveMax == 0 && !SaveConfig.HaveSettings) || !SaveConfig.saveActived)
             {
                 EditorGUI.LabelField(position, label.text, "Saves Desactivated");
                 EditorGUI.EndProperty();

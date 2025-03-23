@@ -4,6 +4,14 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
+public static class SaveConfig
+{
+    public static readonly int SaveMax = 5;
+    public static bool saveActived = true;
+    public static readonly bool HaveSettings = true;
+    public static readonly bool FileCrypted = true;
+}
+
 namespace BT.Save
 {
     public class LoadSaveData : MonoBehaviour
@@ -22,9 +30,7 @@ namespace BT.Save
         
         private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
         private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
-        private static readonly bool saveActived = true;
-        private static readonly bool FileCrypted = true;
-		private static readonly bool HaveSettings = true;
+        
 
         private void OnEnable()
         {
@@ -42,14 +48,19 @@ namespace BT.Save
 
         private void Start()
         {
-            if (saveActived)
+            if (SaveConfig.SaveMax <= 0 && !SaveConfig.HaveSettings)
+            {
+                SaveConfig.saveActived = false;
+            }
+
+            if (SaveConfig.saveActived)
             {
                 if (!Directory.Exists(SaveDirectory))
                 {
                     Directory.CreateDirectory(SaveDirectory);
                 }
 
-                if (HaveSettings)
+                if (SaveConfig.HaveSettings)
                 {
                     if (FileAlreadyExist(saveSettingsName))
                     {
@@ -106,45 +117,67 @@ namespace BT.Save
 
         private void SaveToJson(string name, bool isSettings)
         {
-            if (saveActived)
+            if (SaveConfig.saveActived)
             {
                 string filePath = GetFilePath(name);
 
-                string dataToSave = isSettings && HaveSettings ? JsonUtility.ToJson(rsoSettingsSaved.Value) : JsonUtility.ToJson(rsoContentSaved.Value);
+                string dataToSave = "";
 
-                File.WriteAllText(filePath, FileCrypted ? Encrypt(dataToSave) : dataToSave);
+                if (isSettings && SaveConfig.HaveSettings)
+                {
+                    dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
+                }
+                else
+                {
+                    if (SaveConfig.SaveMax > 0)
+                    {
+                        dataToSave = JsonUtility.ToJson(rsoContentSaved.Value);
+                    }
+                    else
+                    {
+                        dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
+                    }
+                }
+
+                File.WriteAllText(filePath, SaveConfig.FileCrypted ? Encrypt(dataToSave) : dataToSave);
             }
         }
 
         private void LoadFromJson(string name, bool isSettings)
         {
-            if (saveActived)
+            if (SaveConfig.saveActived)
             {
                 if (!FileAlreadyExist(name)) return;
 
                 string filePath = GetFilePath(name);
                 string encryptedJson = File.ReadAllText(filePath);
 
-                if (FileCrypted)
+                if (SaveConfig.FileCrypted)
                 {
                     encryptedJson = Decrypt(encryptedJson);
                 }
 
-
-                if (isSettings && HaveSettings)
+                if (isSettings && SaveConfig.HaveSettings)
                 {
                     rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(encryptedJson);
                 }
                 else
                 {
-                    rsoContentSaved.Value = JsonUtility.FromJson<ContentSaved>(encryptedJson);
+                    if (SaveConfig.SaveMax > 0)
+                    {
+                        rsoContentSaved.Value = JsonUtility.FromJson<ContentSaved>(encryptedJson);
+                    }
+                    else
+                    {
+                        rsoSettingsSaved.Value = JsonUtility.FromJson<SettingsSaved>(encryptedJson);
+                    }
                 }
             }
         }
 
         private void ClearContent(string name)
         {
-            if (saveActived)
+            if (SaveConfig.saveActived)
             {
                 if (FileAlreadyExist(name))
                 {
