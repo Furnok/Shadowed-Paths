@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 1569580376625165131}
   - component: {fileID: 458108173207107792}
   - component: {fileID: 216611773099263106}
+  - component: {fileID: 1397381795131667970}
   - component: {fileID: 7985683572946363860}
   m_Layer: 5
   m_Name: MenuUI
@@ -630,6 +631,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &1397381795131667970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533752840322367651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf4803d362bfbe4c9629166e6637fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windows:
+  - {fileID: 2089948091796671549}
+  - {fileID: 5739117250686465878}
+  - {fileID: 6214047554056097414}
+  rseOpenWindow: {fileID: 11400000, guid: 86e4b04339065a6479e516ed9aed9df4, type: 2}
+  rseCloseWindow: {fileID: 11400000, guid: 3a2b3e46e3f615345a9e037e561dfd5e, type: 2}
 --- !u!114 &7985683572946363860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5573748712659409891}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ContentMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1309,7 +1328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8779512779763695937}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ContentCredits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2128,6 +2147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelSettings
       objectReference: {fileID: 0}
+    - target: {fileID: 7815452712620133325, guid: 9914d5e134eaff9439cb8390242e2e46, type: 3}
+      propertyPath: m_Name
+      value: ContentSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 8106850638831345525, guid: 9914d5e134eaff9439cb8390242e2e46, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2218,5 +2241,10 @@ PrefabInstance:
 --- !u!224 &5389676471948204606 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8106850638831345525, guid: 9914d5e134eaff9439cb8390242e2e46, type: 3}
+  m_PrefabInstance: {fileID: 4200358195336578379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6214047554056097414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7815452712620133325, guid: 9914d5e134eaff9439cb8390242e2e46, type: 3}
   m_PrefabInstance: {fileID: 4200358195336578379}
   m_PrefabAsset: {fileID: 0}

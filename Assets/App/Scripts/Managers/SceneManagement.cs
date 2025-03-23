@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] SceneReference main;
-    [SerializeField] SceneReference menuName;
-    [SerializeField] SceneReference[] levelsName;
+    [SerializeField] private SceneReference main;
+    [SerializeField] private SceneReference menuName;
+    [SerializeField] private SceneReference[] levelsName;
 
     private string currentLevel = "";
     private bool isLoading = false;
