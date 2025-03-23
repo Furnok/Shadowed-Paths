@@ -9,7 +9,7 @@ public class Loader : MonoBehaviour
     [Header("Output")]
     [SerializeField] private RSO_CurrentLevel rsoCurrentLevel;
 
-    private void Start()
+    private void Awake()
     {
         if (!SceneManager.GetSceneByName(main.Name).isLoaded)
         {
