@@ -121,7 +121,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1502154503781555279}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: cb1adfe4f5f82b34085ff931d3e4e98a, type: 2}
+        m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[System.String,
+          mscorlib
+        m_MethodName: Call
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Village1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4230691020721069965
 MonoBehaviour:
   m_ObjectHideFlags: 0

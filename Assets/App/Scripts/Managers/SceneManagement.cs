@@ -8,12 +8,31 @@ public class SceneManagement : MonoBehaviour
     [SerializeField] private SceneReference menuName;
     [SerializeField] private SceneReference[] levelsName;
 
-    private string currentLevel = "";
+    [Header("Inputs")]
+    [SerializeField] private RSE_LoadLevel rseLoadLevel;
+
+    [Header("Output")]
+    [SerializeField] private RSO_CurrentLevel rsoCurrentLevel;
+
     private bool isLoading = false;
+
+    private void OnEnable()
+    {
+        rseLoadLevel.action += LoadLevel;
+    }
+
+    private void OnDisable()
+    {
+        rseLoadLevel.action -= LoadLevel;
+    }
 
     private void Start()
     {
-        LoadLevel(menuName.Name);
+        if (SceneManager.sceneCount < 2)
+        {
+            rsoCurrentLevel.Value = null;
+            LoadLevel(menuName.Name);
+        }
     }
 
     private void LoadLevel(string sceneName)
@@ -27,16 +46,16 @@ public class SceneManagement : MonoBehaviour
 
     private void Transition(string sceneName)
     {
-        if (currentLevel != "")
+        if (rsoCurrentLevel.Value != null)
         {
-            StartCoroutine(Utils.UnloadSceneAsync(currentLevel));
+            StartCoroutine(Utils.UnloadSceneAsync(rsoCurrentLevel.Value));
         }
 
         StartCoroutine(Utils.LoadSceneAsync(sceneName, LoadSceneMode.Additive, () =>
         {
             isLoading = false;
 
-            currentLevel = sceneName;
+            rsoCurrentLevel.Value = sceneName;
         }));
     }
 }
