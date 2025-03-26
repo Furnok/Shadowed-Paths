@@ -11,6 +11,7 @@ public class S_LoadUILoads : MonoBehaviour
     [SerializeField, S_SaveName] private string saveName;
 
     [Header("References")]
+    [SerializeField] private TextMeshProUGUI textZone;
     [SerializeField] private TextMeshProUGUI textDate;
     [SerializeField] private Button buttonLoad;
     [SerializeField] private Button buttonDelete;
@@ -40,6 +41,7 @@ public class S_LoadUILoads : MonoBehaviour
     {
         if(name == saveName)
         {
+            textZone.text = "Player: Empty";
             textDate.text = "Date: Empty";
             buttonLoad.interactable = false;
             buttonDelete.interactable = false;
@@ -54,12 +56,14 @@ public class S_LoadUILoads : MonoBehaviour
         {
             if (data.dateSaved != "")
             {
-                textDate.text = data.dateSaved;
+                textZone.text = $"Player: {data.playerName}, {data.currentLevel}";
+                textDate.text = $"Date: {data.dateSaved}";
                 buttonLoad.interactable = true;
                 buttonDelete.interactable = true;
             }
             else
             {
+                textZone.text = "Player: Empty";
                 textDate.text = "Date: Empty";
                 buttonLoad.interactable = false;
                 buttonDelete.interactable = false;

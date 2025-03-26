@@ -6,6 +6,8 @@ namespace BT.Save
         public string saveName = "";
         public string dateSaved = "";
         public string currentLevel = "";
+
+        public string playerName = "Admin";
     }
 }
 

@@ -17,8 +17,8 @@ public class S_SaveConversion : MonoBehaviour
     public void ButtonPressSaveData()
     {
         rsoContentSaved.Value.saveName = saveName;
-        rsoContentSaved.Value.dateSaved = $"Date: {DateTime.Now:yyyy-MM-dd}, {DateTime.Now:HH:mm:ss}";
-        rsoContentSaved.Value.currentLevel = SceneManager.GetActiveScene().name;
+        rsoContentSaved.Value.dateSaved = $"{DateTime.Now:yyyy-MM-dd}, {DateTime.Now:HH:mm:ss}";
+        rsoContentSaved.Value.currentLevel = SceneManager.GetActiveScene().name.Substring(3);
         rseSaveData.Call(saveName, false);
     }
 
