@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 3373477565933544390}
   - component: {fileID: 7064880944070123901}
   m_Layer: 5
-  m_Name: TextAudioMusic
+  m_Name: TextAudioUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2568,7 +2568,7 @@ GameObject:
   - component: {fileID: 4528434212981622761}
   - component: {fileID: 2022787639022152544}
   m_Layer: 5
-  m_Name: TextAudioMusic
+  m_Name: TextAudioSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2966,7 +2966,7 @@ GameObject:
   - component: {fileID: 3133003618238519977}
   - component: {fileID: 1223259581328660299}
   m_Layer: 5
-  m_Name: Panel (5)
+  m_Name: PanelSetting6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3393,7 +3393,7 @@ GameObject:
   - component: {fileID: 1191548133541152139}
   - component: {fileID: 632841732593337649}
   m_Layer: 5
-  m_Name: Panel (6)
+  m_Name: PanelSetting7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
