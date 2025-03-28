@@ -33,7 +33,13 @@ namespace BT.Save
 
         private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
         private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
-        
+
+
+        private void Awake()
+        {
+            rsoSettingsSaved = new RSO_SettingsSaved();
+            rsoContentSaved = new RSO_ContentSaved();
+        }
 
         private void OnEnable()
         {
