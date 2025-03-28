@@ -73,9 +73,9 @@ public class S_CursorManager : MonoBehaviour
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
-    private void MouseEnter(Button button)
+    private void MouseEnter(Selectable uiElement)
     {
-        if (button.interactable)
+        if (uiElement.interactable)
         {
             Vector2 cursorOffset = new Vector2(handCursor.width / 3, handCursor.height / 40);
 
@@ -83,9 +83,9 @@ public class S_CursorManager : MonoBehaviour
         }
     }
 
-    private void MouseLeave(Button button)
+    private void MouseLeave(Selectable uiElement)
     {
-        if (button.interactable)
+        if (uiElement.interactable)
         {
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }

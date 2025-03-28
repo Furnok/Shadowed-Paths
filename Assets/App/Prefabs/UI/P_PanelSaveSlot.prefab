@@ -131,7 +131,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Settings
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3938383508945114858
@@ -152,13 +152,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000, guid: 035224f6047ad5047961d7e13435dc0c, type: 2}
-          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Button,
+          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Selectable,
             UnityEngine.UI
           m_MethodName: Call
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 6581826703681363103}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -169,13 +169,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000, guid: a5c0904853255ca4ebc6f5560a96af8f, type: 2}
-          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Button,
+          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Selectable,
             UnityEngine.UI
           m_MethodName: Call
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 6581826703681363103}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054774a0dc53d9047b9ac88a0748b310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveName: Settings
+  saveName: Save_1
   rsoContentSaved: {fileID: 11400000, guid: 9e79b13044dd6874ca558007c0305d62, type: 2}
   rseSaveData: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}
   rseLoadData: {fileID: 11400000, guid: 4117e29ff3c195746b67e05df0e2e14d, type: 2}
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31ba47dc4abd894b8ae1376cb4b5816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveName: Settings
+  saveName: Save_1
   textZone: {fileID: 3739330493228690026}
   textDate: {fileID: 7143351488734345696}
   buttonLoad: {fileID: 1659896406109718171}
@@ -1125,13 +1125,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000, guid: 035224f6047ad5047961d7e13435dc0c, type: 2}
-          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Button,
+          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Selectable,
             UnityEngine.UI
           m_MethodName: Call
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1659896406109718171}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1142,13 +1142,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000, guid: a5c0904853255ca4ebc6f5560a96af8f, type: 2}
-          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Button,
+          m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.UI.Selectable,
             UnityEngine.UI
           m_MethodName: Call
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1659896406109718171}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
