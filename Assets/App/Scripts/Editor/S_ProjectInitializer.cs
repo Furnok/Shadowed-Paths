@@ -23,8 +23,6 @@ public static class S_ProjectInitializer
             $"{rootFolder}/Audio/Musics",
             $"{rootFolder}/Audio/SFX",
 
-            $"{rootFolder}/Editor",
-
             $"{rootFolder}/Inputs",
 
             $"{rootFolder}/Prefabs",
@@ -35,6 +33,7 @@ public static class S_ProjectInitializer
             $"{rootFolder}/Scenes/Tests",
 
             $"{rootFolder}/Scripts",
+	    $"{rootFolder}/Scripts/Editor",
             $"{rootFolder}/Scripts/Managers",
             $"{rootFolder}/Scripts/UI",
             $"{rootFolder}/Scripts/Utils",
