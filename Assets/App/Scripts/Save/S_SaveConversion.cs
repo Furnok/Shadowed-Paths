@@ -9,6 +9,7 @@ public class S_SaveConversion : MonoBehaviour
 
     [Header("Output")]
     [SerializeField] private RSO_ContentSaved rsoContentSaved;
+    [SerializeField] private RSE_ResetCursor rseResetCursor;
     [SerializeField] private RSE_SaveData rseSaveData;
     [SerializeField] private RSE_LoadData rseLoadData;
     [SerializeField] private RSE_DeleteData rseDeleteData;
@@ -32,5 +33,6 @@ public class S_SaveConversion : MonoBehaviour
     public void ButtonPressDeleteData()
     {
         rseDeleteData.Call(saveName);
+        rseResetCursor.Call();
     }
 }

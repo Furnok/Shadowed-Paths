@@ -11,7 +11,8 @@ public class S_CursorManager : MonoBehaviour
     [Header("Input")]
     [SerializeField] private RSE_ShowMouseCursor rseShowMouseCursor;
     [SerializeField] private RSE_HideMouseCursor rseHideMouseCursor;
-    [SerializeField] private RSE_DeleteData rseDeleteData;
+    [SerializeField] private RSE_ResetCursor rseResetCursor;
+    [SerializeField] private RSE_ResetFocus rseResetFocus;
     [SerializeField] private RSE_MouseEnterUI rseMouseEnterUI;
     [SerializeField] private RSE_MouseLeaveUI rseMouseLeaveUI;
 
@@ -20,7 +21,8 @@ public class S_CursorManager : MonoBehaviour
         InputSystem.onDeviceChange += OnDeviceChange;
         rseShowMouseCursor.action += ShowMouseCursor;
         rseHideMouseCursor.action += HideMouseCursor;
-        rseDeleteData.action += DefaultCursor;
+        rseResetCursor.action += ResetCursor;
+        rseResetFocus.action += ResetFocus;
         rseMouseEnterUI.action += MouseEnter;
         rseMouseLeaveUI.action += MouseLeave;
     }
@@ -30,7 +32,8 @@ public class S_CursorManager : MonoBehaviour
         InputSystem.onDeviceChange -= OnDeviceChange;
         rseShowMouseCursor.action -= ShowMouseCursor;
         rseHideMouseCursor.action -= HideMouseCursor;
-        rseDeleteData.action -= DefaultCursor;
+        rseResetCursor.action -= ResetCursor;
+        rseResetFocus.action -= ResetFocus;
         rseMouseEnterUI.action -= MouseEnter;
         rseMouseLeaveUI.action -= MouseLeave;
     }
@@ -50,7 +53,7 @@ public class S_CursorManager : MonoBehaviour
             }
             else if (change == InputDeviceChange.Removed)
             {
-                EventSystem.current.SetSelectedGameObject(null);
+                ResetFocus();
 
                 ShowMouseCursor();
             }
@@ -91,8 +94,13 @@ public class S_CursorManager : MonoBehaviour
         }
     }
 
-    private void DefaultCursor(string name)
+    private void ResetCursor()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    private void ResetFocus()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
