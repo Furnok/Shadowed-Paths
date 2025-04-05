@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class S_UIContent : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Button defaultButton;
+    [SerializeField] private Selectable defaultButton;
 
     private void OnEnable()
     {

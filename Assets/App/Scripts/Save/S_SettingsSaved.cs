@@ -4,7 +4,7 @@ namespace BT.Save
     public class S_SettingsSaved
     {
         public int language = 0;
-        public int fullScreen = 1;
+        public bool fullScreen = true;
         public int resolutions = 0;
 
         public float audioMain = 100;

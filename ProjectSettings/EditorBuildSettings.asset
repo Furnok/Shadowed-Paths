@@ -18,5 +18,7 @@ EditorBuildSettings:
     path: Assets/App/Scenes/SC_Dungeon1.unity
     guid: 7fd466a850aa8314f9438efbe241f4c7
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: a0bd31cec61822449bd24e743099a956, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: 68f9127ec606fd447b5df8edc01c3fa4, type: 2}
   m_UseUCBPForAssetBundles: 0

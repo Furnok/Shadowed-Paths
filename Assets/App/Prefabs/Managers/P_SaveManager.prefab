@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6592113500553194971}
   - component: {fileID: 8257924338019466653}
+  - component: {fileID: 11879120748935568}
   m_Layer: 0
   m_Name: P_SaveManager
   m_TagString: Untagged
@@ -53,3 +54,20 @@ MonoBehaviour:
   rsoContentSaved: {fileID: 11400000, guid: 9e79b13044dd6874ca558007c0305d62, type: 2}
   rseDataTemp: {fileID: 11400000, guid: fbf23441b9c628c41bf325007280b993, type: 2}
   rseDataUI: {fileID: 11400000, guid: 421776842923db84aa8bfdeec469fe92, type: 2}
+  rseLoadSettings: {fileID: 11400000, guid: 0d13c401b28990249aa66a01d4e57368, type: 2}
+--- !u!114 &11879120748935568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276099954474256351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5faf5cf361439c74fa678fcd37ac5d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplicatorVolume: 5
+  audioMixer: {fileID: 24100000, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
+  rseLoadSettings: {fileID: 11400000, guid: 0d13c401b28990249aa66a01d4e57368, type: 2}
+  rsoSettingsSaved: {fileID: 11400000, guid: 99cfdc4f06155084aaa2aa1770d6a6b2, type: 2}

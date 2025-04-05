@@ -30,6 +30,7 @@ namespace BT.Save
         [SerializeField] private RSO_ContentSaved rsoContentSaved;
         [SerializeField] private RSE_DataTemp rseDataTemp;
         [SerializeField] private RSE_DataUI rseDataUI;
+        [SerializeField] private RSE_LoadSettings rseLoadSettings;
 
         private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
         private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
@@ -137,6 +138,8 @@ namespace BT.Save
                 if (isSettings && SaveConfig.HaveSettings)
                 {
                     dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
+
+                    StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
                 }
                 else
                 {
@@ -147,6 +150,8 @@ namespace BT.Save
                     else
                     {
                         dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
+
+                        StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
                     }
                 }
 
@@ -177,6 +182,8 @@ namespace BT.Save
                 if (isSettings && SaveConfig.HaveSettings)
                 {
                     rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
+
+                    StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
                 }
                 else
                 {
@@ -187,6 +194,8 @@ namespace BT.Save
                     else
                     {
                         rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
+
+                        StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
                     }
                 }
             }

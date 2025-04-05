@@ -2,8 +2,10 @@ using TMPro;
 using UnityEngine;
 using BT.Save;
 using UnityEngine.UI;
-using UnityEngine.Diagnostics;
-using Unity.VisualScripting;
+using System.Globalization;
+using UnityEngine.Localization.Settings;
+using System;
+using UnityEngine.Localization;
 
 public class S_LoadUILoads : MonoBehaviour
 {
@@ -39,10 +41,10 @@ public class S_LoadUILoads : MonoBehaviour
 
     private void Initialisation(string name)
     {
-        if(name == saveName)
+        if (name == saveName)
         {
-            textZone.text = "Player: Empty";
-            textDate.text = "Date: Empty";
+            textZone.text = "";
+            textDate.text = "";
             buttonLoad.interactable = false;
             buttonDelete.interactable = false;
 
@@ -56,15 +58,22 @@ public class S_LoadUILoads : MonoBehaviour
         {
             if (data.dateSaved != "")
             {
-                textZone.text = $"Player: {data.playerName}, {data.currentLevel}";
-                textDate.text = $"Date: {data.dateSaved}";
-                buttonLoad.interactable = true;
-                buttonDelete.interactable = true;
+                if (DateTime.TryParse(data.dateSaved, out DateTime parsedDate))
+                {
+                    CultureInfo culture = LocalizationSettings.SelectedLocale.Identifier.CultureInfo;
+
+                    string localizedDate = parsedDate.ToString("d", culture);
+
+                    textZone.text = $"{data.playerName}, {data.currentLevel}";
+                    textDate.text = $"{localizedDate}";
+                    buttonLoad.interactable = true;
+                    buttonDelete.interactable = true;
+                }
             }
             else
             {
-                textZone.text = "Player: Empty";
-                textDate.text = "Date: Empty";
+                textZone.text = "";
+                textDate.text = "";
                 buttonLoad.interactable = false;
                 buttonDelete.interactable = false;
             }
