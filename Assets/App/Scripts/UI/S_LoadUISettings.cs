@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,29 +72,29 @@ public class S_LoadUISettings : MonoBehaviour
         toggleFullscreen.isOn = fullscreen;
     }
 
-    private int GetResolutions()
+    private int GetResolutions(int index)
     {
-        Resolution[] resolutionsPC = Screen.resolutions;
+        List<Resolution> resolutionsPC = new(Screen.resolutions);
+        resolutionsPC.Reverse();
+
         int currentResolutionIndex = 0;
 
         dropDownResolutions.ClearOptions();
 
         List<string> options = new();
 
-        for (int i = 0; i < resolutionsPC.Length; i++)
+        for (int i = 0; i < resolutionsPC.Count; i++)
         {
             Resolution res = resolutionsPC[i];
-            string option = res.width + " x " + res.height;
+            string option = $"{res.width}x{res.height} {res.refreshRateRatio}Hz";
 
             options.Add(option);
 
-            if (res.width == Screen.width && res.height == Screen.height)
+            if (i == index)
             {
                 currentResolutionIndex = i;
             }
         }
-
-        options = new(new HashSet<string>(options));
 
         dropDownResolutions.AddOptions(options);
         dropDownResolutions.RefreshShownValue();
@@ -103,7 +104,7 @@ public class S_LoadUISettings : MonoBehaviour
 
     private void LoadResolutions()
     {
-        resolutions = GetResolutions();
+        resolutions = GetResolutions(rsoSettingsSaved.Value.resolutions);
 
         dropDownResolutions.value = resolutions;
     }

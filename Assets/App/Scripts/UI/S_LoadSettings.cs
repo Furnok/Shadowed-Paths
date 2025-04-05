@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
 public class S_LoadSettings : MonoBehaviour
@@ -28,28 +28,22 @@ public class S_LoadSettings : MonoBehaviour
         rseLoadSettings.action -= Load;
     }
 
-
-    private Resolution GetResolutions()
+    private Resolution GetResolutions(int index)
     {
-        Resolution[] resolutionsPC = Screen.resolutions;
+        List<Resolution> resolutionsPC = new(Screen.resolutions);
+        resolutionsPC.Reverse();
+
         Resolution resolution = resolutionsPC[0];
 
-        List<string> options = new();
-
-        for (int i = 0; i < resolutionsPC.Length; i++)
+        for (int i = 0; i < resolutionsPC.Count; i++)
         {
             Resolution res = resolutionsPC[i];
-            string option = res.width + " x " + res.height;
 
-            options.Add(option);
-
-            if (res.width == Screen.width && res.height == Screen.height)
+            if (i == index)
             {
                 resolution = res;
             }
         }
-
-        options = new(new HashSet<string>(options));
 
         return resolution;
     }
@@ -57,6 +51,10 @@ public class S_LoadSettings : MonoBehaviour
     private void Load()
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[rsoSettingsSaved.Value.language];
+
+        Resolution resolution = GetResolutions(rsoSettingsSaved.Value.resolutions);
+
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRateRatio);
 
         if (rsoSettingsSaved.Value.fullScreen)
         {
@@ -69,16 +67,12 @@ public class S_LoadSettings : MonoBehaviour
 
         Screen.fullScreen = rsoSettingsSaved.Value.fullScreen;
 
-        Resolution resolution = GetResolutions();
+        audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
 
-        Screen.SetResolution(resolution.width, resolution.height, rsoSettingsSaved.Value.fullScreen);
+        audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
 
-        audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain * multiplicatorVolume, 1) / 100));
+        audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
 
-        audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain * multiplicatorVolume, 1) / 100));
-
-        audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain * multiplicatorVolume, 1) / 100));
-
-        audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain * multiplicatorVolume, 1) / 100));
+        audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
     }
 }

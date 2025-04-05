@@ -1986,22 +1986,22 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: 1920 x 1080
+    - m_Text: 1920x1080 100Hz
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 1600 x 900
+    - m_Text: 1600x900 100Hz
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 1280 x 720
+    - m_Text: 1280x720 100Hz
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 960 x 540
+    - m_Text: 960x540 100Hz
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 640 x 360
+    - m_Text: 640x360 100Hz
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 320 x 180
+    - m_Text: 320x180 100Hz
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -2172,8 +2172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: 0}
-  m_SizeDelta: {x: -60, y: -4}
+  m_AnchoredPosition: {x: 15, y: 0}
+  m_SizeDelta: {x: -50, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3501685716503030879
 CanvasRenderer:
@@ -2230,7 +2230,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 25
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -2366,7 +2366,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 25
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -4135,8 +4135,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: 0}
-  m_SizeDelta: {x: -60, y: -4}
+  m_AnchoredPosition: {x: 15, y: 0}
+  m_SizeDelta: {x: -50, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5781170874613877990
 CanvasRenderer:
@@ -4193,7 +4193,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 25
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -8547,12 +8547,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicatorVolume: 5
+  saveSettingsName: 
   textAudioMain: {fileID: 285079293232986976}
   textAudioMusic: {fileID: 606941818105840485}
   textAudioSounds: {fileID: 8420479509548112601}
   textAudioUI: {fileID: 809087365296048357}
   audioMixer: {fileID: 24100000, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
   rsoSettingsSaved: {fileID: 11400000, guid: 99cfdc4f06155084aaa2aa1770d6a6b2, type: 2}
+  rseSaveData: {fileID: 0}
 --- !u!1 &7861640830985764417
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,7 +9068,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1920 x 1080
+  m_text: 1920x1080 100Hz
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9093,8 +9095,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

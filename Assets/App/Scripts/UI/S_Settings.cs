@@ -8,6 +8,7 @@ public class S_Settings : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private int multiplicatorVolume;
+    [SerializeField, S_SaveName] private string saveSettingsName;
 
     [Header("References")]
     [SerializeField] private TextMeshProUGUI textAudioMain;
@@ -18,6 +19,9 @@ public class S_Settings : MonoBehaviour
 
     [Header("Input")]
     [SerializeField] private RSO_SettingsSaved rsoSettingsSaved;
+
+    [Header("Output")]
+    [SerializeField] private RSE_SaveData rseSaveData;
 
     private bool isLoaded = false;
 
@@ -38,6 +42,8 @@ public class S_Settings : MonoBehaviour
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
 
             rsoSettingsSaved.Value.language = index;
+
+            Save();
         }
     }
 
@@ -57,30 +63,27 @@ public class S_Settings : MonoBehaviour
             Screen.fullScreen = value;
 
             rsoSettingsSaved.Value.fullScreen = value;
+
+            Save();
         }
     }
 
-    private Resolution GetResolutions()
+    private Resolution GetResolutions(int index)
     {
-        Resolution[] resolutionsPC = Screen.resolutions;
+        List<Resolution> resolutionsPC = new(Screen.resolutions);
+        resolutionsPC.Reverse();
+
         Resolution resolution = resolutionsPC[0];
 
-        List<string> options = new();
-
-        for (int i = 0; i < resolutionsPC.Length; i++)
+        for (int i = 0; i < resolutionsPC.Count; i++)
         {
             Resolution res = resolutionsPC[i];
-            string option = res.width + " x " + res.height;
 
-            options.Add(option);
-
-            if (res.width == Screen.width && res.height == Screen.height)
+            if (i == index)
             {
                 resolution = res;
             }
         }
-
-        options = new(new HashSet<string>(options));
 
         return resolution;
     }
@@ -89,11 +92,13 @@ public class S_Settings : MonoBehaviour
     {
         if (isLoaded)
         {
-            Resolution resolution = GetResolutions();
+            Resolution resolution = GetResolutions(index);
 
-            Screen.SetResolution(resolution.width, resolution.height, rsoSettingsSaved.Value.fullScreen);
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRateRatio);
 
             rsoSettingsSaved.Value.resolutions = index;
+
+            Save();
         }
     }
 
@@ -106,6 +111,10 @@ public class S_Settings : MonoBehaviour
             audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
             rsoSettingsSaved.Value.audioMain = value;
+
+            textAudioMain.text = $"{value}%";
+
+            Save();
         }
     }
 
@@ -118,6 +127,10 @@ public class S_Settings : MonoBehaviour
             audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
             rsoSettingsSaved.Value.audioMusic = value;
+
+            textAudioMusic.text = $"{value}%";
+
+            Save();
         }
     }
 
@@ -130,6 +143,10 @@ public class S_Settings : MonoBehaviour
             audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
             rsoSettingsSaved.Value.audioSounds = value;
+
+            textAudioSounds.text = $"{value}%";
+
+            Save();
         }
     }
 
@@ -142,6 +159,15 @@ public class S_Settings : MonoBehaviour
             audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
             rsoSettingsSaved.Value.audioUI = value;
+
+            textAudioUI.text = $"{value}%";
+
+            Save();
         }
+    }
+
+    private void Save()
+    {
+        rseSaveData.Call(saveSettingsName, true);
     }
 }

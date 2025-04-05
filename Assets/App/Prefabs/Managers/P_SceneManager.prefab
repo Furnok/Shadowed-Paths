@@ -45,15 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main:
-    sceneName: Game
+    sceneName: SC_Game
     sceneGUID: 45dab89d0be75d048aabfdd7784c7dfd
   menuName:
-    sceneName: Menu
+    sceneName: SC_Menu
     sceneGUID: 92c7bc17631015440a34ba1d5230c289
   levelsName:
-  - sceneName: Village1
+  - sceneName: SC_Village1
     sceneGUID: 8c9cfa26abfee488c85f1582747f6a02
-  - sceneName: Dungeon1
+  - sceneName: SC_Dungeon1
     sceneGUID: 7fd466a850aa8314f9438efbe241f4c7
   rseLoadLevel: {fileID: 11400000, guid: cb1adfe4f5f82b34085ff931d3e4e98a, type: 2}
   rseQuitGame: {fileID: 11400000, guid: 7aa2f1d0ee6863d44bfc8e6c5847ee27, type: 2}
