@@ -78,10 +78,6 @@ MonoBehaviour:
     m_Localized: Delete
     m_Metadata:
       m_Items: []
-  - m_Id: 32325433491456
-    m_Localized: 'Player: Empty'
-    m_Metadata:
-      m_Items: []
   - m_Id: 40667975450624
     m_Localized: 'Player:'
     m_Metadata:
@@ -90,12 +86,12 @@ MonoBehaviour:
     m_Localized: 'Date:'
     m_Metadata:
       m_Items: []
-  - m_Id: 43164790095872
-    m_Localized: Empty
+  - m_Id: 125220601659392
+    m_Localized: 'Developed by:'
     m_Metadata:
       m_Items: []
-  - m_Id: 43182343258112
-    m_Localized: Empty
+  - m_Id: 123671368368128
+    m_Localized: CREDITS
     m_Metadata:
       m_Items: []
   - m_Id: 44662332784640
@@ -115,9 +111,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 45088042057728
-    m_Localized: 'QUIT
-
-'
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118872816156672
+    m_Localized: Return
     m_Metadata:
       m_Items: []
   references:

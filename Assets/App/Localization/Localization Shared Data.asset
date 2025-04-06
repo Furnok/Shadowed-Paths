@@ -16,105 +16,103 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 5938714771c04e64089aac3cc114008b
   m_Entries:
   - m_Id: 4951807557632
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/TextTitle
+    m_Key: SETTINGS/Title
     m_Metadata:
       m_Items: []
   - m_Id: 15313068032000
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting1/Content/TextLanguages
+    m_Key: SETTINGS/Languages
     m_Metadata:
       m_Items: []
   - m_Id: 15484740894720
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting2/Content/TextFullscreen
+    m_Key: SETTINGS/Fullscreen
     m_Metadata:
       m_Items: []
   - m_Id: 16051479445504
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting3/Content/TextResolutions
+    m_Key: SETTINGS/Resolutions
     m_Metadata:
       m_Items: []
   - m_Id: 16337266737152
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting4/Content/TextAudioMain
+    m_Key: SETTINGS/AudioMain
     m_Metadata:
       m_Items: []
   - m_Id: 16448050888704
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting5/Content/TextAudioMusic
+    m_Key: SETTINGS/AudioMusic
     m_Metadata:
       m_Items: []
   - m_Id: 16475112538112
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting6/Content/TextAudioSounds
+    m_Key: SETTINGS/AudioSounds
     m_Metadata:
       m_Items: []
   - m_Id: 16507840692224
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting7/Content/TextAudioUI
+    m_Key: SETTINGS/AudioUI
     m_Metadata:
       m_Items: []
   - m_Id: 17270444851200
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting1/Content/DropdownLanguages
+    m_Key: SETTINGS/English
     m_Metadata:
       m_Items: []
   - m_Id: 17289956753408
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/PanelSettings/PanelSetting1/Content/DropdownLanguages
-      1
+    m_Key: SETTINGS/French
     m_Metadata:
       m_Items: []
   - m_Id: 17404083765248
-    m_Key: SC_Menu/P_MenuUI/P_PanelSettings/ContentSettings/ButtonReturn/TextReturn
+    m_Key: SETTINGS/Return
     m_Metadata:
       m_Items: []
   - m_Id: 17613043990528
-    m_Key: SC_Menu/P_MenuUI/P_PanelLoads/ContentLoads/TextTitle
+    m_Key: LOADS/Title
     m_Metadata:
       m_Items: []
   - m_Id: 18164548829184
-    m_Key: SC_Menu/P_MenuUI/P_PanelLoads/ContentLoads/ButtonReturn/TextReturn
+    m_Key: LOADS/Return
     m_Metadata:
       m_Items: []
   - m_Id: 18465754382336
-    m_Key: P_PanelSaveSlot/Canvas (Environment)/P_PanelSaveSlot/PanelButtons/ButtonLoad/TextLoad
+    m_Key: LOADS/Load
     m_Metadata:
       m_Items: []
   - m_Id: 18535174307840
-    m_Key: P_PanelSaveSlot/Canvas (Environment)/P_PanelSaveSlot/PanelButtons/ButtonDelete/TextDelete
-    m_Metadata:
-      m_Items: []
-  - m_Id: 32325433491456
-    m_Key: P_PanelSaveSlot/Prefab Mode in Context/P_PanelSaveSlot/PanelText/TextPlayer
+    m_Key: LOADS/Delete
     m_Metadata:
       m_Items: []
   - m_Id: 40667975450624
-    m_Key: P_PanelSaveSlot/Prefab Mode in Context/P_PanelSaveSlot/PanelText/TextPlayer
-      1
+    m_Key: LOADS/Player
     m_Metadata:
       m_Items: []
   - m_Id: 40694986768384
-    m_Key: P_PanelSaveSlot/Prefab Mode in Context/P_PanelSaveSlot/PanelText/TextDate
-    m_Metadata:
-      m_Items: []
-  - m_Id: 43164790095872
-    m_Key: P_PanelSaveSlot/Prefab Mode in Context/P_PanelSaveSlot/PanelTextValue/TextPlayerValue
-    m_Metadata:
-      m_Items: []
-  - m_Id: 43182343258112
-    m_Key: P_PanelSaveSlot/Prefab Mode in Context/P_PanelSaveSlot/PanelTextValue/TextDateValue
+    m_Key: LOADS/Date
     m_Metadata:
       m_Items: []
   - m_Id: 44662332784640
-    m_Key: SC_Menu/P_MenuUI/PanelMenu/ContentMenu/PanelButtons/ButtonStart/TextStart
+    m_Key: MainMenu/START
     m_Metadata:
       m_Items: []
   - m_Id: 44951777509376
-    m_Key: SC_Menu/P_MenuUI/PanelMenu/ContentMenu/PanelButtons/ButtonLoads/TextLoads
+    m_Key: MainMenu/LOADS
     m_Metadata:
       m_Items: []
   - m_Id: 44978839158784
-    m_Key: SC_Menu/P_MenuUI/PanelMenu/ContentMenu/PanelButtons/ButtonSettings/TextSettings
+    m_Key: MainMenu/SETTINGS
     m_Metadata:
       m_Items: []
   - m_Id: 45066630135808
-    m_Key: SC_Menu/P_MenuUI/PanelMenu/ContentMenu/PanelButtons/ButtonCredits/TextCredits
+    m_Key: MainMenu/CREDITS
     m_Metadata:
       m_Items: []
   - m_Id: 45088042057728
-    m_Key: SC_Menu/P_MenuUI/PanelMenu/ContentMenu/PanelButtons/ButtonQuit/TextQuit
+    m_Key: MainMenu/QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118872816156672
+    m_Key: Credit/Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123671368368128
+    m_Key: Credit/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 125220601659392
+    m_Key: Credit/DevBy
     m_Metadata:
       m_Items: []
   m_Metadata:

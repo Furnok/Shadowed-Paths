@@ -78,10 +78,6 @@ MonoBehaviour:
     m_Localized: Supprimer
     m_Metadata:
       m_Items: []
-  - m_Id: 32325433491456
-    m_Localized: 'Joueur : Empty'
-    m_Metadata:
-      m_Items: []
   - m_Id: 40667975450624
     m_Localized: 'Joueur :'
     m_Metadata:
@@ -90,12 +86,12 @@ MonoBehaviour:
     m_Localized: 'Date :'
     m_Metadata:
       m_Items: []
-  - m_Id: 43164790095872
-    m_Localized: Vide
+  - m_Id: 125220601659392
+    m_Localized: "D\xE9velopper par :"
     m_Metadata:
       m_Items: []
-  - m_Id: 43182343258112
-    m_Localized: Vide
+  - m_Id: 123671368368128
+    m_Localized: "CR\xC9DITS"
     m_Metadata:
       m_Items: []
   - m_Id: 44662332784640
@@ -115,9 +111,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 45088042057728
-    m_Localized: 'QUITTER
-
-'
+    m_Localized: QUITTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118872816156672
+    m_Localized: Retour
     m_Metadata:
       m_Items: []
   references:
