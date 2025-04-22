@@ -16,7 +16,7 @@ public class S_DynamicSceneSwitcher : EditorWindow
     [MenuItem("Tools/Dynamic Scenes Switcher")]
     public static void ShowWindow()
     {
-        DynamicSceneSwitcher window = GetWindow<DynamicSceneSwitcher>();
+        S_DynamicSceneSwitcher window = GetWindow<S_DynamicSceneSwitcher>();
         window.minSize = new Vector2(300, 300);
         window.maxSize = new Vector2(1000, 1000);
         window.position = new Rect(100, 100, 400, 400);

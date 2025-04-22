@@ -11,6 +11,7 @@ public class S_CursorManager : MonoBehaviour
     [Header("Input")]
     [SerializeField] private RSE_ShowMouseCursor rseShowMouseCursor;
     [SerializeField] private RSE_HideMouseCursor rseHideMouseCursor;
+    [SerializeField] private RSE_SetFocus rseSetFocus;
     [SerializeField] private RSE_ResetCursor rseResetCursor;
     [SerializeField] private RSE_ResetFocus rseResetFocus;
     [SerializeField] private RSE_MouseEnterUI rseMouseEnterUI;
@@ -21,6 +22,7 @@ public class S_CursorManager : MonoBehaviour
         InputSystem.onDeviceChange += OnDeviceChange;
         rseShowMouseCursor.action += ShowMouseCursor;
         rseHideMouseCursor.action += HideMouseCursor;
+        rseSetFocus.action += SetFocus;
         rseResetCursor.action += ResetCursor;
         rseResetFocus.action += ResetFocus;
         rseMouseEnterUI.action += MouseEnter;
@@ -32,6 +34,7 @@ public class S_CursorManager : MonoBehaviour
         InputSystem.onDeviceChange -= OnDeviceChange;
         rseShowMouseCursor.action -= ShowMouseCursor;
         rseHideMouseCursor.action -= HideMouseCursor;
+        rseSetFocus.action -= SetFocus;
         rseResetCursor.action -= ResetCursor;
         rseResetFocus.action -= ResetFocus;
         rseMouseEnterUI.action -= MouseEnter;
@@ -91,6 +94,14 @@ public class S_CursorManager : MonoBehaviour
         if (uiElement.interactable)
         {
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
+    }
+
+    private void SetFocus(Selectable uiElement)
+    {
+        if (uiElement != null && uiElement.interactable && Gamepad.current != null)
+        {
+            uiElement.Select();
         }
     }
 
