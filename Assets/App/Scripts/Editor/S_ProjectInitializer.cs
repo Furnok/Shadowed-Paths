@@ -49,7 +49,7 @@ public static class S_ProjectInitializer
 
             $"Plugins",
 
-            $"Ressources",
+            $"Resources",
 
             $"ScriptTemplates",
 
