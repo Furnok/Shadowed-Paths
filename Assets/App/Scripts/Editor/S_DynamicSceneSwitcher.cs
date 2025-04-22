@@ -9,20 +9,17 @@ public class S_DynamicSceneSwitcher : EditorWindow
     private Vector2 scrollPosition;
     private string[] scenePaths;
 
-    private GUIStyle labelStyle;
-    private GUIStyle labelError;
     private GUIStyle buttonStyle;
     private GUIStyle buttonRefreshStyle;
+	private float scale;
 
     [MenuItem("Tools/Dynamic Scenes Switcher")]
     public static void ShowWindow()
     {
-        // Create the UI
-        S_DynamicSceneSwitcher window = GetWindow<S_DynamicSceneSwitcher>("Scenes Switcher");
+        DynamicSceneSwitcher window = GetWindow<DynamicSceneSwitcher>();
         window.minSize = new Vector2(300, 300);
-        window.maxSize = new Vector2(600, 600);
-
-        window.position = new Rect(100, 100, 300, 300);
+        window.maxSize = new Vector2(1000, 1000);
+        window.position = new Rect(100, 100, 400, 400);
     }
 
     private void OnEnable()
@@ -32,42 +29,36 @@ public class S_DynamicSceneSwitcher : EditorWindow
 
     private void RefreshSceneList()
     {
-        // Get All Scenes in the Folder Assets in the Project
-		scenePaths = AssetDatabase.FindAssets("t:Scene").Select(AssetDatabase.GUIDToAssetPath).Where(path => path.StartsWith("Assets/")).ToArray();
+        scenePaths = AssetDatabase.FindAssets("t:Scene")
+            .Select(AssetDatabase.GUIDToAssetPath)
+            .Where(path => path.StartsWith("Assets/"))
+            .ToArray();
     }
 
     private void SetupStyles()
     {
-        labelStyle = new GUIStyle(EditorStyles.label)
-        {
-            fontStyle = FontStyle.Bold,
-            fontSize = 18,
-            alignment = TextAnchor.MiddleCenter,
-            margin = new RectOffset(10, 10, 10, 5),
-        };
+        float width = position.width;
 
-        labelError = new GUIStyle(EditorStyles.label)
-        {
-            fontSize = 14,
-            alignment = TextAnchor.MiddleCenter,
-            margin = new RectOffset(10, 10, 10, 5),
-        };
+        // Calcule dynamique
+        scale = Mathf.Clamp(width / 400f, 0.75f, 2f);
 
         buttonStyle = new GUIStyle(GUI.skin.button)
         {
-            margin = new RectOffset(30, 30, 10, 5),
-            padding = new RectOffset(10, 10, 5, 5),
-            fontStyle = FontStyle.Bold,
-            fontSize = 16,
+            margin = new RectOffset(20, 20, 5, 5),
+            padding = new RectOffset(10, 10, 8, 8),
+            fontStyle = FontStyle.Normal,
+            fontSize = Mathf.RoundToInt(14 * scale),
+            alignment = TextAnchor.MiddleCenter
         };
 
         buttonRefreshStyle = new GUIStyle(GUI.skin.button)
         {
-            margin = new RectOffset(30, 30, 10, 5),
-            padding = new RectOffset(10, 10, 15, 15),
+            margin = new RectOffset(40, 40, 10, 10),
+            padding = new RectOffset(15, 15, 10, 10),
             fontStyle = FontStyle.Bold,
+            fontSize = Mathf.RoundToInt(16 * scale),
             normal = { textColor = Color.white },
-            fontSize = 20,
+            alignment = TextAnchor.MiddleCenter
         };
     }
 
@@ -75,21 +66,20 @@ public class S_DynamicSceneSwitcher : EditorWindow
     {
         SetupStyles();
 
-        GUILayout.Label("All Scenes in the Project Assets:", labelStyle);
-
         EditorGUILayout.Space(5);
 
         if (scenePaths == null || scenePaths.Length == 0)
         {
-            GUILayout.Label("No Scenes Found", labelError);
-		}
+            EditorGUILayout.LabelField("No Scenes Found", EditorStyles.centeredGreyMiniLabel);
+        }
         else
         {
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition, GUILayout.ExpandHeight(true));
 
             foreach (string scenePath in scenePaths)
             {
-                if (GUILayout.Button(Path.GetFileNameWithoutExtension(scenePath), buttonStyle) && EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                if (GUILayout.Button(Path.GetFileNameWithoutExtension(scenePath), buttonStyle) &&
+                    EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
                 {
                     EditorSceneManager.OpenScene(scenePath);
                 }
@@ -100,7 +90,7 @@ public class S_DynamicSceneSwitcher : EditorWindow
 
         EditorGUILayout.Space(5);
 
-        if (GUILayout.Button("REFRESH SCENES", buttonRefreshStyle))
+        if (GUILayout.Button("Refresh Scenes", buttonRefreshStyle))
         {
             RefreshSceneList();
             Repaint();
