@@ -9509,7 +9509,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 6003506204472038075}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 2488843725918438625}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
