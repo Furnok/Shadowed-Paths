@@ -33,7 +33,7 @@ public static class S_ProjectInitializer
             $"{rootFolder}/Scenes/Tests",
 
             $"{rootFolder}/Scripts",
-	    $"{rootFolder}/Scripts/Editor",
+            $"{rootFolder}/Scripts/Editor",
             $"{rootFolder}/Scripts/Managers",
             $"{rootFolder}/Scripts/UI",
             $"{rootFolder}/Scripts/Utils",

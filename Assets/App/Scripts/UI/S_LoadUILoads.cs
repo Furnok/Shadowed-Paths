@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using System.Globalization;
 using UnityEngine.Localization.Settings;
 using System;
-using UnityEngine.Localization;
 
 public class S_LoadUILoads : MonoBehaviour
 {
