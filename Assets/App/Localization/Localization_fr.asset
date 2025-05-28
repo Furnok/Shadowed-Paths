@@ -118,6 +118,22 @@ MonoBehaviour:
     m_Localized: Retour
     m_Metadata:
       m_Items: []
+  - m_Id: 19249659175960576
+    m_Localized: AUBERGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249734648266752
+    m_Localized: MAGAZINS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249766738886656
+    m_Localized: GUILD D'AVENTURIER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249798250692608
+    m_Localized: DONJON
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

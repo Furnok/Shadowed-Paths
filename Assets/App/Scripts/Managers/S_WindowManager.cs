@@ -29,21 +29,24 @@ public class S_WindowManager : MonoBehaviour
 
     private void Start()
     {
-        if(mainWindow != null)
+        if (mainWindow != null)
         {
-            AlreadyOpen(mainWindow);
+            OpenWindow(mainWindow);
         }
     }
 
     private void AlreadyOpen(GameObject window)
     {
-        if (window != null && !window.activeInHierarchy)
+        if (window != null)
         {
-            OpenWindow(window);
-        }
-        else
-        {
-            CloseWindow(window);
+            if (!window.activeInHierarchy)
+            {
+                OpenWindow(window);
+            }
+            else
+            {
+                CloseWindow(window);
+            }
         }
     }
 

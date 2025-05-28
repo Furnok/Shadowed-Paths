@@ -118,6 +118,22 @@ MonoBehaviour:
     m_Localized: Return
     m_Metadata:
       m_Items: []
+  - m_Id: 19249659175960576
+    m_Localized: INN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249734648266752
+    m_Localized: SHOPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249766738886656
+    m_Localized: ADVENTURER GUILD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249798250692608
+    m_Localized: DUNGEON
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

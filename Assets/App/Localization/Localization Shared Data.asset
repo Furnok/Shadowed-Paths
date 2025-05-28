@@ -115,6 +115,22 @@ MonoBehaviour:
     m_Key: Credit/DevBy
     m_Metadata:
       m_Items: []
+  - m_Id: 19249659175960576
+    m_Key: Village1/Menu/INN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249734648266752
+    m_Key: Village1/Menu/SHOPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249766738886656
+    m_Key: Village1/Menu/GUILD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19249798250692608
+    m_Key: Village1/Menu/DUNGEON
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
