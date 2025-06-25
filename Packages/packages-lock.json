@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.unity.2d.animation": {
-      "version": "10.2.0",
+      "version": "10.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "9.1.0",
+        "com.unity.2d.common": "9.1.1",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.collections": "1.2.4",
         "com.unity.modules.animation": "1.0.0",
@@ -26,7 +26,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.common": {
-      "version": "9.1.0",
+      "version": "9.1.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -48,11 +48,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
-      "version": "9.0.3",
-      "depth": 1,
+      "version": "9.1.0",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "9.0.4",
+        "com.unity.2d.common": "9.1.1",
         "com.unity.2d.sprite": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -95,7 +95,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.addressables": {
-      "version": "2.5.0",
+      "version": "2.6.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -111,7 +111,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.21",
+      "version": "1.8.23",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -151,9 +151,9 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.2d.animation": "10.2.0",
+        "com.unity.2d.animation": "10.2.1",
         "com.unity.2d.pixel-perfect": "5.1.0",
-        "com.unity.2d.psdimporter": "9.0.3",
+        "com.unity.2d.psdimporter": "9.1.0",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "10.1.0",
         "com.unity.2d.tilemap": "1.0.0",
@@ -189,11 +189,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.localization": {
-      "version": "1.5.4",
+      "version": "1.5.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.addressables": "1.22.2",
+        "com.unity.addressables": "1.25.0",
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
       "url": "https://packages.unity.com"
@@ -345,7 +345,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.7",
+      "version": "1.9.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
