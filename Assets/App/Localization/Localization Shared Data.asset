@@ -15,12 +15,76 @@ MonoBehaviour:
   m_TableCollectionName: Localization
   m_TableCollectionNameGuidString: 5938714771c04e64089aac3cc114008b
   m_Entries:
+  - m_Id: 44662332784640
+    m_Key: MAINMENU/START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44951777509376
+    m_Key: MAINMENU/LOADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38765912882085888
+    m_Key: MAINMENU/ACHIEVEMENTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44978839158784
+    m_Key: MAINMENU/SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45066630135808
+    m_Key: MAINMENU/CREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45088042057728
+    m_Key: MAINMENU/QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17613043990528
+    m_Key: LOADS/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40667975450624
+    m_Key: LOADS/Player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40694986768384
+    m_Key: LOADS/Date
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18465754382336
+    m_Key: LOADS/Load
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18535174307840
+    m_Key: LOADS/Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18164548829184
+    m_Key: LOADS/Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38771382904619008
+    m_Key: ACHIEVEMENTS/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38771501787971584
+    m_Key: ACHIEVEMENTS/Return
+    m_Metadata:
+      m_Items: []
   - m_Id: 4951807557632
     m_Key: SETTINGS/Title
     m_Metadata:
       m_Items: []
   - m_Id: 15313068032000
     m_Key: SETTINGS/Languages
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17270444851200
+    m_Key: SETTINGS/English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17289956753408
+    m_Key: SETTINGS/French
     m_Metadata:
       m_Items: []
   - m_Id: 15484740894720
@@ -47,88 +111,36 @@ MonoBehaviour:
     m_Key: SETTINGS/AudioUI
     m_Metadata:
       m_Items: []
-  - m_Id: 17270444851200
-    m_Key: SETTINGS/English
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17289956753408
-    m_Key: SETTINGS/French
-    m_Metadata:
-      m_Items: []
   - m_Id: 17404083765248
     m_Key: SETTINGS/Return
     m_Metadata:
       m_Items: []
-  - m_Id: 17613043990528
-    m_Key: LOADS/Title
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18164548829184
-    m_Key: LOADS/Return
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18465754382336
-    m_Key: LOADS/Load
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18535174307840
-    m_Key: LOADS/Delete
-    m_Metadata:
-      m_Items: []
-  - m_Id: 40667975450624
-    m_Key: LOADS/Player
-    m_Metadata:
-      m_Items: []
-  - m_Id: 40694986768384
-    m_Key: LOADS/Date
-    m_Metadata:
-      m_Items: []
-  - m_Id: 44662332784640
-    m_Key: MainMenu/START
-    m_Metadata:
-      m_Items: []
-  - m_Id: 44951777509376
-    m_Key: MainMenu/LOADS
-    m_Metadata:
-      m_Items: []
-  - m_Id: 44978839158784
-    m_Key: MainMenu/SETTINGS
-    m_Metadata:
-      m_Items: []
-  - m_Id: 45066630135808
-    m_Key: MainMenu/CREDITS
-    m_Metadata:
-      m_Items: []
-  - m_Id: 45088042057728
-    m_Key: MainMenu/QUIT
-    m_Metadata:
-      m_Items: []
-  - m_Id: 118872816156672
-    m_Key: Credit/Return
-    m_Metadata:
-      m_Items: []
   - m_Id: 123671368368128
-    m_Key: Credit/Title
+    m_Key: CREDITS/Title
     m_Metadata:
       m_Items: []
   - m_Id: 125220601659392
-    m_Key: Credit/DevBy
+    m_Key: CREDITS/DevBy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118872816156672
+    m_Key: CREDITS/Return
     m_Metadata:
       m_Items: []
   - m_Id: 19249659175960576
-    m_Key: Village1/Menu/INN
+    m_Key: ELDERREST/Menu/INN
     m_Metadata:
       m_Items: []
   - m_Id: 19249734648266752
-    m_Key: Village1/Menu/SHOPS
+    m_Key: ELDERREST/Menu/SHOPS
     m_Metadata:
       m_Items: []
   - m_Id: 19249766738886656
-    m_Key: Village1/Menu/GUILD
+    m_Key: ELDERREST/Menu/GUILD
     m_Metadata:
       m_Items: []
   - m_Id: 19249798250692608
-    m_Key: Village1/Menu/DUNGEON
+    m_Key: ELDERREST/Menu/DUNGEON
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -15,9 +15,8 @@ namespace App.Scripts.Utils
 
             // Get Property
             SerializedProperty sceneGUIDProp = property.FindPropertyRelative("sceneGUID");
-            SerializedProperty sceneNameProp = property.FindPropertyRelative("sceneName");
 
-            if (sceneGUIDProp == null || sceneNameProp == null)
+            if (sceneGUIDProp == null)
             {
                 EditorGUI.LabelField(position, label.text, "Invalid SceneReference.");
                 EditorGUI.EndProperty();
@@ -43,7 +42,6 @@ namespace App.Scripts.Utils
             {
                 selectedIndex = 0;
                 sceneGUIDProp.stringValue = sceneGUIDs[selectedIndex];
-                sceneNameProp.stringValue = sceneNames[selectedIndex];
             }
 
             // Display Dropdown
@@ -51,7 +49,6 @@ namespace App.Scripts.Utils
             if (newIndex != selectedIndex)
             {
                 sceneGUIDProp.stringValue = sceneGUIDs[newIndex];
-                sceneNameProp.stringValue = sceneNames[newIndex];
             }
 
             EditorGUI.EndProperty();

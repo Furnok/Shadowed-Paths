@@ -184,9 +184,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8890010031999185770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &135728317880462530
@@ -261,7 +261,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 320
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -906,9 +906,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6045350441684422867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3323224393313334576
@@ -983,7 +983,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -994,7 +994,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 320
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -1016,7 +1016,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -1493,9 +1493,9 @@ RectTransform:
   - {fileID: 9001418356443004560}
   m_Father: {fileID: 2125291102450466604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 505, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6003506204472038075
@@ -1642,7 +1642,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -1653,7 +1653,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -1664,7 +1664,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 500
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -1675,7 +1675,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -1892,9 +1892,9 @@ RectTransform:
   - {fileID: 3064387392381170746}
   m_Father: {fileID: 1347525816512696720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 502.5, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8752024838796703002
@@ -2101,7 +2101,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2112,7 +2112,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2123,7 +2123,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 500
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2134,7 +2134,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2231,7 +2231,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 25
-  m_fontSizeBase: 30
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2367,7 +2367,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 25
-  m_fontSizeBase: 30
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2443,9 +2443,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2125291102450466604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4192928063475973677
@@ -2520,7 +2520,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2531,7 +2531,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2542,7 +2542,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 320
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2553,7 +2553,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -2896,9 +2896,9 @@ RectTransform:
   - {fileID: 2487120884336128246}
   m_Father: {fileID: 6676673754540900388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 505, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409517240379448302
@@ -3045,7 +3045,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3056,7 +3056,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3067,7 +3067,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 500
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3078,7 +3078,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3190,9 +3190,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6676673754540900388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &458873571867956255
@@ -3267,7 +3267,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3278,7 +3278,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3289,7 +3289,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 320
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3300,7 +3300,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3415,9 +3415,9 @@ RectTransform:
   - {fileID: 4403906486865457082}
   m_Father: {fileID: 6045350441684422867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 505, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6215994446011079936
@@ -3564,7 +3564,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3575,7 +3575,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3586,7 +3586,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 500
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3597,7 +3597,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -3838,9 +3838,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2125291102450466604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.5, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 295, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3373477565933544390
@@ -3998,7 +3998,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4009,7 +4009,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4020,7 +4020,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 145
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4031,7 +4031,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4194,7 +4194,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 25
-  m_fontSizeBase: 30
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4607,9 +4607,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6676673754540900388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.5, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 295, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8782153602043795844
@@ -4767,7 +4767,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4778,7 +4778,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4789,7 +4789,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 145
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4800,7 +4800,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -4837,9 +4837,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8890010031999185770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.5, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 295, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4528434212981622761
@@ -4997,7 +4997,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -5008,7 +5008,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -5019,7 +5019,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 145
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -5030,7 +5030,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -5281,9 +5281,9 @@ RectTransform:
   - {fileID: 6678602987820526067}
   m_Father: {fileID: 8890010031999185770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 505, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710917522453319335
@@ -5430,7 +5430,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -5441,7 +5441,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -5452,7 +5452,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 500
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -5463,7 +5463,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -6004,9 +6004,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6045350441684422867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.5, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 295, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3955478432956605710
@@ -6164,7 +6164,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -6175,7 +6175,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -6186,7 +6186,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 145
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -6197,7 +6197,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -6920,9 +6920,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1347525816512696720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 152.5, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 305, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8605096192582734199
@@ -7080,7 +7080,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7091,7 +7091,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7102,7 +7102,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 150
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7113,7 +7113,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7262,9 +7262,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2125291102450466604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 685, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5515647091743208154
@@ -7339,7 +7339,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7350,7 +7350,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7361,7 +7361,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 680
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7372,7 +7372,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7883,9 +7883,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6676673754540900388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 685, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8833048754362832016
@@ -7960,7 +7960,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7971,7 +7971,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7982,7 +7982,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 680
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -7993,7 +7993,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8230,9 +8230,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6045350441684422867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 685, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3858679498815617534
@@ -8307,7 +8307,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8318,7 +8318,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8329,7 +8329,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 680
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8340,7 +8340,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8547,14 +8547,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicatorVolume: 5
-  saveSettingsName: 
+  saveSettingsName: Settings
   textAudioMain: {fileID: 285079293232986976}
   textAudioMusic: {fileID: 606941818105840485}
   textAudioSounds: {fileID: 8420479509548112601}
   textAudioUI: {fileID: 809087365296048357}
   audioMixer: {fileID: 24100000, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
   rsoSettingsSaved: {fileID: 11400000, guid: 99cfdc4f06155084aaa2aa1770d6a6b2, type: 2}
-  rseSaveData: {fileID: 0}
+  rseSaveData: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}
 --- !u!1 &7861640830985764417
 GameObject:
   m_ObjectHideFlags: 0
@@ -8889,9 +8889,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8890010031999185770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 685, y: -30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7417948308107966205
@@ -8966,7 +8966,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8977,7 +8977,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 1
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8988,7 +8988,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: 680
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0
@@ -8999,7 +8999,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: en
-          value: -30
+          value: 0
         - localeIdentifier:
             m_Code: fr
           value: 0

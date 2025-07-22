@@ -134,6 +134,18 @@ MonoBehaviour:
     m_Localized: DONJON
     m_Metadata:
       m_Items: []
+  - m_Id: 38765912882085888
+    m_Localized: ACHIEVEMENTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38771382904619008
+    m_Localized: ACHIEVEMENTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38771501787971584
+    m_Localized: Retour
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
