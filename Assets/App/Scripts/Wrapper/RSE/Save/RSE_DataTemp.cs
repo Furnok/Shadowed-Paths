@@ -1,4 +1,3 @@
-using BT.Save;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "RSE_DataTemp", menuName = "Data/RSE/Save/DataTemp")]

@@ -1,13 +1,11 @@
-namespace BT.Save
+using System;
+
+[Serializable]
+public class S_ContentSaved
 {
-    [System.Serializable]
-    public class S_ContentSaved
-    {
-        public string saveName = "";
-        public string dateSaved = "";
-        public string currentLevel = "";
+    public string saveName = "";
+    public string dateSaved = "";
+    public string currentLevel = "";
 
-        public string playerName = "Admin";
-    }
+    public string playerName = "Admin";
 }
-

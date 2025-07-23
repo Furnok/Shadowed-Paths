@@ -8,5 +8,6 @@ public class S_ClassAchievements
     public Sprite image;
     public string title;
     public string description;
+    public int objective;
     public bool unlocked;
 }

@@ -1,4 +1,3 @@
-using BT.Save;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "RSO_SettingsSaved", menuName = "Data/RSO/Save/SettingsSaved")]
