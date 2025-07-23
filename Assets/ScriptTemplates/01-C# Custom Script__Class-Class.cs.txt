@@ -1,6 +1,7 @@
 using UnityEngine;
 
 #ROOTNAMESPACEBEGIN#
+[Serializable]
 public class #SCRIPTNAME#
 {
 	
