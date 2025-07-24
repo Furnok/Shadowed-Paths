@@ -59,7 +59,7 @@ public class S_LoadUISettings : MonoBehaviour
 
     private void LoadLanguages()
     {
-        languages = rsoSettingsSaved.Value.language;
+        languages = rsoSettingsSaved.Value.languageIndex;
 
         dropDownLanguages.value = languages;
     }
@@ -103,14 +103,14 @@ public class S_LoadUISettings : MonoBehaviour
 
     private void LoadResolutions()
     {
-        resolutions = GetResolutions(rsoSettingsSaved.Value.resolutions);
+        resolutions = GetResolutions(rsoSettingsSaved.Value.resolutionIndex);
 
         dropDownResolutions.value = resolutions;
     }
 
     private void LoadAudioMain()
     {
-        audioMain = rsoSettingsSaved.Value.audioMain;
+        audioMain = rsoSettingsSaved.Value.masterVolume;
 
         sliderAudioMain.value = audioMain / multiplicatorVolume;
         textAudioMain.text = $"{audioMain}%";
@@ -118,7 +118,7 @@ public class S_LoadUISettings : MonoBehaviour
 
     private void LoadAudioMusic()
     {
-        audioMusic = rsoSettingsSaved.Value.audioMusic;
+        audioMusic = rsoSettingsSaved.Value.musicVolume;
 
         sliderAudioMusic.value = audioMusic / multiplicatorVolume;
         textAudioMusic.text = $"{audioMusic}%";
@@ -126,7 +126,7 @@ public class S_LoadUISettings : MonoBehaviour
 
     private void LoadAudioSounds()
     {
-        audioSounds = rsoSettingsSaved.Value.audioSounds;
+        audioSounds = rsoSettingsSaved.Value.soundsVolume;
 
         sliderAudioSounds.value = audioSounds / multiplicatorVolume;
         textAudioSounds.text = $"{audioSounds}%";
@@ -135,7 +135,7 @@ public class S_LoadUISettings : MonoBehaviour
 
     private void LoadAudioUI()
     {
-        audioUI = rsoSettingsSaved.Value.audioUI;
+        audioUI = rsoSettingsSaved.Value.uiVolume;
 
         sliderAudioUI.value = audioUI / multiplicatorVolume;
         textAudioUI.text = $"{audioUI}%";

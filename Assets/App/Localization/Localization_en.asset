@@ -146,6 +146,166 @@ MonoBehaviour:
     m_Localized: Return
     m_Metadata:
       m_Items: []
+  - m_Id: 39569743723298816
+    m_Localized: "First Step\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39570134322053120
+    m_Localized: "Finish a run 1 time.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589444067196928
+    m_Localized: "Dungeon Finisher I\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589506604269568
+    m_Localized: "Finish a run 1 time.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589576712060928
+    m_Localized: "Dungeon Finisher II\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589601487814656
+    m_Localized: "Conqueror of Shadows\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589624338382848
+    m_Localized: "Master of the Path\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589639362379776
+    m_Localized: "Legend of the Path\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589653283274752
+    m_Localized: "Gold Hoarder\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589670781911040
+    m_Localized: "Craftsman\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589681624186880
+    m_Localized: "Master Blacksmith\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589691761819648
+    m_Localized: "First Kill\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589717057667072
+    m_Localized: "Exterminator I\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589726272552960
+    m_Localized: "Exterminator II\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589738419257344
+    m_Localized: "Warrior\u2019s Way\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589747176964096
+    m_Localized: "Eye of the Hawk\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589757394288640
+    m_Localized: "Arcane Mastery\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589767557087232
+    m_Localized: "Treasure Hunter\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589824364740608
+    m_Localized: "First Blood\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589836654051328
+    m_Localized: "Clumsy Explorer\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589847026565120
+    m_Localized: "Coward\u2019s Path\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589860448337920
+    m_Localized: "Fallen Hero\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589873878499328
+    m_Localized: "Finish a run 10 times.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589954472050688
+    m_Localized: "Defeat the final boss on Easy.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589971203129344
+    m_Localized: "Defeat the final boss on Normal.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589982087348224
+    m_Localized: "Defeat the final boss on Hard.  \r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589991507755008
+    m_Localized: "Earn a total of 10,000 gold.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590003897729024
+    m_Localized: "Craft your first weapon.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590013787897856
+    m_Localized: "Craft a legendary weapon.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590024995078144
+    m_Localized: "Defeat your first enemy.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590046151147520
+    m_Localized: "Defeat 25 enemies.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590054632030208
+    m_Localized: "Defeat 50 enemies.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590064132128768
+    m_Localized: "Complete a dungeon using only the sword.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590071065313280
+    m_Localized: "Complete a dungeon using only the bow.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590086731038720
+    m_Localized: "Complete a dungeon using only the staff.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590096134668288
+    m_Localized: "Open 20 chests.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590105940951040
+    m_Localized: "Trigger your first trap.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590115269083136
+    m_Localized: "Trigger traps 10 times.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590125012451328
+    m_Localized: "Flee from a dungeon run.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590134692904960
+    m_Localized: "Die during a dungeon run.\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

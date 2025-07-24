@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class S_ScrollBar : MonoBehaviour
+public class S_ScrollBarInitialisation : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ScrollRect scrollRect;

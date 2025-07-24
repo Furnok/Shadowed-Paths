@@ -373,8 +373,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4637619560679353260, guid: ce30b33552ed16e4e9d4266970ac0a67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7193457971731717918}
   m_SourcePrefab: {fileID: 100100000, guid: ce30b33552ed16e4e9d4266970ac0a67, type: 3}
+--- !u!1 &7193457971731717917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4637619560679353260, guid: ce30b33552ed16e4e9d4266970ac0a67, type: 3}
+  m_PrefabInstance: {fileID: 7193457971731717916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7193457971731717918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193457971731717917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d2e76b2d6685a4f96d1a07a03d85be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ssoAchievements: {fileID: 11400000, guid: f336060cf606d6148a6800aa7328a9f8, type: 2}
+  rsoAchievements: {fileID: 11400000, guid: 67750bf5064b87045bddafbdebf70930, type: 2}
 --- !u!1001 &8929101305890483847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -541,11 +563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324236756751734787, guid: 7c446cf02532ac149a67038e97da7d26, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4710384745132186686, guid: 7c446cf02532ac149a67038e97da7d26, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -560
       objectReference: {fileID: 0}
     - target: {fileID: 4710384745132186686, guid: 7c446cf02532ac149a67038e97da7d26, type: 3}
       propertyPath: m_LocalPosition.y
@@ -620,7 +642,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6050974813109941525, guid: 7c446cf02532ac149a67038e97da7d26, type: 3}
+    - {fileID: 6460603973348498515, guid: 7c446cf02532ac149a67038e97da7d26, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c446cf02532ac149a67038e97da7d26, type: 3}

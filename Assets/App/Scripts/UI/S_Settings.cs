@@ -41,7 +41,7 @@ public class S_Settings : MonoBehaviour
         {
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
 
-            rsoSettingsSaved.Value.language = index;
+            rsoSettingsSaved.Value.languageIndex = index;
 
             Save();
         }
@@ -96,7 +96,7 @@ public class S_Settings : MonoBehaviour
 
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRateRatio);
 
-            rsoSettingsSaved.Value.resolutions = index;
+            rsoSettingsSaved.Value.resolutionIndex = index;
 
             Save();
         }
@@ -110,7 +110,7 @@ public class S_Settings : MonoBehaviour
 
             audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
-            rsoSettingsSaved.Value.audioMain = value;
+            rsoSettingsSaved.Value.masterVolume = value;
 
             textAudioMain.text = $"{value}%";
 
@@ -126,7 +126,7 @@ public class S_Settings : MonoBehaviour
 
             audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
-            rsoSettingsSaved.Value.audioMusic = value;
+            rsoSettingsSaved.Value.musicVolume = value;
 
             textAudioMusic.text = $"{value}%";
 
@@ -142,7 +142,7 @@ public class S_Settings : MonoBehaviour
 
             audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
-            rsoSettingsSaved.Value.audioSounds = value;
+            rsoSettingsSaved.Value.soundsVolume = value;
 
             textAudioSounds.text = $"{value}%";
 
@@ -158,7 +158,7 @@ public class S_Settings : MonoBehaviour
 
             audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
-            rsoSettingsSaved.Value.audioUI = value;
+            rsoSettingsSaved.Value.uiVolume = value;
 
             textAudioUI.text = $"{value}%";
 

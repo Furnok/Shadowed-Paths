@@ -49,9 +49,9 @@ public class S_LoadSettings : MonoBehaviour
 
     private void Load()
     {
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[rsoSettingsSaved.Value.language];
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[rsoSettingsSaved.Value.languageIndex];
 
-        Resolution resolution = GetResolutions(rsoSettingsSaved.Value.resolutions);
+        Resolution resolution = GetResolutions(rsoSettingsSaved.Value.resolutionIndex);
 
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRateRatio);
 
@@ -66,12 +66,12 @@ public class S_LoadSettings : MonoBehaviour
 
         Screen.fullScreen = rsoSettingsSaved.Value.fullScreen;
 
-        audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
+        audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.masterVolume, 1) / 100));
 
-        audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
+        audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.musicVolume, 1) / 100));
 
-        audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
+        audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.soundsVolume, 1) / 100));
 
-        audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.audioMain, 1) / 100));
+        audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.uiVolume, 1) / 100));
     }
 }

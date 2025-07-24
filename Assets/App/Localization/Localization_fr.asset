@@ -146,6 +146,166 @@ MonoBehaviour:
     m_Localized: Retour
     m_Metadata:
       m_Items: []
+  - m_Id: 39569743723298816
+    m_Localized: "Premi\xE8re \xC9tape"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39570134322053120
+    m_Localized: "Terminer un donjon 1 fois.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589444067196928
+    m_Localized: "Finisseur de Donjon I\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589506604269568
+    m_Localized: "Terminer un donjon 1 fois.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589576712060928
+    m_Localized: "Finisseur de Donjon II\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589601487814656
+    m_Localized: "Conqu\xE9rant des Ombres\r\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589624338382848
+    m_Localized: "Ma\xEEtre de la Voie\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589639362379776
+    m_Localized: "L\xE9gende de la Voie\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589653283274752
+    m_Localized: "Accumulateur d'Or\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589670781911040
+    m_Localized: "Artisan\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589681624186880
+    m_Localized: "Ma\xEEtre Forgeron\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589691761819648
+    m_Localized: "Premier Meurtre\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589717057667072
+    m_Localized: "Exterminateur I\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589726272552960
+    m_Localized: "Exterminateur II\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589738419257344
+    m_Localized: "Voie du Guerrier\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589747176964096
+    m_Localized: "\u0152il du Faucon\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589757394288640
+    m_Localized: "Ma\xEEtrise des Arcanes\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589767557087232
+    m_Localized: "Chasseur de Tr\xE9sors\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589824364740608
+    m_Localized: "Premier Sang\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589836654051328
+    m_Localized: "Explorateur Maladroit\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589847026565120
+    m_Localized: "Voie du L\xE2che\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589860448337920
+    m_Localized: "H\xE9ros D\xE9chu\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589873878499328
+    m_Localized: "Terminer un donjon 10 fois.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589954472050688
+    m_Localized: "Vaincre le boss final en Facile.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589971203129344
+    m_Localized: "Vaincre le boss final en mode Normal.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589982087348224
+    m_Localized: "Vaincre le boss final en mode Difficile.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589991507755008
+    m_Localized: "Gagnez un total de 10 000 pi\xE8ces d'or.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590003897729024
+    m_Localized: "Fabriquez votre premi\xE8re arme.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590013787897856
+    m_Localized: "Fabriquer une arme l\xE9gendaire.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590024995078144
+    m_Localized: "Vainquez votre premier ennemi.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590046151147520
+    m_Localized: "Vaincre 25 ennemis.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590054632030208
+    m_Localized: "Vaincre 50 ennemis.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590064132128768
+    m_Localized: "Terminer un donjon en utilisant uniquement l'\xE9p\xE9e.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590071065313280
+    m_Localized: "Terminer un donjon en utilisant uniquement l'arc.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590086731038720
+    m_Localized: "Terminer un donjon en utilisant uniquement le b\xE2ton.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590096134668288
+    m_Localized: "Ouvrez 20 coffres.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590105940951040
+    m_Localized: "D\xE9clenchez votre premier pi\xE8ge.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590115269083136
+    m_Localized: "D\xE9clencher les pi\xE8ges 10 fois.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590125012451328
+    m_Localized: "S'enfuir d'un donjon.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590134692904960
+    m_Localized: "Mourir au cours d'un donjon.\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

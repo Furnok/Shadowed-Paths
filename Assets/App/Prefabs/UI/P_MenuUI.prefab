@@ -3928,6 +3928,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3116159202216812990}
     m_Modifications:
+    - target: {fileID: 216643947858415940, guid: 8246bcd5339f371459ec57be67f80dda, type: 3}
+      propertyPath: scrollContent
+      value: 
+      objectReference: {fileID: 4710384745132186686}
+    - target: {fileID: 216643947858415940, guid: 8246bcd5339f371459ec57be67f80dda, type: 3}
+      propertyPath: achievementSlotPrefab
+      value: 
+      objectReference: {fileID: 3713673656840299847, guid: 9f0dc4d8f9b4eb847bf24f7c392f9107, type: 3}
     - target: {fileID: 1570958434865326574, guid: 8246bcd5339f371459ec57be67f80dda, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
@@ -4024,6 +4032,11 @@ PrefabInstance:
 --- !u!1 &4324236756751734787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 575618731450412946, guid: 8246bcd5339f371459ec57be67f80dda, type: 3}
+  m_PrefabInstance: {fileID: 4323389967342925713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4710384745132186686 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8836451407414668207, guid: 8246bcd5339f371459ec57be67f80dda, type: 3}
   m_PrefabInstance: {fileID: 4323389967342925713}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &6855829422576634344 stripped

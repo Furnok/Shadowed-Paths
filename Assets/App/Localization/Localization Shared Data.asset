@@ -67,6 +67,166 @@ MonoBehaviour:
     m_Key: ACHIEVEMENTS/Title
     m_Metadata:
       m_Items: []
+  - m_Id: 39569743723298816
+    m_Key: ACHIEVEMENTS/ID0/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39570134322053120
+    m_Key: ACHIEVEMENTS/ID0/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589444067196928
+    m_Key: ACHIEVEMENTS/ID1/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589506604269568
+    m_Key: ACHIEVEMENTS/ID1/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589576712060928
+    m_Key: ACHIEVEMENTS/ID2/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589873878499328
+    m_Key: ACHIEVEMENTS/ID2/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589601487814656
+    m_Key: ACHIEVEMENTS/ID3/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589954472050688
+    m_Key: ACHIEVEMENTS/ID3/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589624338382848
+    m_Key: ACHIEVEMENTS/ID4/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589971203129344
+    m_Key: ACHIEVEMENTS/ID4/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589639362379776
+    m_Key: ACHIEVEMENTS/ID5/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589982087348224
+    m_Key: ACHIEVEMENTS/ID5/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589653283274752
+    m_Key: ACHIEVEMENTS/ID6/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589991507755008
+    m_Key: ACHIEVEMENTS/ID6/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589670781911040
+    m_Key: ACHIEVEMENTS/ID7/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590003897729024
+    m_Key: ACHIEVEMENTS/ID7/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589681624186880
+    m_Key: ACHIEVEMENTS/ID8/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590013787897856
+    m_Key: ACHIEVEMENTS/ID8/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589691761819648
+    m_Key: ACHIEVEMENTS/ID9/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590024995078144
+    m_Key: ACHIEVEMENTS/ID9/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589717057667072
+    m_Key: ACHIEVEMENTS/ID10/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590046151147520
+    m_Key: ACHIEVEMENTS/ID10/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589726272552960
+    m_Key: ACHIEVEMENTS/ID11/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590054632030208
+    m_Key: ACHIEVEMENTS/ID11/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589738419257344
+    m_Key: ACHIEVEMENTS/ID12/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590064132128768
+    m_Key: ACHIEVEMENTS/ID12/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589747176964096
+    m_Key: ACHIEVEMENTS/ID13/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590071065313280
+    m_Key: ACHIEVEMENTS/ID13/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589757394288640
+    m_Key: ACHIEVEMENTS/ID14/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590086731038720
+    m_Key: ACHIEVEMENTS/ID14/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589767557087232
+    m_Key: ACHIEVEMENTS/ID15/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590096134668288
+    m_Key: ACHIEVEMENTS/ID15/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589824364740608
+    m_Key: ACHIEVEMENTS/ID16/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590105940951040
+    m_Key: ACHIEVEMENTS/ID16/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589836654051328
+    m_Key: ACHIEVEMENTS/ID17/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590115269083136
+    m_Key: ACHIEVEMENTS/ID17/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589847026565120
+    m_Key: ACHIEVEMENTS/ID18/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590125012451328
+    m_Key: ACHIEVEMENTS/ID18/Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39589860448337920
+    m_Key: ACHIEVEMENTS/ID19/Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39590134692904960
+    m_Key: ACHIEVEMENTS/ID19/Description
+    m_Metadata:
+      m_Items: []
   - m_Id: 38771501787971584
     m_Key: ACHIEVEMENTS/Return
     m_Metadata:
