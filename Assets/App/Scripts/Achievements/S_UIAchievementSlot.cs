@@ -13,13 +13,22 @@ public class S_UIAchievementSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI description;
 
+    private S_ClassAchievements currentAchievement = null;
+
     public void Setup(S_ClassAchievements achievement)
     {
-        image.sprite = achievement.image;
-        title.text = achievement.title.GetLocalizedString();
-        description.text = achievement.description.GetLocalizedString();
+        currentAchievement = achievement;
 
-        if (achievement.unlocked)
+        image.sprite = currentAchievement.image;
+        title.text = currentAchievement.title.GetLocalizedString();
+        description.text = currentAchievement.description.GetLocalizedString();
+
+        Unlock();
+    }
+
+    public void Unlock()
+    {
+        if (currentAchievement.unlocked)
         {
             image.color = colorUnLock;
             title.color = colorUnLock;

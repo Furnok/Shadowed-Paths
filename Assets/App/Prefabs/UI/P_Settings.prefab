@@ -3779,7 +3779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8106850638831345525}
   m_Layer: 5
-  m_Name: P_PanelSettings
+  m_Name: P_Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
