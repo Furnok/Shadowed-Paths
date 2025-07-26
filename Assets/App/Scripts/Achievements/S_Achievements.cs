@@ -52,14 +52,7 @@ public class S_Achievements : MonoBehaviour
         {
             if (!rsoAchievements.Value[id].unlocked)
             {
-                rsoAchievements.Value[id].progress += value;
-
-                if (rsoAchievements.Value[id].progress >= rsoAchievements.Value[id].objective)
-                {
-                    rsoAchievements.Value[id].progress = rsoAchievements.Value[id].objective;
-
-                    ValidAchievements(id);
-                }
+                ValidAchievements(id);
             }
         }
     }
