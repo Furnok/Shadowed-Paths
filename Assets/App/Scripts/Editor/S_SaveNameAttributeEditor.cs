@@ -1,58 +1,70 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.Scripts.Save
+[CustomPropertyDrawer(typeof(S_SaveNameAttribute))]
+public class S_SaveNameAttributeEditor : PropertyDrawer
 {
-    [CustomPropertyDrawer(typeof(S_SaveNameAttribute))]
-    public class S_SaveNameAttributeEditor : PropertyDrawer
+    private static List<string> SaveNames
     {
-        private static readonly string[] saveNames = GenerateSaveNames();
-
-        private static string[] GenerateSaveNames()
+        get
         {
-            int offset = SaveConfig.HaveSettings ? 1 : 0;
-            string[] names = new string[SaveConfig.SaveMax + offset];
-
-            if (SaveConfig.saveActived)
+            if (!SaveConfig.saveActived)
             {
-                if (SaveConfig.HaveSettings)
-                {
-                    names[0] = "Settings";
-                }
+                return new();
+            }
 
+            List<string> saveNames = new();
+
+            if (SaveConfig.HaveSettings)
+            {
+                saveNames.Add($"Settings");
+            }
+
+            if (SaveConfig.HaveAchievements)
+            {
+                saveNames.Add($"Achievements");
+            }
+
+            if (SaveConfig.SaveMax > 0)
+            {
                 for (int i = 0; i < SaveConfig.SaveMax; i++)
                 {
-                    names[i + offset] = $"Save_{i + 1}";
+                    saveNames.Add($"Save_{i + 1}");
                 }
             }
 
-            return names;
+            return saveNames;
         }
+    }
 
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        EditorGUI.BeginProperty(position, label, property);
+
+        if (property.propertyType != SerializedPropertyType.String)
         {
-            EditorGUI.BeginProperty(position, label, property);
-
-            if (property.propertyType != SerializedPropertyType.String)
-            {
-                EditorGUI.LabelField(position, label.text, "Use [SaveName] with a String.");
-                EditorGUI.EndProperty();
-                return;
-            }
-
-            if ((SaveConfig.SaveMax == 0 && !SaveConfig.HaveSettings) || !SaveConfig.saveActived)
-            {
-                EditorGUI.LabelField(position, label.text, "Saves Desactivated");
-                EditorGUI.EndProperty();
-                return;
-            }
-
-            // Find the Index of the Current Save
-            int selectedIndex = Mathf.Max(0, Array.IndexOf(saveNames, property.stringValue));
-            property.stringValue = saveNames[EditorGUI.Popup(position, label.text, selectedIndex, saveNames)];
-
+            EditorGUI.LabelField(position, label.text, "Use [SaveName] with a String.");
             EditorGUI.EndProperty();
+            return;
         }
+
+        if ((SaveConfig.SaveMax <= 0 && !SaveConfig.HaveSettings) || !SaveConfig.saveActived)
+        {
+            EditorGUI.LabelField(position, label.text, "Saves Desactivated");
+            EditorGUI.EndProperty();
+            return;
+        }
+
+        if (SaveConfig.SaveMax > 0)
+        {
+            // Find the Index of the Current Save
+            var saveNamesArray = SaveNames.ToArray();
+            int selectedIndex = Mathf.Max(0, Array.IndexOf(saveNamesArray, property.stringValue));
+            property.stringValue = saveNamesArray[EditorGUI.Popup(position, label.text, selectedIndex, saveNamesArray)];
+        }
+
+        EditorGUI.EndProperty();
     }
 }

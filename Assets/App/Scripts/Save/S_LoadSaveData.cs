@@ -8,6 +8,7 @@ public static class SaveConfig
 {
     public static readonly int SaveMax = 5;
     public static bool saveActived = true;
+    public static readonly bool HaveAchievements = true;
     public static readonly bool HaveSettings = true;
     public static readonly bool FileCrypted = true;
 }
