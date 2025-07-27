@@ -18,6 +18,7 @@ public class S_LoadSaveData : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField, S_SaveName] private string saveSettingsName;
+    [SerializeField, S_SaveName] private string saveAchievementsName;
 
     [Header("Input")]
     [SerializeField] private RSE_LoadData rseLoadData;
@@ -60,28 +61,31 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void Start()
     {
-        if (SavesConfig.SaveMax <= 0 && !SavesConfig.HaveSettings)
+        if (saveSettingsName != null)
         {
-            SavesConfig.saveActived = false;
+            Directory.CreateDirectory(SaveDirectory);
+
+            if (FileAlreadyExist(saveSettingsName))
+            {
+                LoadFromJson(saveSettingsName, true);
+            }
+            else
+            {
+                SaveToJson(saveSettingsName, true);
+            }
         }
 
-        if (SavesConfig.saveActived)
+        if (saveAchievementsName != null)
         {
-            if (!Directory.Exists(SaveDirectory))
-            {
-                Directory.CreateDirectory(SaveDirectory);
-            }
+            Directory.CreateDirectory(SaveDirectory);
 
-            if (SavesConfig.HaveSettings)
+            if (FileAlreadyExist(saveAchievementsName))
             {
-                if (FileAlreadyExist(saveSettingsName))
-                {
-                    LoadFromJson(saveSettingsName, true);
-                }
-                else
-                {
-                    SaveToJson(saveSettingsName, true);
-                }
+                LoadFromJson(saveAchievementsName, false);
+            }
+            else
+            {
+                SaveToJson(saveAchievementsName, false);
             }
         }
     }
@@ -129,36 +133,33 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void SaveToJson(string name, bool isSettings)
     {
-        if (SavesConfig.saveActived)
+        string filePath = GetFilePath(name);
+
+        string dataToSave = "";
+
+        if (isSettings && SavesConfig.HaveSettings)
         {
-            string filePath = GetFilePath(name);
+            dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
 
-            string dataToSave = "";
-
-            if (isSettings && SavesConfig.HaveSettings)
+            StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
+        }
+        else
+        {
+            if (SavesConfig.SaveMax > 0)
+            {
+                dataToSave = JsonUtility.ToJson(rsoContentSaved.Value);
+            }
+            else
             {
                 dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
 
                 StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
             }
-            else
-            {
-                if (SavesConfig.SaveMax > 0)
-                {
-                    dataToSave = JsonUtility.ToJson(rsoContentSaved.Value);
-                }
-                else
-                {
-                    dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
-
-                    StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
-                }
-            }
-
-            File.WriteAllText(filePath, SavesConfig.FileCrypted ? Encrypt(dataToSave) : dataToSave);
-
-            rseDataUI.Call(name);
         }
+
+        File.WriteAllText(filePath, SavesConfig.FileCrypted ? Encrypt(dataToSave) : dataToSave);
+
+        rseDataUI.Call(name);
     }
 
     private void LoadFromJson(string name, bool isSettings)

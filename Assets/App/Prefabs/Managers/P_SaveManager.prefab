@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveSettingsName: Settings
+  saveAchievementsName: Achievements
   rseLoadData: {fileID: 11400000, guid: 4117e29ff3c195746b67e05df0e2e14d, type: 2}
   rseLoadTempData: {fileID: 11400000, guid: b53652cda2ad40d4ba363ce83c09e62b, type: 2}
   rseSaveData: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}
