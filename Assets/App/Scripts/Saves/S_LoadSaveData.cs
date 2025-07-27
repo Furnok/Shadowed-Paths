@@ -4,10 +4,11 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-public static class SaveConfig
+public static class SavesConfig
 {
     public static readonly int SaveMax = 5;
     public static bool saveActived = true;
+    public static readonly bool HaveSaveAuto = true;
     public static readonly bool HaveAchievements = true;
     public static readonly bool HaveSettings = true;
     public static readonly bool FileCrypted = true;
@@ -59,19 +60,19 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void Start()
     {
-        if (SaveConfig.SaveMax <= 0 && !SaveConfig.HaveSettings)
+        if (SavesConfig.SaveMax <= 0 && !SavesConfig.HaveSettings)
         {
-            SaveConfig.saveActived = false;
+            SavesConfig.saveActived = false;
         }
 
-        if (SaveConfig.saveActived)
+        if (SavesConfig.saveActived)
         {
             if (!Directory.Exists(SaveDirectory))
             {
                 Directory.CreateDirectory(SaveDirectory);
             }
 
-            if (SaveConfig.HaveSettings)
+            if (SavesConfig.HaveSettings)
             {
                 if (FileAlreadyExist(saveSettingsName))
                 {
@@ -128,13 +129,13 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void SaveToJson(string name, bool isSettings)
     {
-        if (SaveConfig.saveActived)
+        if (SavesConfig.saveActived)
         {
             string filePath = GetFilePath(name);
 
             string dataToSave = "";
 
-            if (isSettings && SaveConfig.HaveSettings)
+            if (isSettings && SavesConfig.HaveSettings)
             {
                 dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
 
@@ -142,7 +143,7 @@ public class S_LoadSaveData : MonoBehaviour
             }
             else
             {
-                if (SaveConfig.SaveMax > 0)
+                if (SavesConfig.SaveMax > 0)
                 {
                     dataToSave = JsonUtility.ToJson(rsoContentSaved.Value);
                 }
@@ -154,7 +155,7 @@ public class S_LoadSaveData : MonoBehaviour
                 }
             }
 
-            File.WriteAllText(filePath, SaveConfig.FileCrypted ? Encrypt(dataToSave) : dataToSave);
+            File.WriteAllText(filePath, SavesConfig.FileCrypted ? Encrypt(dataToSave) : dataToSave);
 
             rseDataUI.Call(name);
         }
@@ -162,7 +163,7 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void LoadFromJson(string name, bool isSettings)
     {
-        if (SaveConfig.saveActived)
+        if (SavesConfig.saveActived)
         {
             if (!FileAlreadyExist(name))
             {
@@ -173,12 +174,12 @@ public class S_LoadSaveData : MonoBehaviour
             string filePath = GetFilePath(name);
             string encryptedJson = File.ReadAllText(filePath);
 
-            if (SaveConfig.FileCrypted)
+            if (SavesConfig.FileCrypted)
             {
                 encryptedJson = Decrypt(encryptedJson);
             }
 
-            if (isSettings && SaveConfig.HaveSettings)
+            if (isSettings && SavesConfig.HaveSettings)
             {
                 rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
 
@@ -186,7 +187,7 @@ public class S_LoadSaveData : MonoBehaviour
             }
             else
             {
-                if (SaveConfig.SaveMax > 0)
+                if (SavesConfig.SaveMax > 0)
                 {
                     rsoContentSaved.Value = JsonUtility.FromJson<S_ContentSaved>(encryptedJson);
                 }
@@ -202,14 +203,14 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void LoadTempFromJson(string name)
     {
-        if (SaveConfig.saveActived)
+        if (SavesConfig.saveActived)
         {
             if (!FileAlreadyExist(name)) return;
 
             string filePath = GetFilePath(name);
             string encryptedJson = File.ReadAllText(filePath);
 
-            if (SaveConfig.FileCrypted)
+            if (SavesConfig.FileCrypted)
             {
                 encryptedJson = Decrypt(encryptedJson);
             }
@@ -220,7 +221,7 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void DeleteData(string name)
     {
-        if (SaveConfig.saveActived)
+        if (SavesConfig.saveActived)
         {
             if (FileAlreadyExist(name))
             {
