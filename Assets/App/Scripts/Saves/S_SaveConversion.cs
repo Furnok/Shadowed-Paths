@@ -20,12 +20,12 @@ public class S_SaveConversion : MonoBehaviour
         rsoContentSaved.Value.saveName = saveName;
         rsoContentSaved.Value.dateSaved = $"{DateTime.Now:yyyy-MM-dd}, {DateTime.Now:HH:mm:ss}";
         rsoContentSaved.Value.currentLevel = SceneManager.GetActiveScene().name.Substring(3);
-        rseSaveData.Call(saveName, false);
+        rseSaveData.Call(saveName, false, false);
     }
 
     public void ButtonPressLoadData()
     {
-        rseLoadData.Call(saveName, false);
+        rseLoadData.Call(saveName, false, false);
 
         StartCoroutine(S_Utils.DelayFrame(() => rseLoadLevel.Call(rsoContentSaved.Value.currentLevel)));
     }

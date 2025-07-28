@@ -168,6 +168,6 @@ public class S_Settings : MonoBehaviour
 
     private void Save()
     {
-        rseSaveData.Call(saveSettingsName, true);
+        rseSaveData.Call(saveSettingsName, true, false);
     }
 }

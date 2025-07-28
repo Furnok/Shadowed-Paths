@@ -4,16 +4,6 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-public static class SavesConfig
-{
-    public static readonly int SaveMax = 5;
-    public static bool saveActived = true;
-    public static readonly bool HaveSaveAuto = true;
-    public static readonly bool HaveAchievements = true;
-    public static readonly bool HaveSettings = true;
-    public static readonly bool FileCrypted = true;
-}
-
 public class S_LoadSaveData : MonoBehaviour
 {
     [Header("Settings")]
@@ -35,7 +25,7 @@ public class S_LoadSaveData : MonoBehaviour
 
     private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
     private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
-
+    private static readonly bool fileCrypted = true;
 
     private void Awake()
     {
@@ -67,11 +57,11 @@ public class S_LoadSaveData : MonoBehaviour
 
             if (FileAlreadyExist(saveSettingsName))
             {
-                LoadFromJson(saveSettingsName, true);
+                LoadFromJson(saveSettingsName, true, false);
             }
             else
             {
-                SaveToJson(saveSettingsName, true);
+                SaveToJson(saveSettingsName, true, false);
             }
         }
 
@@ -81,11 +71,11 @@ public class S_LoadSaveData : MonoBehaviour
 
             if (FileAlreadyExist(saveAchievementsName))
             {
-                LoadFromJson(saveAchievementsName, false);
+                LoadFromJson(saveAchievementsName, false, true);
             }
             else
             {
-                SaveToJson(saveAchievementsName, false);
+                SaveToJson(saveAchievementsName, false, true);
             }
         }
     }
@@ -131,111 +121,92 @@ public class S_LoadSaveData : MonoBehaviour
         return File.Exists(GetFilePath(name));
     }
 
-    private void SaveToJson(string name, bool isSettings)
+    private void SaveToJson(string name, bool isSetting, bool isAchievement)
     {
         string filePath = GetFilePath(name);
 
         string dataToSave = "";
 
-        if (isSettings && SavesConfig.HaveSettings)
+        if (isSetting)
         {
             dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
 
             StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
         }
+        else if (isAchievement)
+        {
+            dataToSave = JsonUtility.ToJson(rsoContentSaved.Value, true);
+        }
         else
         {
-            if (SavesConfig.SaveMax > 0)
-            {
-                dataToSave = JsonUtility.ToJson(rsoContentSaved.Value);
-            }
-            else
-            {
-                dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
-
-                StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
-            }
+            dataToSave = JsonUtility.ToJson(rsoContentSaved.Value);
         }
 
-        File.WriteAllText(filePath, SavesConfig.FileCrypted ? Encrypt(dataToSave) : dataToSave);
+        File.WriteAllText(filePath, fileCrypted ? Encrypt(dataToSave) : dataToSave);
 
         rseDataUI.Call(name);
     }
 
-    private void LoadFromJson(string name, bool isSettings)
+    private void LoadFromJson(string name, bool isSettings, bool isAchievement)
     {
-        if (SavesConfig.saveActived)
+        if (!FileAlreadyExist(name))
         {
-            if (!FileAlreadyExist(name))
-            {
-                Debug.Log("Save don't exist");
-                return;
-            }
+            Debug.Log("Save don't exist");
+            return;
+        }
 
-            string filePath = GetFilePath(name);
-            string encryptedJson = File.ReadAllText(filePath);
+        string filePath = GetFilePath(name);
+        string encryptedJson = File.ReadAllText(filePath);
 
-            if (SavesConfig.FileCrypted)
-            {
-                encryptedJson = Decrypt(encryptedJson);
-            }
+        if (fileCrypted)
+        {
+            encryptedJson = Decrypt(encryptedJson);
+        }
 
-            if (isSettings && SavesConfig.HaveSettings)
-            {
-                rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
+        if (isSettings)
+        {
+            rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
 
-                StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
-            }
-            else
-            {
-                if (SavesConfig.SaveMax > 0)
-                {
-                    rsoContentSaved.Value = JsonUtility.FromJson<S_ContentSaved>(encryptedJson);
-                }
-                else
-                {
-                    rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
-
-                    StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
-                }
-            }
+            StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
+        }
+        else if (isAchievement)
+        {
+            rsoContentSaved.Value = JsonUtility.FromJson<S_ContentSaved>(encryptedJson);
+        }
+        else
+        {
+            rsoContentSaved.Value = JsonUtility.FromJson<S_ContentSaved>(encryptedJson);
         }
     }
 
     private void LoadTempFromJson(string name)
     {
-        if (SavesConfig.saveActived)
+        if (!FileAlreadyExist(name)) return;
+
+        string filePath = GetFilePath(name);
+        string encryptedJson = File.ReadAllText(filePath);
+
+        if (fileCrypted)
         {
-            if (!FileAlreadyExist(name)) return;
-
-            string filePath = GetFilePath(name);
-            string encryptedJson = File.ReadAllText(filePath);
-
-            if (SavesConfig.FileCrypted)
-            {
-                encryptedJson = Decrypt(encryptedJson);
-            }
-
-            rseDataTemp.Call(JsonUtility.FromJson<S_ContentSaved>(encryptedJson));
+            encryptedJson = Decrypt(encryptedJson);
         }
+
+        rseDataTemp.Call(JsonUtility.FromJson<S_ContentSaved>(encryptedJson));
     }
 
     private void DeleteData(string name)
     {
-        if (SavesConfig.saveActived)
+        if (FileAlreadyExist(name))
         {
-            if (FileAlreadyExist(name))
-            {
-                string filePath = GetFilePath(name);
+            string filePath = GetFilePath(name);
 
-                File.Delete(filePath);
-            }
-            else
-            {
-                Debug.Log("Save don't exist");
-            }
-
-            rseDataUI.Call(name);
+            File.Delete(filePath);
         }
+        else
+        {
+            Debug.Log("Save don't exist");
+        }
+
+        rseDataUI.Call(name);
     }
 }
