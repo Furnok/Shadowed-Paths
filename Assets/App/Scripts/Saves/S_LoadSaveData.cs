@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -179,12 +178,12 @@ public class S_LoadSaveData : MonoBehaviour
         }
         else if (isAchievement)
         {
-            rsoAchievementsSave.Value = JsonUtility.FromJson<List<S_StructAchievements>>(encryptedJson);
+            rsoAchievementsSave.Value = JsonUtility.FromJson<S_AchievementsSaved>(encryptedJson);
 
             for (int i = 0; i < ssoAchievements.Value.Count; i++)
             {
                 rsoAchievements.Value.Add(ssoAchievements.Value[i].Clone());
-                rsoAchievements.Value[i].unlocked = rsoAchievementsSave.Value[i].unlocked;
+                rsoAchievements.Value[i].unlocked = rsoAchievementsSave.Value.listAchievements[i].unlocked;
             }
         }
         else

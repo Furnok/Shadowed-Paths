@@ -34,7 +34,7 @@ public class S_Achievements : MonoBehaviour
         foreach (var achievement in ssoAchievements.Value)
         {
             rsoAchievements.Value.Add(achievement.Clone());
-            rsoAchievementsSave.Value.Add(achievement.ToSaveData());
+            rsoAchievementsSave.Value.listAchievements.Add(achievement.ToSaveData());
         }
 
         SaveAchievements();
@@ -52,11 +52,11 @@ public class S_Achievements : MonoBehaviour
 
     private void SaveStructAchievement(int id)
     {
-        S_StructAchievements achievement = rsoAchievementsSave.Value[id];
+        S_StructAchievements achievement = rsoAchievementsSave.Value.listAchievements[id];
 
         achievement.unlocked = true;
 
-        rsoAchievementsSave.Value[id] = achievement;
+        rsoAchievementsSave.Value.listAchievements[id] = achievement;
         SaveAchievements();
     }
 
