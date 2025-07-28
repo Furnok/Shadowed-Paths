@@ -2,40 +2,42 @@ using UnityEngine;
 
 public class S_Achievements : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField, S_SaveName] private string saveAchievementsName;
+
     [Header("Input")]
+    [SerializeField] private RSE_LoadAchievements rseLoadAchievements;
     [SerializeField] private RSE_UpdateAchievement rseUpdateAchievement;
 
     [Header("Output")]
     [SerializeField] private SSO_Achievements ssoAchievements;
+    [SerializeField] private RSO_AchievementsSave rsoAchievementsSave;
     [SerializeField] private RSO_Achievements rsoAchievements;
     [SerializeField] private RSE_UpdateUIAchievement rseUpdateUIAchievement;
     [SerializeField] private RSE_ClearAchievement rseClearAchievement;
+    [SerializeField] private RSE_SaveData rseSaveData;
 
     private void OnEnable()
     {
+        rseLoadAchievements.action += LoadAchievements;
         rseUpdateAchievement.action += UpdateAchievement;
     }
 
     private void OnDisable()
     {
-        rsoAchievements.Value = null;
-
+        rseLoadAchievements.action -= LoadAchievements;
         rseUpdateAchievement.action -= UpdateAchievement;
-    }
-
-    private void Start()
-    {
-        LoadAchievements();
     }
 
     private void LoadAchievements()
     {
-        rsoAchievements.Value = new();
-
         foreach (var achievement in ssoAchievements.Value)
         {
             rsoAchievements.Value.Add(achievement.Clone());
+            rsoAchievementsSave.Value.Add(achievement.ToSaveData());
         }
+
+        SaveAchievements();
     }
 
     private void ValidAchievements(int id)
@@ -44,6 +46,18 @@ public class S_Achievements : MonoBehaviour
 
         rseUpdateUIAchievement.Call(id);
         rseClearAchievement.Call(rsoAchievements.Value[id]);
+
+        SaveStructAchievement(id);
+    }
+
+    private void SaveStructAchievement(int id)
+    {
+        S_StructAchievements achievement = rsoAchievementsSave.Value[id];
+
+        achievement.unlocked = true;
+
+        rsoAchievementsSave.Value[id] = achievement;
+        SaveAchievements();
     }
 
     private void UpdateAchievement(int id, int value)
@@ -55,5 +69,10 @@ public class S_Achievements : MonoBehaviour
                 ValidAchievements(id);
             }
         }
+    }
+
+    private void SaveAchievements()
+    {
+        rseSaveData.Call(saveAchievementsName, false, true);
     }
 }

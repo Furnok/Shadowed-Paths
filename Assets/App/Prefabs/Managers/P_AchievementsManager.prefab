@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d2e76b2d6685a4f96d1a07a03d85be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveAchievementsName: Achievements
+  rseLoadAchievements: {fileID: 11400000, guid: 65b918c8d1e53134aaa44bd8891d92c5, type: 2}
   rseUpdateAchievement: {fileID: 11400000, guid: 6c684313f1594c8428e25f5f8381048c, type: 2}
   ssoAchievements: {fileID: 11400000, guid: f336060cf606d6148a6800aa7328a9f8, type: 2}
+  rsoAchievementsSave: {fileID: 11400000, guid: e3a541be7aac0c34096abf1fdbd0114c, type: 2}
   rsoAchievements: {fileID: 11400000, guid: 67750bf5064b87045bddafbdebf70930, type: 2}
   rseUpdateUIAchievement: {fileID: 11400000, guid: f0a6096f71faac446947a23990aef324, type: 2}
   rseClearAchievement: {fileID: 11400000, guid: 176db5898331a1a42953034d5a0e6f07, type: 2}
+  rseSaveData: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}

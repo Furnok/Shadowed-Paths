@@ -51,7 +51,11 @@ MonoBehaviour:
   rseLoadTempData: {fileID: 11400000, guid: b53652cda2ad40d4ba363ce83c09e62b, type: 2}
   rseSaveData: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}
   rseDeleteData: {fileID: 11400000, guid: 342dee36e9f1b0d438aa5dddd11f2c32, type: 2}
+  rseLoadAchievements: {fileID: 11400000, guid: 65b918c8d1e53134aaa44bd8891d92c5, type: 2}
   rsoSettingsSaved: {fileID: 11400000, guid: 99cfdc4f06155084aaa2aa1770d6a6b2, type: 2}
+  ssoAchievements: {fileID: 11400000, guid: f336060cf606d6148a6800aa7328a9f8, type: 2}
+  rsoAchievements: {fileID: 11400000, guid: 67750bf5064b87045bddafbdebf70930, type: 2}
+  rsoAchievementsSave: {fileID: 11400000, guid: e3a541be7aac0c34096abf1fdbd0114c, type: 2}
   rsoContentSaved: {fileID: 11400000, guid: 9e79b13044dd6874ca558007c0305d62, type: 2}
   rseDataTemp: {fileID: 11400000, guid: fbf23441b9c628c41bf325007280b993, type: 2}
   rseDataUI: {fileID: 11400000, guid: 421776842923db84aa8bfdeec469fe92, type: 2}

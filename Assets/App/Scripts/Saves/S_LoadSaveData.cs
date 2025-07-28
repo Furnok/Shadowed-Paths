@@ -1,8 +1,9 @@
 using System;
-using UnityEngine;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using UnityEngine;
 
 public class S_LoadSaveData : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class S_LoadSaveData : MonoBehaviour
     [SerializeField] private RSE_DeleteData rseDeleteData;
 
     [Header("Output")]
+    [SerializeField] private RSE_LoadAchievements rseLoadAchievements;
     [SerializeField] private RSO_SettingsSaved rsoSettingsSaved;
+    [SerializeField] private SSO_Achievements ssoAchievements;
+    [SerializeField] private RSO_Achievements rsoAchievements;
+    [SerializeField] private RSO_AchievementsSave rsoAchievementsSave;
     [SerializeField] private RSO_ContentSaved rsoContentSaved;
     [SerializeField] private RSE_DataTemp rseDataTemp;
     [SerializeField] private RSE_DataUI rseDataUI;
@@ -25,12 +30,14 @@ public class S_LoadSaveData : MonoBehaviour
 
     private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
     private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
-    private static readonly bool fileCrypted = true;
+    private static readonly bool fileCrypted = false;
 
     private void Awake()
     {
         rsoSettingsSaved.Value = new();
         rsoContentSaved.Value = new();
+        rsoAchievements.Value = new();
+        rsoAchievementsSave.Value = new();
     }
 
     private void OnEnable()
@@ -47,14 +54,19 @@ public class S_LoadSaveData : MonoBehaviour
         rseLoadData.action -= LoadFromJson;
         rseLoadTempData.action -= LoadTempFromJson;
         rseDeleteData.action -= DeleteData;
+
+        rsoSettingsSaved.Value = null;
+        rsoContentSaved.Value = null;
+        rsoAchievements.Value = null;
+        rsoAchievementsSave.Value = null;
     }
 
     private void Start()
     {
+        Directory.CreateDirectory(SaveDirectory);
+
         if (saveSettingsName != null)
         {
-            Directory.CreateDirectory(SaveDirectory);
-
             if (FileAlreadyExist(saveSettingsName))
             {
                 LoadFromJson(saveSettingsName, true, false);
@@ -67,15 +79,13 @@ public class S_LoadSaveData : MonoBehaviour
 
         if (saveAchievementsName != null)
         {
-            Directory.CreateDirectory(SaveDirectory);
-
             if (FileAlreadyExist(saveAchievementsName))
             {
                 LoadFromJson(saveAchievementsName, false, true);
             }
             else
             {
-                SaveToJson(saveAchievementsName, false, true);
+                rseLoadAchievements.Call();
             }
         }
     }
@@ -123,6 +133,8 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void SaveToJson(string name, bool isSetting, bool isAchievement)
     {
+        if (name == null) return;
+
         string filePath = GetFilePath(name);
 
         string dataToSave = "";
@@ -135,7 +147,7 @@ public class S_LoadSaveData : MonoBehaviour
         }
         else if (isAchievement)
         {
-            dataToSave = JsonUtility.ToJson(rsoContentSaved.Value, true);
+            dataToSave = JsonUtility.ToJson(rsoAchievementsSave.Value);
         }
         else
         {
@@ -149,11 +161,7 @@ public class S_LoadSaveData : MonoBehaviour
 
     private void LoadFromJson(string name, bool isSettings, bool isAchievement)
     {
-        if (!FileAlreadyExist(name))
-        {
-            Debug.Log("Save don't exist");
-            return;
-        }
+        if (!FileAlreadyExist(name)) return;
 
         string filePath = GetFilePath(name);
         string encryptedJson = File.ReadAllText(filePath);
@@ -171,7 +179,13 @@ public class S_LoadSaveData : MonoBehaviour
         }
         else if (isAchievement)
         {
-            rsoContentSaved.Value = JsonUtility.FromJson<S_ContentSaved>(encryptedJson);
+            rsoAchievementsSave.Value = JsonUtility.FromJson<List<S_StructAchievements>>(encryptedJson);
+
+            for (int i = 0; i < ssoAchievements.Value.Count; i++)
+            {
+                rsoAchievements.Value.Add(ssoAchievements.Value[i].Clone());
+                rsoAchievements.Value[i].unlocked = rsoAchievementsSave.Value[i].unlocked;
+            }
         }
         else
         {
@@ -201,12 +215,8 @@ public class S_LoadSaveData : MonoBehaviour
             string filePath = GetFilePath(name);
 
             File.Delete(filePath);
-        }
-        else
-        {
-            Debug.Log("Save don't exist");
-        }
 
-        rseDataUI.Call(name);
+            rseDataUI.Call(name);
+        }
     }
 }

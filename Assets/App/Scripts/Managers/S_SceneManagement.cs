@@ -27,6 +27,8 @@ public class S_SceneManagement : MonoBehaviour
     {
         rseLoadLevel.action -= LoadLevel;
         rseQuitGame.action -= QuitGame;
+
+        rsoCurrentLevel.Value = null;
     }
 
     private void Start()
