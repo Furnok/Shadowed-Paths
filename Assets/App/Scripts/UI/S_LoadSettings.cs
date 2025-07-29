@@ -5,9 +5,6 @@ using UnityEngine.Localization.Settings;
 
 public class S_LoadSettings : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField] private int multiplicatorVolume;
-
     [Header("References")]
     [SerializeField] private AudioMixer audioMixer;
 
