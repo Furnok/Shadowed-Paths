@@ -78,10 +78,6 @@ MonoBehaviour:
     m_Localized: Delete
     m_Metadata:
       m_Items: []
-  - m_Id: 40667975450624
-    m_Localized: 'Player:'
-    m_Metadata:
-      m_Items: []
   - m_Id: 40694986768384
     m_Localized: 'Date:'
     m_Metadata:
@@ -304,6 +300,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39590134692904960
     m_Localized: "Die during a dungeon run.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41467569499734016
+    m_Localized: 'Name:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41467649522860032
+    m_Localized: 'Player:'
     m_Metadata:
       m_Items: []
   references:

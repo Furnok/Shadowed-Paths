@@ -19,12 +19,12 @@ public class S_UIAchievements : MonoBehaviour
     {
         PopulateAchievementSlots();
 
-        rseUpdateUIAchievement.action += UpdateUIAchivementSlot;
+        rseUpdateUIAchievement.action += UpdateUIAchievementSlot;
     }
 
     private void OnDisable()
     {
-        rseUpdateUIAchievement.action -= UpdateUIAchivementSlot;
+        rseUpdateUIAchievement.action -= UpdateUIAchievementSlot;
     }
 
     private void PopulateAchievementSlots()
@@ -52,7 +52,7 @@ public class S_UIAchievements : MonoBehaviour
         }
     }
 
-    private void UpdateUIAchivementSlot(int id)
+    private void UpdateUIAchievementSlot(int id)
     {
         listUIAchievementSlot[id].Unlock();
     }

@@ -15,6 +15,11 @@ public class S_SaveConversion : MonoBehaviour
     [SerializeField] private RSE_DeleteData rseDeleteData;
     [SerializeField] private RSE_LoadLevel rseLoadLevel;
 
+    public void Setup(string name)
+    {
+        saveName = name;
+    }
+
     public void ButtonPressSaveData()
     {
         rsoContentSaved.Value.saveName = saveName;

@@ -10,7 +10,7 @@ public class S_SaveNameAttributeEditor : PropertyDrawer
     private readonly bool HaveAchievements = true;
     private readonly bool HaveSaveAuto = true;
     private readonly bool HaveSaves = true;
-    private readonly int SaveMax = 5;
+    private readonly int SaveMax = 3;
 
     private List<string> SaveNames
     {
@@ -30,7 +30,7 @@ public class S_SaveNameAttributeEditor : PropertyDrawer
 
             if (HaveSaveAuto)
             {
-                saveNames.Add($"SaveAuto");
+                saveNames.Add($"Save_Auto");
             }
 
             if (HaveSaves && SaveMax > 0)
