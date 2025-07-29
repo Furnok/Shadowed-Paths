@@ -3080,30 +3080,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9103959050943505124, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
-      propertyPath: 'saveNames.Array.data[0]'
-      value: Save_Auto
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103959050943505124, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
-      propertyPath: 'saveNames.Array.data[1]'
-      value: Save_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103959050943505124, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
-      propertyPath: 'saveNames.Array.data[2]'
-      value: Save_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103959050943505124, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
-      propertyPath: 'saveNames.Array.data[3]'
-      value: Save_3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103959050943505124, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
-      propertyPath: 'saveNames.Array.data[4]'
-      value: Settings
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103959050943505124, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
-      propertyPath: 'saveNames.Array.data[5]'
-      value: Settings
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3213,7 +3189,7 @@ PrefabInstance:
       objectReference: {fileID: 2089948091796671549}
     - target: {fileID: 8609327811885875890, guid: a5036344186773945930920bf5b4af12, type: 3}
       propertyPath: m_Name
-      value: P_PanelCredits
+      value: P_Credits
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

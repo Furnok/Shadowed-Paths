@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8257924338019466653}
   - component: {fileID: 11879120748935568}
   m_Layer: 0
-  m_Name: P_SaveManager
+  m_Name: P_DataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,8 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveSettingsName: Settings
   saveAchievementsName: Achievements
+  saveNames:
+  - Save_Auto
+  - Save_1
+  - Save_2
+  - Save_3
   rseLoadData: {fileID: 11400000, guid: 4117e29ff3c195746b67e05df0e2e14d, type: 2}
-  rseLoadTempData: {fileID: 11400000, guid: b53652cda2ad40d4ba363ce83c09e62b, type: 2}
   rseSaveData: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}
   rseDeleteData: {fileID: 11400000, guid: 342dee36e9f1b0d438aa5dddd11f2c32, type: 2}
   rseLoadAchievements: {fileID: 11400000, guid: 65b918c8d1e53134aaa44bd8891d92c5, type: 2}
@@ -57,8 +61,9 @@ MonoBehaviour:
   rsoAchievements: {fileID: 11400000, guid: 67750bf5064b87045bddafbdebf70930, type: 2}
   rsoAchievementsSave: {fileID: 11400000, guid: e3a541be7aac0c34096abf1fdbd0114c, type: 2}
   rsoContentSaved: {fileID: 11400000, guid: 9e79b13044dd6874ca558007c0305d62, type: 2}
-  rseDataTemp: {fileID: 11400000, guid: fbf23441b9c628c41bf325007280b993, type: 2}
-  rseDataUI: {fileID: 11400000, guid: 421776842923db84aa8bfdeec469fe92, type: 2}
+  rsoDataTemp: {fileID: 11400000, guid: 37bc64f320d0d2345bfa93ba610584f1, type: 2}
+  rseUpdateDataUI: {fileID: 11400000, guid: 2ed705b9f93bfa0449f63b5279ae94be, type: 2}
+  rseClearDataUI: {fileID: 11400000, guid: 421776842923db84aa8bfdeec469fe92, type: 2}
   rseLoadSettings: {fileID: 11400000, guid: 0d13c401b28990249aa66a01d4e57368, type: 2}
 --- !u!114 &11879120748935568
 MonoBehaviour:

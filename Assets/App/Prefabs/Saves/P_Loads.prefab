@@ -290,13 +290,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28567c24b073c024bbade8aa457be11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveNames:
-  - 
-  - 
-  - 
-  - 
   scrollContent: {fileID: 7486077248907338750}
   loadSlotPrefab: {fileID: 7760611664841767132, guid: 777152101140f524c98c24189ed606f8, type: 3}
+  rseUpdateDataUI: {fileID: 11400000, guid: 2ed705b9f93bfa0449f63b5279ae94be, type: 2}
+  rseClearDataUI: {fileID: 11400000, guid: 421776842923db84aa8bfdeec469fe92, type: 2}
+  rsoDataTemp: {fileID: 11400000, guid: 37bc64f320d0d2345bfa93ba610584f1, type: 2}
 --- !u!1 &2772423864237220960
 GameObject:
   m_ObjectHideFlags: 0

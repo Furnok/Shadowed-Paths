@@ -11,15 +11,38 @@ public class S_UILoadSlot : MonoBehaviour
     [SerializeField] private Button buttonLoad;
     [SerializeField] private Button buttonDelete;
 
-    private string saveName;
+    [HideInInspector] public string saveName;
 
-    public void Setup(string name)
+    public void Setup(S_ClassDataTemp dataTemp)
     {
-        saveName = name;
+        saveName = dataTemp.saveName;
 
-        textNameValue.text = $"{name}";
-        textPlayerValue.text = "";
-        textDateValue.text = "";
+        textNameValue.text = $"{dataTemp.saveName}";
+
+        if (dataTemp.dateSaved != "")
+        {
+            UpdateSlot(dataTemp);
+        }
+        else
+        {
+            ClearSlot();
+        }
+    }
+
+    public void UpdateSlot(S_ClassDataTemp dataTemp)
+    {
+        textPlayerValue.text = $"{dataTemp.playerName}, {dataTemp.currentLevel.Substring(3)}";
+        textDateValue.text = $"{dataTemp.dateSaved}";
+
+        buttonLoad.interactable = true;
+        buttonDelete.interactable = true;
+    }
+
+    public void ClearSlot()
+    {
+        textPlayerValue.text = $"";
+        textDateValue.text = $"";
+
         buttonLoad.interactable = false;
         buttonDelete.interactable = false;
     }

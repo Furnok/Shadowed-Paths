@@ -45,7 +45,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2276099954474256351, guid: 40cf9fa2e4129a44aa7e72eb757d3197, type: 3}
       propertyPath: m_Name
-      value: P_SaveManager
+      value: P_DataManager
       objectReference: {fileID: 0}
     - target: {fileID: 6592113500553194971, guid: 40cf9fa2e4129a44aa7e72eb757d3197, type: 3}
       propertyPath: m_LocalPosition.x
@@ -273,14 +273,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1501142559822707718, guid: a86c1261a5613984b8a0246f88ebb58d, type: 3}
-      propertyPath: rseClearAchievement
-      value: 
-      objectReference: {fileID: 11400000, guid: 176db5898331a1a42953034d5a0e6f07, type: 2}
-    - target: {fileID: 1501142559822707718, guid: a86c1261a5613984b8a0246f88ebb58d, type: 3}
-      propertyPath: rseUpdateUIAchievement
-      value: 
-      objectReference: {fileID: 11400000, guid: f0a6096f71faac446947a23990aef324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

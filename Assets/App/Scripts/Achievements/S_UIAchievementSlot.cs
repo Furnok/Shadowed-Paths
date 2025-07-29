@@ -20,8 +20,8 @@ public class S_UIAchievementSlot : MonoBehaviour
         currentAchievement = achievement;
 
         image.sprite = currentAchievement.image;
-        title.text = currentAchievement.title.GetLocalizedString();
-        description.text = currentAchievement.description.GetLocalizedString();
+        title.text = $"{currentAchievement.title.GetLocalizedString()}";
+        description.text = $"{currentAchievement.description.GetLocalizedString()}";
 
         Unlock();
     }

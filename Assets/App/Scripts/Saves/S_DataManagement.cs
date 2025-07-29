@@ -1,18 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
 
-public class S_LoadSaveData : MonoBehaviour
+public class S_DataManagement : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField, S_SaveName] private string saveSettingsName;
     [SerializeField, S_SaveName] private string saveAchievementsName;
+    [SerializeField, S_SaveName] private List<string> saveNames;
 
     [Header("Input")]
     [SerializeField] private RSE_LoadData rseLoadData;
-    [SerializeField] private RSE_LoadTempData rseLoadTempData;
     [SerializeField] private RSE_SaveData rseSaveData;
     [SerializeField] private RSE_DeleteData rseDeleteData;
 
@@ -23,8 +24,9 @@ public class S_LoadSaveData : MonoBehaviour
     [SerializeField] private RSO_Achievements rsoAchievements;
     [SerializeField] private RSO_AchievementsSave rsoAchievementsSave;
     [SerializeField] private RSO_ContentSaved rsoContentSaved;
-    [SerializeField] private RSE_DataTemp rseDataTemp;
-    [SerializeField] private RSE_DataUI rseDataUI;
+    [SerializeField] private RSO_DataTemp rsoDataTemp;
+    [SerializeField] private RSE_UpdateDataUI rseUpdateDataUI;
+    [SerializeField] private RSE_ClearDataUI rseClearDataUI;
     [SerializeField] private RSE_LoadSettings rseLoadSettings;
 
     private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
@@ -37,13 +39,13 @@ public class S_LoadSaveData : MonoBehaviour
         rsoContentSaved.Value = new();
         rsoAchievements.Value = new();
         rsoAchievementsSave.Value = new();
+        rsoDataTemp.Value = new();
     }
 
     private void OnEnable()
     {
         rseSaveData.action += SaveToJson;
         rseLoadData.action += LoadFromJson;
-        rseLoadTempData.action += LoadTempFromJson;
         rseDeleteData.action += DeleteData;
     }
 
@@ -51,13 +53,13 @@ public class S_LoadSaveData : MonoBehaviour
     {
         rseSaveData.action -= SaveToJson;
         rseLoadData.action -= LoadFromJson;
-        rseLoadTempData.action -= LoadTempFromJson;
         rseDeleteData.action -= DeleteData;
 
         rsoSettingsSaved.Value = null;
         rsoContentSaved.Value = null;
         rsoAchievements.Value = null;
         rsoAchievementsSave.Value = null;
+        rsoDataTemp.Value = null;
     }
 
     private void Start()
@@ -85,6 +87,28 @@ public class S_LoadSaveData : MonoBehaviour
             else
             {
                 rseLoadAchievements.Call();
+            }
+        }
+
+        LoadDataTemp();
+    }
+
+    private void LoadDataTemp()
+    {
+        rsoDataTemp.Value.Clear();
+
+        for (int i = 0; i < saveNames.Count; i++)
+        {
+            if (FileAlreadyExist(saveNames[i]))
+            {
+                LoadTempFromJson(saveNames[i], i);
+            }
+            else
+            {
+                S_ClassDataTemp s_ClassDataTemp = new();
+                s_ClassDataTemp.saveName = saveNames[i];
+
+                rsoDataTemp.Value.Add(s_ClassDataTemp);
             }
         }
     }
@@ -155,7 +179,8 @@ public class S_LoadSaveData : MonoBehaviour
 
         File.WriteAllText(filePath, fileCrypted ? Encrypt(dataToSave) : dataToSave);
 
-        rseDataUI.Call(name);
+        LoadDataTemp();
+        StartCoroutine(S_Utils.DelayFrame(() => rseUpdateDataUI.Call(name)));
     }
 
     private void LoadFromJson(string name, bool isSettings, bool isAchievement)
@@ -168,6 +193,11 @@ public class S_LoadSaveData : MonoBehaviour
         if (fileCrypted)
         {
             encryptedJson = Decrypt(encryptedJson);
+        }
+
+        if (string.IsNullOrWhiteSpace(encryptedJson))
+        {
+            return;
         }
 
         if (isSettings)
@@ -192,7 +222,7 @@ public class S_LoadSaveData : MonoBehaviour
         }
     }
 
-    private void LoadTempFromJson(string name)
+    private void LoadTempFromJson(string name, int index)
     {
         if (!FileAlreadyExist(name)) return;
 
@@ -204,7 +234,13 @@ public class S_LoadSaveData : MonoBehaviour
             encryptedJson = Decrypt(encryptedJson);
         }
 
-        rseDataTemp.Call(JsonUtility.FromJson<S_ContentSaved>(encryptedJson));
+        if (string.IsNullOrWhiteSpace(encryptedJson))
+        {
+            return;
+        }
+
+        rsoDataTemp.Value.Add(JsonUtility.FromJson<S_ClassDataTemp>(encryptedJson));
+        rsoDataTemp.Value[index].saveName = name;
     }
 
     private void DeleteData(string name)
@@ -215,7 +251,8 @@ public class S_LoadSaveData : MonoBehaviour
 
             File.Delete(filePath);
 
-            rseDataUI.Call(name);
+            LoadDataTemp();
+            rseClearDataUI.Call(name);
         }
     }
 }

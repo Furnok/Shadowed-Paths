@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f167447db8ad24c998f543da99b5b6, type: 3}
-  m_Name: RSE_LoadTempData
+  m_Script: {fileID: 11500000, guid: b3d1e5acb0af7f64ea2f0324cbdb1ce9, type: 3}
+  m_Name: RSO_DataTemp
   m_EditorClassIdentifier: 
+  _value: []
