@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 7383174464055551591}
   - component: {fileID: 809087365296048357}
   m_Layer: 5
-  m_Name: TextAudioUIValue
+  m_Name: TextUIVolumeValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,7 +1470,7 @@ GameObject:
   - component: {fileID: 4943466153297015372}
   - component: {fileID: 3214401964222911019}
   m_Layer: 5
-  m_Name: SliderAudioUI
+  m_Name: SliderUIVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1551,7 +1551,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 26900731690603397}
         m_TargetAssemblyTypeName: S_Settings, Assembly-CSharp
-        m_MethodName: UpdateAudioUI
+        m_MethodName: UpdateUIVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2873,7 +2873,7 @@ GameObject:
   - component: {fileID: 1883629239209994672}
   - component: {fileID: 2170493107143213299}
   m_Layer: 5
-  m_Name: SliderAudioMusic
+  m_Name: SliderMusicVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2954,7 +2954,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 26900731690603397}
         m_TargetAssemblyTypeName: S_Settings, Assembly-CSharp
-        m_MethodName: UpdateAudioMusic
+        m_MethodName: UpdateMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3392,7 +3392,7 @@ GameObject:
   - component: {fileID: 80203688846452802}
   - component: {fileID: 3852889694971178022}
   m_Layer: 5
-  m_Name: SliderAudioMain
+  m_Name: SliderMainVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3473,7 +3473,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 26900731690603397}
         m_TargetAssemblyTypeName: S_Settings, Assembly-CSharp
-        m_MethodName: UpdateAudioMain
+        m_MethodName: UpdateMainVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3818,7 +3818,7 @@ GameObject:
   - component: {fileID: 7064880944070123901}
   - component: {fileID: 1041409237796278486}
   m_Layer: 5
-  m_Name: TextAudioUI
+  m_Name: TextUIVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3871,7 +3871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Audio UI:'
+  m_text: 'UI Volume:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4249,7 +4249,7 @@ GameObject:
   - component: {fileID: 9162598085605883065}
   - component: {fileID: 285079293232986976}
   m_Layer: 5
-  m_Name: TextAudioMainValue
+  m_Name: TextMainVolumeValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4587,7 +4587,7 @@ GameObject:
   - component: {fileID: 9207762696950888198}
   - component: {fileID: 2815408546727115760}
   m_Layer: 5
-  m_Name: TextAudioMusic
+  m_Name: TextMusicVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4640,7 +4640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Audio Music:'
+  m_text: 'Music Volume:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4817,7 +4817,7 @@ GameObject:
   - component: {fileID: 2022787639022152544}
   - component: {fileID: 4679265487543706846}
   m_Layer: 5
-  m_Name: TextAudioSounds
+  m_Name: TextSoundsVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4870,7 +4870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Audio Sounds:'
+  m_text: 'Sounds Volume:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5258,7 +5258,7 @@ GameObject:
   - component: {fileID: 5573879917139594193}
   - component: {fileID: 3925943734676712515}
   m_Layer: 5
-  m_Name: SliderAudioSounds
+  m_Name: SliderSoundsVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5339,7 +5339,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 26900731690603397}
         m_TargetAssemblyTypeName: S_Settings, Assembly-CSharp
-        m_MethodName: UpdateAudioSounds
+        m_MethodName: UpdateSoundsVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5984,7 +5984,7 @@ GameObject:
   - component: {fileID: 3781243955677226037}
   - component: {fileID: 788592942287648661}
   m_Layer: 5
-  m_Name: TextAudioMain
+  m_Name: TextMainVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6037,7 +6037,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Audio Main:'
+  m_text: 'Main Volume:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6763,7 +6763,7 @@ GameObject:
   - component: {fileID: 9013510294891184759}
   - component: {fileID: 606941818105840485}
   m_Layer: 5
-  m_Name: TextAudioMusicValue
+  m_Name: TextMusicVolumeValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8009,7 +8009,7 @@ GameObject:
   - component: {fileID: 6149223288859071170}
   - component: {fileID: 8420479509548112601}
   m_Layer: 5
-  m_Name: TextAudioSoundsValue
+  m_Name: TextSoundsVolumeValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8525,14 +8525,16 @@ MonoBehaviour:
   dropDownLanguages: {fileID: 2488843725918438625}
   toggleFullscreen: {fileID: 4337175548363780828}
   dropDownResolutions: {fileID: 5636987497382367547}
-  sliderAudioMain: {fileID: 6215994446011079936}
-  sliderAudioMusic: {fileID: 1409517240379448302}
-  sliderAudioSounds: {fileID: 710917522453319335}
-  sliderAudioUI: {fileID: 6003506204472038075}
-  textAudioMain: {fileID: 285079293232986976}
-  textAudioMusic: {fileID: 606941818105840485}
-  textAudioSounds: {fileID: 8420479509548112601}
-  textAudioUI: {fileID: 809087365296048357}
+  listSliderVolume:
+  - {fileID: 6215994446011079936}
+  - {fileID: 1409517240379448302}
+  - {fileID: 710917522453319335}
+  - {fileID: 6003506204472038075}
+  listTextVolume:
+  - {fileID: 285079293232986976}
+  - {fileID: 606941818105840485}
+  - {fileID: 8420479509548112601}
+  - {fileID: 809087365296048357}
   rsoSettingsSaved: {fileID: 11400000, guid: 99cfdc4f06155084aaa2aa1770d6a6b2, type: 2}
 --- !u!114 &26900731690603397
 MonoBehaviour:
@@ -8546,12 +8548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f715d2cff1a76f4e94bc976156df566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplicatorVolume: 5
   saveSettingsName: Settings
-  textAudioMain: {fileID: 285079293232986976}
-  textAudioMusic: {fileID: 606941818105840485}
-  textAudioSounds: {fileID: 8420479509548112601}
-  textAudioUI: {fileID: 809087365296048357}
   audioMixer: {fileID: 24100000, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
   rsoSettingsSaved: {fileID: 11400000, guid: 99cfdc4f06155084aaa2aa1770d6a6b2, type: 2}
   rseSaveData: {fileID: 11400000, guid: e84a3890ad14f524397f2ae83c5fe474, type: 2}

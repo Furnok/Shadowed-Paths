@@ -7,14 +7,9 @@ using UnityEngine.Localization.Settings;
 public class S_Settings : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int multiplicatorVolume;
     [SerializeField, S_SaveName] private string saveSettingsName;
 
     [Header("References")]
-    [SerializeField] private TextMeshProUGUI textAudioMain;
-    [SerializeField] private TextMeshProUGUI textAudioMusic;
-    [SerializeField] private TextMeshProUGUI textAudioSounds;
-    [SerializeField] private TextMeshProUGUI textAudioUI;
     [SerializeField] private AudioMixer audioMixer;
 
     [Header("Input")]
@@ -24,15 +19,20 @@ public class S_Settings : MonoBehaviour
     [SerializeField] private RSE_SaveData rseSaveData;
 
     private bool isLoaded = false;
+    private int multiplicatorVolume = 0;
+    private List<TextMeshProUGUI> listTextAudios = new();
 
     private void OnEnable()
     {
         isLoaded = false;
     }
 
-    public void SetIsLoaded()
+    public void Setup(int multiplicator, List<TextMeshProUGUI> listTextVolumes)
     {
         isLoaded = true;
+
+        multiplicatorVolume = multiplicator;
+        listTextAudios = listTextVolumes;
     }
 
     public void UpdateLanguages(int index)
@@ -102,68 +102,49 @@ public class S_Settings : MonoBehaviour
         }
     }
 
-    public void UpdateAudioMain(float value)
+    public void UpdateMainVolume(float value)
     {
         if (isLoaded)
         {
-            value = value * multiplicatorVolume;
-
-            audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
-
-            rsoSettingsSaved.Value.masterVolume = value;
-
-            textAudioMain.text = $"{value}%";
-
-            Save();
+            UpdateVolumes(value, 0);
         }
     }
 
-    public void UpdateAudioMusic(float value)
+    public void UpdateMusicVolume(float value)
     {
         if (isLoaded)
         {
-            value = value * multiplicatorVolume;
-
-            audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
-
-            rsoSettingsSaved.Value.musicVolume = value;
-
-            textAudioMusic.text = $"{value}%";
-
-            Save();
+            UpdateVolumes(value, 1);
         }
     }
 
-    public void UpdateAudioSounds(float value)
+    public void UpdateSoundsVolume(float value)
     {
         if (isLoaded)
         {
-            value = value * multiplicatorVolume;
-
-            audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
-
-            rsoSettingsSaved.Value.soundsVolume = value;
-
-            textAudioSounds.text = $"{value}%";
-
-            Save();
+            UpdateVolumes(value, 2);
         }
     }
 
-    public void UpdateAudioUI(float value)
+    public void UpdateUIVolume(float value)
     {
         if (isLoaded)
         {
-            value = value * multiplicatorVolume;
-
-            audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
-
-            rsoSettingsSaved.Value.uiVolume = value;
-
-            textAudioUI.text = $"{value}%";
-
-            Save();
+            UpdateVolumes(value, 3);
         }
+    }
+
+    private void UpdateVolumes(float value, int index)
+    {
+        value = value * multiplicatorVolume;
+
+        audioMixer.SetFloat(rsoSettingsSaved.Value.listVolumes[index].name, 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
+
+        rsoSettingsSaved.Value.listVolumes[index].volume = value;
+
+        listTextAudios[index].text = $"{value}%";
+
+        Save();
     }
 
     private void Save()

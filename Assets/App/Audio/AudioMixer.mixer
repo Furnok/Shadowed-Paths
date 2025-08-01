@@ -45,7 +45,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 4eddfd072b8453d4e899cfe3cb7f1709
-    name: Main
+    name: Master
   - guid: bb7285e2a1c15474db1746bba5e7792c
     name: Music
   - guid: 25821623211e73147add9c7d30f5d1a8

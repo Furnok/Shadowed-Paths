@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class S_SettingsSaved
@@ -7,8 +8,11 @@ public class S_SettingsSaved
     public bool fullScreen = true;
     public int resolutionIndex = 0;
 
-    public float masterVolume = 100;
-    public float musicVolume = 100;
-    public float soundsVolume = 100;
-    public float uiVolume = 100;
+    public List<S_ClassVolume> listVolumes = new()
+    {
+        new S_ClassVolume { name = "Master", volume = 100f },
+        new S_ClassVolume { name = "Music", volume = 100f },
+        new S_ClassVolume { name = "Sounds", volume = 100f },
+        new S_ClassVolume { name = "UI", volume = 100f }
+    };
 }

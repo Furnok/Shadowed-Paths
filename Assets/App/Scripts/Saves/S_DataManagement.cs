@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
@@ -206,7 +207,7 @@ public class S_DataManagement : MonoBehaviour
         {
             rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
 
-            LoadSettings();
+            StartCoroutine(S_Utils.DelayFrame(() => LoadSettings()));
         }
         else if (isAchievement)
         {
@@ -267,7 +268,7 @@ public class S_DataManagement : MonoBehaviour
 
     private void LoadSettings()
     {
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[rsoSettingsSaved.Value.languageIndex];
+        StartCoroutine(LangueSetup());
 
         Resolution resolution = GetResolutions(rsoSettingsSaved.Value.resolutionIndex);
 
@@ -284,13 +285,18 @@ public class S_DataManagement : MonoBehaviour
 
         Screen.fullScreen = rsoSettingsSaved.Value.fullScreen;
 
-        audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.masterVolume, 1) / 100));
+        for (int i = 0; i < rsoSettingsSaved.Value.listVolumes.Count; i++)
+        {
+            audioMixer.SetFloat(rsoSettingsSaved.Value.listVolumes[i].name, 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.listVolumes[i].volume, 1) / 100));
+        }
+    }
 
-        audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.musicVolume, 1) / 100));
+    private IEnumerator LangueSetup()
+    {
+        var initOperation = LocalizationSettings.InitializationOperation;
+        yield return initOperation;
 
-        audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.soundsVolume, 1) / 100));
-
-        audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.uiVolume, 1) / 100));
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[rsoSettingsSaved.Value.languageIndex];
     }
 
     private void DeleteData(string name)
