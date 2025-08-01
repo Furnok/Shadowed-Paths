@@ -4,6 +4,8 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Localization.Settings;
 
 public class S_DataManagement : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class S_DataManagement : MonoBehaviour
     [SerializeField, S_SaveName] private string saveSettingsName;
     [SerializeField, S_SaveName] private string saveAchievementsName;
     [SerializeField, S_SaveName] private List<string> saveNames;
+
+    [Header("References")]
+    [SerializeField] private AudioMixer audioMixer;
 
     [Header("Input")]
     [SerializeField] private RSE_LoadData rseLoadData;
@@ -27,7 +32,6 @@ public class S_DataManagement : MonoBehaviour
     [SerializeField] private RSO_DataTemp rsoDataTemp;
     [SerializeField] private RSE_UpdateDataUI rseUpdateDataUI;
     [SerializeField] private RSE_ClearDataUI rseClearDataUI;
-    [SerializeField] private RSE_LoadSettings rseLoadSettings;
 
     private static readonly string EncryptionKey = "ajekoBnPxI9jGbnYCOyvE9alNy9mM/Kw";
     private static readonly string SaveDirectory = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Saves");
@@ -165,8 +169,6 @@ public class S_DataManagement : MonoBehaviour
         if (isSetting)
         {
             dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
-
-            StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
         }
         else if (isAchievement)
         {
@@ -204,7 +206,7 @@ public class S_DataManagement : MonoBehaviour
         {
             rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
 
-            StartCoroutine(S_Utils.Delay(0.1f, () => rseLoadSettings.Call()));
+            LoadSettings();
         }
         else if (isAchievement)
         {
@@ -241,6 +243,54 @@ public class S_DataManagement : MonoBehaviour
 
         rsoDataTemp.Value.Add(JsonUtility.FromJson<S_ClassDataTemp>(encryptedJson));
         rsoDataTemp.Value[index].saveName = name;
+    }
+
+    private Resolution GetResolutions(int index)
+    {
+        List<Resolution> resolutionsPC = new(Screen.resolutions);
+        resolutionsPC.Reverse();
+
+        Resolution resolution = resolutionsPC[0];
+
+        for (int i = 0; i < resolutionsPC.Count; i++)
+        {
+            Resolution res = resolutionsPC[i];
+
+            if (i == index)
+            {
+                resolution = res;
+            }
+        }
+
+        return resolution;
+    }
+
+    private void LoadSettings()
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[rsoSettingsSaved.Value.languageIndex];
+
+        Resolution resolution = GetResolutions(rsoSettingsSaved.Value.resolutionIndex);
+
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRateRatio);
+
+        if (rsoSettingsSaved.Value.fullScreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
+
+        Screen.fullScreen = rsoSettingsSaved.Value.fullScreen;
+
+        audioMixer.SetFloat("Main", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.masterVolume, 1) / 100));
+
+        audioMixer.SetFloat("Music", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.musicVolume, 1) / 100));
+
+        audioMixer.SetFloat("Sounds", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.soundsVolume, 1) / 100));
+
+        audioMixer.SetFloat("UI", 40 * Mathf.Log10(Mathf.Max(rsoSettingsSaved.Value.uiVolume, 1) / 100));
     }
 
     private void DeleteData(string name)
