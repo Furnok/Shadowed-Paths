@@ -54,7 +54,7 @@ public class S_LoadUISettings : MonoBehaviour
 
         LoadAudioUI();
 
-        StartCoroutine(S_Utils.Delay(0.1f, () => settings.SetIsLoaded()));
+        StartCoroutine(S_Utils.DelayFrame(() => settings.SetIsLoaded()));
     }
 
     private void LoadLanguages()
