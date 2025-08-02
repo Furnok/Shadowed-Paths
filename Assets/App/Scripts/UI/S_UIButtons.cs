@@ -6,13 +6,13 @@ public class S_UIButtons : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float transition = 0.2f;
-    [SerializeField] private Color32 colorBase = new Color32(255, 255, 255, 255);
-    [SerializeField] private Color32 colorMouseEnter = new Color32(200, 200, 200, 255);
-    [SerializeField] private Color32 colorMouseDown = new Color32(150, 150, 150, 255);
+    [SerializeField] private Color32 colorMouseEnter = new(200, 200, 200, 255);
+    [SerializeField] private Color32 colorMouseDown = new(150, 150, 150, 255);
 
     [Header("References")]
     [SerializeField] private Image image;
 
+    private Color32 colorBase = new();
     private bool mouseOver = false;
     private bool isPressed = false;
     private Tween colorTween = null;
