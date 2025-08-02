@@ -17,6 +17,11 @@ public class S_UIButtons : MonoBehaviour
     private bool isPressed = false;
     private Tween colorTween = null;
 
+    private void OnDisable()
+    {
+        colorTween?.Kill();
+    }
+
     private void Start()
     {
         colorBase = image.color;
