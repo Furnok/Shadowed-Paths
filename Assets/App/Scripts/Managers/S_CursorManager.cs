@@ -43,7 +43,14 @@ public class S_CursorManager : MonoBehaviour
 
     private void Start()
     {
-        ShowMouseCursor();
+        if (Gamepad.current != null)
+        {
+            HideMouseCursor();
+        }
+        else
+        {
+            ShowMouseCursor();
+        }
     }
 
     private void OnDeviceChange(InputDevice device, InputDeviceChange change)

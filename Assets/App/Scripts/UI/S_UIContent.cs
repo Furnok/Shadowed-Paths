@@ -12,6 +12,7 @@ public class S_UIContent : MonoBehaviour
         if (Gamepad.current != null)
         {
             defaultButton?.Select();
+            defaultButton?.GetComponent<S_UIButtons>()?.Selected(defaultButton);
         }
     }
 

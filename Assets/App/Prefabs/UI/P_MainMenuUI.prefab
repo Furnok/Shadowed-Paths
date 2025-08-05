@@ -239,6 +239,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1089473866026801982}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Selected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5098247975190584603}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1089473866026801982}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Unselected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5098247975190584603}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1089473866026801982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,17 +478,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -556,7 +588,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 5098247975190584603}
-    m_SelectOnDown: {fileID: 1558860399094235569}
+    m_SelectOnDown: {fileID: 1211274562453182762}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -703,6 +735,38 @@ MonoBehaviour:
         - m_Target: {fileID: 1075126408127377056}
           m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
           m_MethodName: MouseUp
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6150529412385809241}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1075126408127377056}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Selected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6150529412385809241}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1075126408127377056}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Unselected
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 6150529412385809241}
@@ -1023,7 +1087,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 6150529412385809241}
+    m_SelectOnUp: {fileID: 1211274562453182762}
     m_SelectOnDown: {fileID: 1595678329011502636}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -1171,6 +1235,38 @@ MonoBehaviour:
         - m_Target: {fileID: 8643739695976099012}
           m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
           m_MethodName: MouseUp
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1558860399094235569}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8643739695976099012}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Selected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1558860399094235569}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8643739695976099012}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Unselected
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1558860399094235569}
@@ -2140,6 +2236,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6647256845670163630}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Selected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4221696980010213870}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6647256845670163630}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Unselected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4221696980010213870}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &6647256845670163630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2722,6 +2850,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3684417893166147910}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Selected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1595678329011502636}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3684417893166147910}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Unselected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1595678329011502636}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &3684417893166147910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2872,7 +3032,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 5098247975190584603}
+    m_SelectOnUp: {fileID: 6150529412385809241}
     m_SelectOnDown: {fileID: 1558860399094235569}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -3020,6 +3180,38 @@ MonoBehaviour:
         - m_Target: {fileID: 1867555208031309728}
           m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
           m_MethodName: MouseUp
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1211274562453182762}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1867555208031309728}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Selected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1211274562453182762}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1867555208031309728}
+          m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
+          m_MethodName: Unselected
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1211274562453182762}

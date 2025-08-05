@@ -82,10 +82,26 @@ public class S_UIButtons : MonoBehaviour
         }
     }
 
+    public void Selected(Selectable uiElement)
+    {
+        if (uiElement.interactable)
+        {
+            PlayColorTransition(colorMouseDown);
+        }
+    }
+
+    public void Unselected(Selectable uiElement)
+    {
+        if (uiElement.interactable)
+        {
+            PlayColorTransition(colorBase);
+        }
+    }
+
     private void PlayColorTransition(Color32 targetColor)
     {
         colorTween?.Kill();
 
-        colorTween = image.DOColor(targetColor, transition);
+        colorTween = image.DOColor(targetColor, transition).SetEase(Ease.Linear);
     }
 }
