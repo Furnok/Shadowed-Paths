@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class S_LoadUISettings : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField] private int multiplicatorVolume;
-
     [Header("References")]
     [SerializeField] private S_Settings settings;
     [SerializeField] private TMP_Dropdown dropDownLanguages;
@@ -34,7 +31,7 @@ public class S_LoadUISettings : MonoBehaviour
 
         LoadVolumes();
 
-        StartCoroutine(S_Utils.DelayFrame(() => settings.Setup(multiplicatorVolume, listTextVolume)));
+        StartCoroutine(S_Utils.DelayFrame(() => settings.Setup(listTextVolume)));
     }
 
     private void LoadLanguages()
@@ -86,7 +83,7 @@ public class S_LoadUISettings : MonoBehaviour
     {
         for (int i = 0; i < rsoSettingsSaved.Value.listVolumes.Count; i++)
         {
-            listSliderVolume[i].value = rsoSettingsSaved.Value.listVolumes[i].volume / multiplicatorVolume;
+            listSliderVolume[i].value = rsoSettingsSaved.Value.listVolumes[i].volume;
             listTextVolume[i].text = $"{rsoSettingsSaved.Value.listVolumes[i].volume}%";
         }
     }

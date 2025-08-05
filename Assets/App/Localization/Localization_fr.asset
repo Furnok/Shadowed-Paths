@@ -35,19 +35,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16337266737152
-    m_Localized: 'Audio Principal :'
+    m_Localized: 'Volume Principal :'
     m_Metadata:
       m_Items: []
   - m_Id: 16448050888704
-    m_Localized: 'Audio Musique :'
+    m_Localized: 'Volume Musique :'
     m_Metadata:
       m_Items: []
   - m_Id: 16475112538112
-    m_Localized: 'Audio Sonds :'
+    m_Localized: 'Volume Sonds :'
     m_Metadata:
       m_Items: []
   - m_Id: 16507840692224
-    m_Localized: 'Audio UI :'
+    m_Localized: 'Volume UI :'
     m_Metadata:
       m_Items: []
   - m_Id: 17270444851200

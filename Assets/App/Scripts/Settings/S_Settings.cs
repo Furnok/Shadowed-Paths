@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
 
 public class S_Settings : MonoBehaviour
@@ -19,7 +21,6 @@ public class S_Settings : MonoBehaviour
     [SerializeField] private RSE_SaveData rseSaveData;
 
     private bool isLoaded = false;
-    private int multiplicatorVolume = 0;
     private List<TextMeshProUGUI> listTextAudios = new();
 
     private void OnEnable()
@@ -27,17 +28,16 @@ public class S_Settings : MonoBehaviour
         isLoaded = false;
     }
 
-    public void Setup(int multiplicator, List<TextMeshProUGUI> listTextVolumes)
+    public void Setup(List<TextMeshProUGUI> listTextVolumes)
     {
         isLoaded = true;
 
-        multiplicatorVolume = multiplicator;
         listTextAudios = listTextVolumes;
     }
 
     public void UpdateLanguages(int index)
     {
-        if (isLoaded)
+        if (isLoaded && rsoSettingsSaved.Value.languageIndex != index)
         {
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
 
@@ -49,7 +49,7 @@ public class S_Settings : MonoBehaviour
 
     public void UpdateFullscreen(bool value)
     {
-        if (isLoaded)
+        if (isLoaded && rsoSettingsSaved.Value.fullScreen != value)
         {
             if (value)
             {
@@ -90,7 +90,7 @@ public class S_Settings : MonoBehaviour
 
     public void UpdateResolutions(int index)
     {
-        if (isLoaded)
+        if (isLoaded && rsoSettingsSaved.Value.resolutionIndex != index)
         {
             Resolution resolution = GetResolutions(index);
 
@@ -104,7 +104,7 @@ public class S_Settings : MonoBehaviour
 
     public void UpdateMainVolume(float value)
     {
-        if (isLoaded)
+        if (isLoaded && rsoSettingsSaved.Value.listVolumes[0].volume != value)
         {
             UpdateVolumes(value, 0);
         }
@@ -112,7 +112,7 @@ public class S_Settings : MonoBehaviour
 
     public void UpdateMusicVolume(float value)
     {
-        if (isLoaded)
+        if (isLoaded && rsoSettingsSaved.Value.listVolumes[1].volume != value)
         {
             UpdateVolumes(value, 1);
         }
@@ -120,7 +120,7 @@ public class S_Settings : MonoBehaviour
 
     public void UpdateSoundsVolume(float value)
     {
-        if (isLoaded)
+        if (isLoaded && rsoSettingsSaved.Value.listVolumes[2].volume != value)
         {
             UpdateVolumes(value, 2);
         }
@@ -128,7 +128,7 @@ public class S_Settings : MonoBehaviour
 
     public void UpdateUIVolume(float value)
     {
-        if (isLoaded)
+        if (isLoaded && rsoSettingsSaved.Value.listVolumes[3].volume != value)
         {
             UpdateVolumes(value, 3);
         }
@@ -136,8 +136,6 @@ public class S_Settings : MonoBehaviour
 
     private void UpdateVolumes(float value, int index)
     {
-        value = value * multiplicatorVolume;
-
         audioMixer.SetFloat(rsoSettingsSaved.Value.listVolumes[index].name, 40 * Mathf.Log10(Mathf.Max(value, 1) / 100));
 
         rsoSettingsSaved.Value.listVolumes[index].volume = value;
