@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class S_UIButtons : MonoBehaviour
+public class S_UISelectable : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float transition = 0.2f;
