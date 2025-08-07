@@ -17,6 +17,14 @@ public class S_CursorManager : MonoBehaviour
     [SerializeField] private RSE_MouseEnterUI rseMouseEnterUI;
     [SerializeField] private RSE_MouseLeaveUI rseMouseLeaveUI;
 
+    [Header("Output")]
+    [SerializeField] private RSO_DefaultSelectable rsoDefaultSelectable;
+
+    private void Awake()
+    {
+        rsoDefaultSelectable.Value = null;
+    }
+
     private void OnEnable()
     {
         InputSystem.onDeviceChange += OnDeviceChange;
@@ -60,6 +68,11 @@ public class S_CursorManager : MonoBehaviour
             if (change == InputDeviceChange.Added)
             {
                 HideMouseCursor();
+
+                if (rsoDefaultSelectable.Value != null)
+                {
+                    SetFocus(rsoDefaultSelectable.Value);
+                }
             }
             else if (change == InputDeviceChange.Removed)
             {

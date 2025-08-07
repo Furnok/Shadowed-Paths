@@ -13,10 +13,13 @@ public class S_UIAchievementSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI description;
 
+    private S_UIAchievements currentUIAchievements = null;
     private S_ClassAchievements currentAchievement = null;
 
-    public void Setup(S_ClassAchievements achievement)
+    public void Setup(S_UIAchievements UIAchievements, S_ClassAchievements achievement)
     {
+        currentUIAchievements = UIAchievements;
+
         currentAchievement = achievement;
 
         image.sprite = currentAchievement.image;
@@ -40,5 +43,10 @@ public class S_UIAchievementSlot : MonoBehaviour
             title.color = colorLock;
             description.color = colorLock;
         }
+    }
+
+    public void ScrollAuto(Selectable item)
+    {
+        currentUIAchievements.ScrollAuto(item);
     }
 }

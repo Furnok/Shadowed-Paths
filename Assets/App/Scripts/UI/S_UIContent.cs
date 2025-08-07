@@ -5,14 +5,18 @@ using UnityEngine.UI;
 public class S_UIContent : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Selectable defaultButton;
+    [SerializeField] private Selectable defaultSelectable;
+
+    [Header("Output")]
+    [SerializeField] private RSO_DefaultSelectable rsoDefaultSelectable;
 
     private void OnEnable()
     {
         if (Gamepad.current != null)
         {
-            defaultButton?.Select();
-            defaultButton?.GetComponent<S_UISelectable>()?.Selected(defaultButton);
+            defaultSelectable?.Select();
+            defaultSelectable?.GetComponent<S_UISelectable>()?.Selected(defaultSelectable);
+            rsoDefaultSelectable.Value = defaultSelectable;
         }
     }
 

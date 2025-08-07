@@ -51,7 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47765b5404b6754bb6f9c184bc3c851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultButton: {fileID: 1355992989705224170}
+  defaultSelectable: {fileID: 1355992989705224170}
+  rsoDefaultSelectable: {fileID: 11400000, guid: 58f5dbead234f17408771ee586860726, type: 2}
 --- !u!1 &4130502903432521637
 GameObject:
   m_ObjectHideFlags: 0

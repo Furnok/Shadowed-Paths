@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_UIAchievements : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField]  private S_AutoScroll autoScroll;
     [SerializeField] private Transform scrollContent;
     [SerializeField] private GameObject achievementSlotPrefab;
+    [SerializeField] private Selectable buttonReturn;
 
     [Header("Input")]
     [SerializeField] private RSE_UpdateUIAchievement rseUpdateUIAchievement;
@@ -45,15 +48,56 @@ public class S_UIAchievements : MonoBehaviour
 
             if (slotScript != null)
             {
-                slotScript.Setup(achievement);
+                slotScript.Setup(this, achievement);
             }
 
             listUIAchievementSlot.Add(slotScript);
+        }
+
+        SetupNavigation();
+    }
+
+    private void SetupNavigation()
+    {
+        Navigation nav = buttonReturn.navigation;
+        nav.mode = Navigation.Mode.Explicit;
+
+        nav.selectOnUp = listUIAchievementSlot[0].transform.GetChild(0).GetComponent<Selectable>();
+        nav.selectOnDown = listUIAchievementSlot[0].transform.GetChild(0).GetComponent<Selectable>();
+
+        buttonReturn.navigation = nav;
+
+        for (int i = 0; i < listUIAchievementSlot.Count; i++)
+        {
+            var current = listUIAchievementSlot[i].transform.GetChild(0).GetComponent<Selectable>();
+
+            if (current != null)
+            {
+                nav = current.navigation;
+                nav.mode = Navigation.Mode.Explicit;
+
+                if(i > 0)
+                {
+                    nav.selectOnUp = listUIAchievementSlot[i - 1].transform.GetChild(0).GetComponent<Selectable>();
+                }
+                
+                if (i < listUIAchievementSlot.Count - 1)
+                {
+                    nav.selectOnDown = listUIAchievementSlot[i + 1].transform.GetChild(0).GetComponent<Selectable>();
+                }
+
+                current.navigation = nav;
+            }
         }
     }
 
     private void UpdateUIAchievementSlot(int id)
     {
         listUIAchievementSlot[id].Unlock();
+    }
+
+    public void ScrollAuto(Selectable item)
+    {
+        autoScroll.ScrollToIndex(item);
     }
 }

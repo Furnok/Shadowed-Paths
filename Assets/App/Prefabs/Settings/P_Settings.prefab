@@ -2977,6 +2977,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1811219731749086053}
+          m_TargetAssemblyTypeName: S_DropDownAutoScroll, Assembly-CSharp
+          m_MethodName: ScrollToIndex
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1246808243932018613}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -8899,7 +8911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47765b5404b6754bb6f9c184bc3c851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultButton: {fileID: 2488843725918438625}
+  defaultSelectable: {fileID: 3447910359622942653}
+  rsoDefaultSelectable: {fileID: 11400000, guid: 58f5dbead234f17408771ee586860726, type: 2}
 --- !u!114 &8729629183450132823
 MonoBehaviour:
   m_ObjectHideFlags: 0

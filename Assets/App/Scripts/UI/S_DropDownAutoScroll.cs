@@ -1,21 +1,26 @@
-using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
-public class S_AutoScroll : MonoBehaviour
+public class S_DropDownAutoScroll : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float transition = 0.05f;
 
     [Header("References")]
+    [SerializeField] private TMP_Dropdown dropDown;
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private Transform content;
 
+    private int number;
     private Tween moveTween = null;
     private S_SerializableDictionary<Selectable, int> selectables = new();
 
     private void OnEnable()
     {
+        number = dropDown.options.Count - 1;
+
         StartCoroutine(S_Utils.Delay(0.5f, () => Setup()));
     }
 
@@ -23,9 +28,9 @@ public class S_AutoScroll : MonoBehaviour
     {
         selectables.Clear();
 
-        for (int i = 0; i < content.childCount; i++)
+        for (int i = 0; i <= number; i++)
         {
-            Transform item = content.GetChild(i).transform.GetChild(0);
+            Transform item = content.GetChild(i + 1);
             if (item.TryGetComponent(out Selectable selectable))
             {
                 selectables[selectable] = i;
@@ -42,7 +47,7 @@ public class S_AutoScroll : MonoBehaviour
     {
         if (selectables.TryGetValue(item, out int index))
         {
-            float targetPos = 1f - ((float)index / (content.childCount - 1));
+            float targetPos = 1f - ((float)index / number);
             moveTween = scrollRect.DOVerticalNormalizedPos(targetPos, transition).SetEase(Ease.Linear);
         }
     }
