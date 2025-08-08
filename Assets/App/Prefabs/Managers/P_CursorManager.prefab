@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5121093462420337517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8654424883155863250}
+  - component: {fileID: 3903650331268540472}
+  m_Layer: 0
+  m_Name: P_CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8654424883155863250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121093462420337517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3903650331268540472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121093462420337517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967e953d8020144985596cf0d6f82a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handCursor: {fileID: 2800000, guid: 3e29908b462578640ab389bf9d553d8e, type: 3}
+  rseShowMouseCursor: {fileID: 11400000, guid: a388413d968005d4bb4bf24777601f78, type: 2}
+  rseHideMouseCursor: {fileID: 11400000, guid: db8fa71f163e3794e89cf085fea513bf, type: 2}
+  rseSetFocus: {fileID: 11400000, guid: 6b986de86e9da6346970b7cbd856d8f1, type: 2}
+  rseResetCursor: {fileID: 11400000, guid: 908ae63eab7e41749bba661a2c9e56f5, type: 2}
+  rseResetFocus: {fileID: 11400000, guid: d51bcbbfb6f3b5146b108dbd829c04e5, type: 2}
+  rseMouseEnterUI: {fileID: 11400000, guid: 035224f6047ad5047961d7e13435dc0c, type: 2}
+  rseMouseLeaveUI: {fileID: 11400000, guid: a5c0904853255ca4ebc6f5560a96af8f, type: 2}
+  rsoDefaultSelectable: {fileID: 11400000, guid: 58f5dbead234f17408771ee586860726, type: 2}
