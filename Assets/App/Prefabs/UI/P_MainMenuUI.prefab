@@ -3630,8 +3630,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Loads
       objectReference: {fileID: 0}
-    - target: {fileID: 616896920354283967, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+    - target: {fileID: 3533661163660239284, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}
+      propertyPath: returnContent
       value: 
       objectReference: {fileID: 2089948091796671549}
     - target: {fileID: 8762187285004203560, guid: 7e12ed57adf8d1748a370993a77ff4a8, type: 3}

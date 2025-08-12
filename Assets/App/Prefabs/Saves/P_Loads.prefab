@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 8037127567902953239}
   - component: {fileID: 6789477279272926340}
   - component: {fileID: 9103959050943505124}
+  - component: {fileID: 3533661163660239284}
   m_Layer: 5
   m_Name: ContentLoads
   m_TagString: Untagged
@@ -291,11 +292,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28567c24b073c024bbade8aa457be11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollRect: {fileID: 5191804344990189924}
   scrollContent: {fileID: 7486077248907338750}
   loadSlotPrefab: {fileID: 7760611664841767132, guid: 777152101140f524c98c24189ed606f8, type: 3}
   rseUpdateDataUI: {fileID: 11400000, guid: 2ed705b9f93bfa0449f63b5279ae94be, type: 2}
   rseClearDataUI: {fileID: 11400000, guid: 421776842923db84aa8bfdeec469fe92, type: 2}
   rsoDataTemp: {fileID: 11400000, guid: 37bc64f320d0d2345bfa93ba610584f1, type: 2}
+--- !u!114 &3533661163660239284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927399951304452035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee2724de326c9b47b177c1ffbb17d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnContent: {fileID: 0}
+  currentContent: {fileID: 1927399951304452035}
+  block: []
+  rseEscape: {fileID: 11400000, guid: 06f2723ef3662ec43a35d4293929e07a, type: 2}
+  rseOpenWindow: {fileID: 11400000, guid: 86e4b04339065a6479e516ed9aed9df4, type: 2}
+  rseCloseWindow: {fileID: 11400000, guid: 3a2b3e46e3f615345a9e037e561dfd5e, type: 2}
+  rsoDefaultSelectable: {fileID: 11400000, guid: 58f5dbead234f17408771ee586860726, type: 2}
 --- !u!1 &2772423864237220960
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d808078a16cd4d944aafba0847833779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isScrollBar: 1
   parentScrollRect: {fileID: 5191804344990189924}
 --- !u!114 &9164991270306721080
 MonoBehaviour:
@@ -821,9 +843,9 @@ MonoBehaviour:
   m_Content: {fileID: 7486077248907338750}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 2
+  m_MovementType: 1
   m_Elasticity: 0.1
-  m_Inertia: 0
+  m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 5
   m_Viewport: {fileID: 4690725033985155006}
@@ -1035,27 +1057,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 3a2b3e46e3f615345a9e037e561dfd5e, type: 2}
-        m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.GameObject,
-          UnityEngine
-        m_MethodName: Call
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1927399951304452035}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 86e4b04339065a6479e516ed9aed9df4, type: 2}
-        m_TargetAssemblyTypeName: BT.ScriptablesObject.RuntimeScriptableEvent`1[[UnityEngine.GameObject,
-          UnityEngine
-        m_MethodName: Call
-        m_Mode: 2
+      - m_Target: {fileID: 3533661163660239284}
+        m_TargetAssemblyTypeName: S_UIReturn, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1155,6 +1163,38 @@ MonoBehaviour:
         - m_Target: {fileID: 4741119529265973914}
           m_TargetAssemblyTypeName: S_UIButtons, Assembly-CSharp
           m_MethodName: MouseUp
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 616896920354283967}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4741119529265973914}
+          m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
+          m_MethodName: Selected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 616896920354283967}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4741119529265973914}
+          m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
+          m_MethodName: Unselected
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 616896920354283967}

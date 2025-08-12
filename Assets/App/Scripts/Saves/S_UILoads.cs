@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_UILoads : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private Transform scrollContent;
     [SerializeField] private GameObject loadSlotPrefab;
 
@@ -48,7 +50,7 @@ public class S_UILoads : MonoBehaviour
 
             if (slotScript != null)
             {
-                slotScript.Setup(rsoDataTemp.Value[i]);
+                slotScript.Setup(rsoDataTemp.Value[i], scrollRect);
             }
 
             listUILoadSlot.Add(slotScript);

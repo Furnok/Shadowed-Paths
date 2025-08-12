@@ -13,7 +13,7 @@ public class S_UILoadSlot : MonoBehaviour
 
     [HideInInspector] public string saveName;
 
-    public void Setup(S_ClassDataTemp dataTemp)
+    public void Setup(S_ClassDataTemp dataTemp, ScrollRect scrollRect)
     {
         saveName = dataTemp.saveName;
 
@@ -27,6 +27,9 @@ public class S_UILoadSlot : MonoBehaviour
         {
             ClearSlot();
         }
+
+        buttonLoad.GetComponent<S_UISelectableScroll>().Setup(scrollRect);
+        buttonDelete.GetComponent<S_UISelectableScroll>().Setup(scrollRect);
     }
 
     public void UpdateSlot(S_ClassDataTemp dataTemp)

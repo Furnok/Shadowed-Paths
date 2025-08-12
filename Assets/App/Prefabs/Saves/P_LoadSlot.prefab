@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 6581826703681363103}
   - component: {fileID: 3938383508945114858}
   - component: {fileID: 9166249388216529457}
+  - component: {fileID: 9142755872724273752}
   m_Layer: 5
   m_Name: ButtonDelete
   m_TagString: Untagged
@@ -499,6 +500,20 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4288059030
   image: {fileID: 8853122075872416887}
+--- !u!114 &9142755872724273752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488121433535259715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d808078a16cd4d944aafba0847833779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isScrollBar: 0
+  parentScrollRect: {fileID: 0}
 --- !u!1 &835512263152103912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,6 +1924,7 @@ GameObject:
   - component: {fileID: 1659896406109718171}
   - component: {fileID: 4627874723457727997}
   - component: {fileID: 7605288296576976660}
+  - component: {fileID: 762923261333751884}
   m_Layer: 5
   m_Name: ButtonLoad
   m_TagString: Untagged
@@ -2153,6 +2169,20 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4288059030
   image: {fileID: 3487351278275447211}
+--- !u!114 &762923261333751884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8956570579765003424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d808078a16cd4d944aafba0847833779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isScrollBar: 0
+  parentScrollRect: {fileID: 0}
 --- !u!1 &9071578236076708315
 GameObject:
   m_ObjectHideFlags: 0
