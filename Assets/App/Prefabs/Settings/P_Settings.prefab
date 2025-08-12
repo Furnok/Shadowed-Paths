@@ -4861,7 +4861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d808078a16cd4d944aafba0847833779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isScrollBar: 0
+  isScrollBar: 1
   parentScrollRect: {fileID: 5494203255964858492}
 --- !u!114 &1260176776439478344
 MonoBehaviour:
@@ -6690,7 +6690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d808078a16cd4d944aafba0847833779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isScrollBar: 0
+  isScrollBar: 1
   parentScrollRect: {fileID: 3531056135228472119}
 --- !u!114 &5380585806572370491
 MonoBehaviour:
@@ -8981,6 +8981,7 @@ MonoBehaviour:
   rseEscape: {fileID: 11400000, guid: 06f2723ef3662ec43a35d4293929e07a, type: 2}
   rseOpenWindow: {fileID: 11400000, guid: 86e4b04339065a6479e516ed9aed9df4, type: 2}
   rseCloseWindow: {fileID: 11400000, guid: 3a2b3e46e3f615345a9e037e561dfd5e, type: 2}
+  rsoDefaultSelectable: {fileID: 11400000, guid: 58f5dbead234f17408771ee586860726, type: 2}
 --- !u!1 &7861640830985764417
 GameObject:
   m_ObjectHideFlags: 0

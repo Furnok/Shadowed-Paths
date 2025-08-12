@@ -81,12 +81,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a017690823acfe843be53b63205370ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollRect: {fileID: 0}
+  scrollRect: {fileID: 6146987636189462837}
   autoScroll: {fileID: 4393855687619560840}
   scrollContent: {fileID: 8836451407414668207}
   achievementSlotPrefab: {fileID: 1966115460742960112, guid: 0bcdc89d03b631349bc74c82870f47ee, type: 3}
   buttonReturn: {fileID: 1570958434865326574}
-  UIReturn: {fileID: 0}
+  UIReturn: {fileID: 7925387603604354275}
   rseUpdateUIAchievement: {fileID: 11400000, guid: f0a6096f71faac446947a23990aef324, type: 2}
   rsoAchievements: {fileID: 11400000, guid: 67750bf5064b87045bddafbdebf70930, type: 2}
 --- !u!114 &7925387603604354275
@@ -107,7 +107,7 @@ MonoBehaviour:
   rseEscape: {fileID: 11400000, guid: 06f2723ef3662ec43a35d4293929e07a, type: 2}
   rseOpenWindow: {fileID: 11400000, guid: 86e4b04339065a6479e516ed9aed9df4, type: 2}
   rseCloseWindow: {fileID: 11400000, guid: 3a2b3e46e3f615345a9e037e561dfd5e, type: 2}
-  rsoDefaultSelectable: {fileID: 0}
+  rsoDefaultSelectable: {fileID: 11400000, guid: 58f5dbead234f17408771ee586860726, type: 2}
 --- !u!1 &1983806219899412564
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d808078a16cd4d944aafba0847833779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isScrollBar: 0
+  isScrollBar: 1
   parentScrollRect: {fileID: 6146987636189462837}
 --- !u!114 &849282819863425224
 MonoBehaviour:

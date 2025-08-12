@@ -67,10 +67,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnContent: {fileID: 0}
-  currentContent: {fileID: 0}
+  currentContent: {fileID: 2669420335127326477}
+  block: []
   rseEscape: {fileID: 11400000, guid: 06f2723ef3662ec43a35d4293929e07a, type: 2}
   rseOpenWindow: {fileID: 11400000, guid: 86e4b04339065a6479e516ed9aed9df4, type: 2}
   rseCloseWindow: {fileID: 11400000, guid: 3a2b3e46e3f615345a9e037e561dfd5e, type: 2}
+  rsoDefaultSelectable: {fileID: 11400000, guid: 58f5dbead234f17408771ee586860726, type: 2}
 --- !u!1 &4130502903432521637
 GameObject:
   m_ObjectHideFlags: 0
