@@ -1,6 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class S_UISelectable : MonoBehaviour
 {
@@ -84,7 +85,7 @@ public class S_UISelectable : MonoBehaviour
 
     public void Selected(Selectable uiElement)
     {
-        if (uiElement.interactable)
+        if (uiElement.interactable && Gamepad.current != null)
         {
             PlayColorTransition(colorMouseDown);
         }
@@ -92,7 +93,7 @@ public class S_UISelectable : MonoBehaviour
 
     public void Unselected(Selectable uiElement)
     {
-        if (uiElement.interactable)
+        if (uiElement.interactable && Gamepad.current != null)
         {
             PlayColorTransition(colorBase);
         }

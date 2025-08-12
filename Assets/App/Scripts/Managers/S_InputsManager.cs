@@ -10,7 +10,7 @@ public class S_InputsManager : MonoBehaviour
     {
         if (callbackContext.performed)
         {
-            rseEscape.Call(callbackContext.ReadValue<float>());
+            rseEscape.Call();
         }
     }
 }

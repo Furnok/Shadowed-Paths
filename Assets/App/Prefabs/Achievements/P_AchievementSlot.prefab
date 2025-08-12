@@ -598,6 +598,7 @@ GameObject:
   - component: {fileID: 8382998517114062047}
   - component: {fileID: 4897862954535943973}
   - component: {fileID: 2711825838960897475}
+  - component: {fileID: 5273190816443035592}
   - component: {fileID: 2116661008722345072}
   m_Layer: 5
   m_Name: ButtonSlot
@@ -765,6 +766,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5273190816443035592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7625614372313528996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d808078a16cd4d944aafba0847833779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScrollRect: {fileID: 0}
 --- !u!114 &2116661008722345072
 MonoBehaviour:
   m_ObjectHideFlags: 0

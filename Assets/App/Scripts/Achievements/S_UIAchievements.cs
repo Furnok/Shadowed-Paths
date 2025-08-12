@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class S_UIAchievements : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private ScrollRect scrollRect;
     [SerializeField]  private S_AutoScroll autoScroll;
     [SerializeField] private Transform scrollContent;
     [SerializeField] private GameObject achievementSlotPrefab;
     [SerializeField] private Selectable buttonReturn;
+    [SerializeField] private S_UIReturn UIReturn;
 
     [Header("Input")]
     [SerializeField] private RSE_UpdateUIAchievement rseUpdateUIAchievement;
@@ -50,6 +52,8 @@ public class S_UIAchievements : MonoBehaviour
             {
                 slotScript.Setup(this, achievement);
             }
+
+            slot.transform.GetChild(0).GetComponent<S_UISelectableScroll>().Setup(scrollRect);
 
             listUIAchievementSlot.Add(slotScript);
         }
@@ -99,5 +103,15 @@ public class S_UIAchievements : MonoBehaviour
     public void ScrollAuto(Selectable item)
     {
         autoScroll.ScrollToIndex(item);
+
+        UIReturn.SetBlocked();
+
+        Navigation nav = buttonReturn.navigation;
+        nav.mode = Navigation.Mode.Explicit;
+
+        nav.selectOnUp = item;
+        nav.selectOnDown = item;
+
+        buttonReturn.navigation = nav;
     }
 }

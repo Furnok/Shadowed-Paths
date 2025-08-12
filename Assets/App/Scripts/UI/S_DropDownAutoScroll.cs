@@ -1,7 +1,8 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class S_DropDownAutoScroll : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class S_DropDownAutoScroll : MonoBehaviour
 
     public void ScrollToIndex(Selectable item)
     {
-        if (selectables.TryGetValue(item, out int index))
+        if (selectables.TryGetValue(item, out int index) && Gamepad.current != null)
         {
             float targetPos = 1f - ((float)index / number);
             moveTween = scrollRect.DOVerticalNormalizedPos(targetPos, transition).SetEase(Ease.Linear);
