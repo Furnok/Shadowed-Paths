@@ -6,8 +6,11 @@ public class S_UILoads : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ScrollRect scrollRect;
+    [SerializeField] private S_AutoScroll autoScroll;
     [SerializeField] private Transform scrollContent;
     [SerializeField] private GameObject loadSlotPrefab;
+    [SerializeField] private Selectable buttonReturn;
+    [SerializeField] private S_UIReturn UIReturn;
 
     [Header("Input")]
     [SerializeField] private RSE_UpdateDataUI rseUpdateDataUI;
@@ -50,7 +53,7 @@ public class S_UILoads : MonoBehaviour
 
             if (slotScript != null)
             {
-                slotScript.Setup(rsoDataTemp.Value[i], scrollRect);
+                slotScript.Setup(this, rsoDataTemp.Value[i], scrollRect);
             }
 
             listUILoadSlot.Add(slotScript);
@@ -60,6 +63,42 @@ public class S_UILoads : MonoBehaviour
             if (slotScript2 != null)
             {
                 slotScript2.Setup(rsoDataTemp.Value[i].saveName);
+            }
+        }
+
+        SetupNavigation();
+    }
+
+    private void SetupNavigation()
+    {
+        Navigation nav = buttonReturn.navigation;
+        nav.mode = Navigation.Mode.Explicit;
+
+        nav.selectOnUp = listUILoadSlot[0].transform.GetChild(0).GetComponent<Selectable>();
+        nav.selectOnDown = listUILoadSlot[0].transform.GetChild(0).GetComponent<Selectable>();
+
+        buttonReturn.navigation = nav;
+
+        for (int i = 0; i < listUILoadSlot.Count; i++)
+        {
+            var current = listUILoadSlot[i].transform.GetChild(0).GetComponent<Selectable>();
+
+            if (current != null)
+            {
+                nav = current.navigation;
+                nav.mode = Navigation.Mode.Explicit;
+
+                if (i > 0)
+                {
+                    nav.selectOnUp = listUILoadSlot[i - 1].transform.GetChild(0).GetComponent<Selectable>();
+                }
+
+                if (i < listUILoadSlot.Count - 1)
+                {
+                    nav.selectOnDown = listUILoadSlot[i + 1].transform.GetChild(0).GetComponent<Selectable>();
+                }
+
+                current.navigation = nav;
             }
         }
     }
@@ -84,5 +123,20 @@ public class S_UILoads : MonoBehaviour
                 slot.ClearSlot();
             }
         }
+    }
+
+    public void ScrollAuto(Selectable item)
+    {
+        autoScroll.ScrollToIndex(item);
+
+        UIReturn.SetBlocked();
+
+        Navigation nav = buttonReturn.navigation;
+        nav.mode = Navigation.Mode.Explicit;
+
+        nav.selectOnUp = item;
+        nav.selectOnDown = item;
+
+        buttonReturn.navigation = nav;
     }
 }

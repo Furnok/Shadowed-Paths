@@ -293,8 +293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollRect: {fileID: 5191804344990189924}
+  autoScroll: {fileID: 4065599615047465613}
   scrollContent: {fileID: 7486077248907338750}
   loadSlotPrefab: {fileID: 7760611664841767132, guid: 777152101140f524c98c24189ed606f8, type: 3}
+  buttonReturn: {fileID: 616896920354283967}
+  UIReturn: {fileID: 3533661163660239284}
   rseUpdateDataUI: {fileID: 11400000, guid: 2ed705b9f93bfa0449f63b5279ae94be, type: 2}
   rseClearDataUI: {fileID: 11400000, guid: 421776842923db84aa8bfdeec469fe92, type: 2}
   rsoDataTemp: {fileID: 11400000, guid: 37bc64f320d0d2345bfa93ba610584f1, type: 2}
@@ -762,6 +765,7 @@ GameObject:
   - component: {fileID: 4199460871334223010}
   - component: {fileID: 5577645302213593315}
   - component: {fileID: 5191804344990189924}
+  - component: {fileID: 4065599615047465613}
   m_Layer: 5
   m_Name: ScrollViewLoads
   m_TagString: Untagged
@@ -858,6 +862,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4065599615047465613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3696427155071524469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fcd65cc2dccfd469959359c68d3e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: 0.05
+  scrollRect: {fileID: 5191804344990189924}
+  content: {fileID: 7486077248907338750}
 --- !u!1 &4424951814051975480
 GameObject:
   m_ObjectHideFlags: 0

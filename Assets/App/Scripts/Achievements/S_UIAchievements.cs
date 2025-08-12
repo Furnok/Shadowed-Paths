@@ -6,7 +6,7 @@ public class S_UIAchievements : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ScrollRect scrollRect;
-    [SerializeField]  private S_AutoScroll autoScroll;
+    [SerializeField] private S_AutoScroll autoScroll;
     [SerializeField] private Transform scrollContent;
     [SerializeField] private GameObject achievementSlotPrefab;
     [SerializeField] private Selectable buttonReturn;
