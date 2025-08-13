@@ -22,6 +22,7 @@ public static class S_ProjectInitializer
             $"{rootFolder}/Audio",
             $"{rootFolder}/Audio/Musics",
             $"{rootFolder}/Audio/SFX",
+            $"{rootFolder}/Audio/UI",
 
             $"{rootFolder}/Inputs",
 

@@ -14,7 +14,7 @@ public class S_DropDownAutoScroll : MonoBehaviour
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private Transform content;
 
-    private int number;
+    private int number = 0;
     private Tween moveTween = null;
     private S_SerializableDictionary<Selectable, int> selectables = new();
 

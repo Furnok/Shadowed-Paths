@@ -9,9 +9,14 @@ public class S_UISelectable : MonoBehaviour
     [SerializeField] private float transition = 0.2f;
     [SerializeField] private Color32 colorMouseEnter = new(200, 200, 200, 255);
     [SerializeField] private Color32 colorMouseDown = new(150, 150, 150, 255);
+    [SerializeField] private S_ClassAudio classAudioClick;
+    [SerializeField] private S_ClassAudio classAudioSelect;
 
     [Header("References")]
     [SerializeField] private Image image;
+
+    [Header("Output")]
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     private Color32 colorBase = new();
     private bool mouseOver = false;
@@ -88,6 +93,11 @@ public class S_UISelectable : MonoBehaviour
         if (uiElement.interactable && Gamepad.current != null)
         {
             PlayColorTransition(colorMouseDown);
+
+            if (classAudioSelect.clip != null)
+            {
+                rsePlayAudio.Call(classAudioSelect);
+            }
         }
     }
 
@@ -96,6 +106,14 @@ public class S_UISelectable : MonoBehaviour
         if (uiElement.interactable && Gamepad.current != null)
         {
             PlayColorTransition(colorBase);
+        }
+    }
+
+    public void Clicked()
+    {
+        if (classAudioClick.clip != null)
+        {
+            rsePlayAudio.Call(classAudioClick);
         }
     }
 

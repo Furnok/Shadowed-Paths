@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class S_WindowManager : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] private S_ClassAudio classAudioMusic;
+
     [Header("References")]
     [SerializeField] private GameObject mainWindow;
 
@@ -10,6 +13,9 @@ public class S_WindowManager : MonoBehaviour
     [SerializeField] private RSE_OpenWindow rseOpenWindow;
     [SerializeField] private RSE_CloseWindow rseCloseWindow;
     [SerializeField] private RSE_CloseAllWindows rseCloseAllWindows;
+
+    [Header("Output")]
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     private List<GameObject> currentWindows = new();
 
@@ -32,6 +38,11 @@ public class S_WindowManager : MonoBehaviour
         if (mainWindow != null)
         {
             OpenWindow(mainWindow);
+        }
+
+        if (classAudioMusic.clip != null)
+        {
+            rsePlayAudio.Call(classAudioMusic);
         }
     }
 
