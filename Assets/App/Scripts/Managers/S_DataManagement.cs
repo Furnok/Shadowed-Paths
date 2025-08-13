@@ -12,7 +12,6 @@ public class S_DataManagement : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField, S_SaveName] private string saveSettingsName;
-    [SerializeField, S_SaveName] private string saveAchievementsName;
     [SerializeField, S_SaveName] private List<string> saveNames;
 
     [Header("References")]
@@ -24,11 +23,7 @@ public class S_DataManagement : MonoBehaviour
     [SerializeField] private RSE_DeleteData rseDeleteData;
 
     [Header("Output")]
-    [SerializeField] private RSE_LoadAchievements rseLoadAchievements;
     [SerializeField] private RSO_SettingsSaved rsoSettingsSaved;
-    [SerializeField] private SSO_Achievements ssoAchievements;
-    [SerializeField] private RSO_Achievements rsoAchievements;
-    [SerializeField] private RSO_AchievementsSave rsoAchievementsSave;
     [SerializeField] private RSO_ContentSaved rsoContentSaved;
     [SerializeField] private RSO_DataTemp rsoDataTemp;
     [SerializeField] private RSE_UpdateDataUI rseUpdateDataUI;
@@ -42,8 +37,6 @@ public class S_DataManagement : MonoBehaviour
     {
         rsoSettingsSaved.Value = new();
         rsoContentSaved.Value = new();
-        rsoAchievements.Value = new();
-        rsoAchievementsSave.Value = new();
         rsoDataTemp.Value = new();
     }
 
@@ -62,8 +55,6 @@ public class S_DataManagement : MonoBehaviour
 
         rsoSettingsSaved.Value = null;
         rsoContentSaved.Value = null;
-        rsoAchievements.Value = null;
-        rsoAchievementsSave.Value = null;
         rsoDataTemp.Value = null;
     }
 
@@ -80,18 +71,6 @@ public class S_DataManagement : MonoBehaviour
             else
             {
                 SaveToJson(saveSettingsName, true, false);
-            }
-        }
-
-        if (saveAchievementsName != null)
-        {
-            if (FileAlreadyExist(saveAchievementsName))
-            {
-                LoadFromJson(saveAchievementsName, false, true);
-            }
-            else
-            {
-                rseLoadAchievements.Call();
             }
         }
 
@@ -171,10 +150,6 @@ public class S_DataManagement : MonoBehaviour
         {
             dataToSave = JsonUtility.ToJson(rsoSettingsSaved.Value);
         }
-        else if (isAchievement)
-        {
-            dataToSave = JsonUtility.ToJson(rsoAchievementsSave.Value);
-        }
         else
         {
             dataToSave = JsonUtility.ToJson(rsoContentSaved.Value);
@@ -208,16 +183,6 @@ public class S_DataManagement : MonoBehaviour
             rsoSettingsSaved.Value = JsonUtility.FromJson<S_SettingsSaved>(encryptedJson);
 
             StartCoroutine(S_Utils.DelayFrame(() => LoadSettings()));
-        }
-        else if (isAchievement)
-        {
-            rsoAchievementsSave.Value = JsonUtility.FromJson<S_AchievementsSaved>(encryptedJson);
-
-            for (int i = 0; i < ssoAchievements.Value.Count; i++)
-            {
-                rsoAchievements.Value.Add(ssoAchievements.Value[i].Clone());
-                rsoAchievements.Value[i].unlocked = rsoAchievementsSave.Value.listAchievements[i].unlocked;
-            }
         }
         else
         {

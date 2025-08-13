@@ -9,6 +9,7 @@ public class S_ClassAchievements
     public Sprite image = null;
     public LocalizedString title = new LocalizedString();
     public LocalizedString description = new LocalizedString();
+    public int currentObjective = 0;
     public int objective = 0;
     public bool unlocked = false;
 
@@ -20,6 +21,7 @@ public class S_ClassAchievements
             image = this.image,
             title = this.title,
             description = this.description,
+            currentObjective = this.currentObjective,
             objective = this.objective,
             unlocked = this.unlocked
         };

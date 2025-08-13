@@ -536,6 +536,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 9164991270306721080}
+          m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
+          m_MethodName: Clicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7765928720761677047}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -547,6 +559,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 7765928720761677047}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 9164991270306721080}
+          m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
+          m_MethodName: Clicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7765928720761677047}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -585,7 +609,18 @@ MonoBehaviour:
   colorMouseDown:
     serializedVersion: 2
     rgba: 4288028190
+  classAudioClick:
+    clip: {fileID: 8300000, guid: 962dc70165747e54482b15b179fce151, type: 3}
+    mixerGroup: {fileID: 8565871280355271144, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
+    fade: 0
+    loop: 0
+  classAudioSelect:
+    clip: {fileID: 8300000, guid: 4c584ec5936f69c4f808ab0960106ed4, type: 3}
+    mixerGroup: {fileID: 8565871280355271144, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
+    fade: 0
+    loop: 0
   image: {fileID: 7578680623657868428}
+  rsePlayAudio: {fileID: 11400000, guid: 17dc8eae39ae5884997ac534f895f59a, type: 2}
 --- !u!1 &3303985699041021556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1123,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4741119529265973914}
+        m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
+        m_MethodName: Clicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2863282841543575784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,7 +1289,18 @@ MonoBehaviour:
   colorMouseDown:
     serializedVersion: 2
     rgba: 4288059030
+  classAudioClick:
+    clip: {fileID: 8300000, guid: 962dc70165747e54482b15b179fce151, type: 3}
+    mixerGroup: {fileID: 8565871280355271144, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
+    fade: 0
+    loop: 0
+  classAudioSelect:
+    clip: {fileID: 8300000, guid: 4c584ec5936f69c4f808ab0960106ed4, type: 3}
+    mixerGroup: {fileID: 8565871280355271144, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
+    fade: 0
+    loop: 0
   image: {fileID: 5200795666923570110}
+  rsePlayAudio: {fileID: 11400000, guid: 17dc8eae39ae5884997ac534f895f59a, type: 2}
 --- !u!1 &6162947122668073575
 GameObject:
   m_ObjectHideFlags: 0

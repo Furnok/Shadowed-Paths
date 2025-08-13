@@ -1009,6 +1009,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1647785448236411709}
+        m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
+        m_MethodName: Clicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5584802371679218959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,4 +1175,15 @@ MonoBehaviour:
   colorMouseDown:
     serializedVersion: 2
     rgba: 4288059030
+  classAudioClick:
+    clip: {fileID: 8300000, guid: 962dc70165747e54482b15b179fce151, type: 3}
+    mixerGroup: {fileID: 8565871280355271144, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
+    fade: 0
+    loop: 0
+  classAudioSelect:
+    clip: {fileID: 8300000, guid: 4c584ec5936f69c4f808ab0960106ed4, type: 3}
+    mixerGroup: {fileID: 8565871280355271144, guid: 7c32377c53d9d4648b32e524767c2d6c, type: 2}
+    fade: 0
+    loop: 0
   image: {fileID: 8110215824073752821}
+  rsePlayAudio: {fileID: 0}

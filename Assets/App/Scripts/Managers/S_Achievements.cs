@@ -11,7 +11,7 @@ public class S_Achievements : MonoBehaviour
 
     [Header("Output")]
     [SerializeField] private SSO_Achievements ssoAchievements;
-    [SerializeField] private RSO_AchievementsSave rsoAchievementsSave;
+    //[SerializeField] private RSO_AchievementsSave rsoAchievementsSave;
     [SerializeField] private RSO_Achievements rsoAchievements;
     [SerializeField] private RSE_UpdateUIAchievement rseUpdateUIAchievement;
     [SerializeField] private RSE_ClearAchievement rseClearAchievement;
@@ -34,7 +34,7 @@ public class S_Achievements : MonoBehaviour
         foreach (var achievement in ssoAchievements.Value)
         {
             rsoAchievements.Value.Add(achievement.Clone());
-            rsoAchievementsSave.Value.listAchievements.Add(achievement.ToSaveData());
+            //rsoAchievementsSave.Value.listAchievements.Add(achievement.ToSaveData());
         }
 
         SaveAchievements();
@@ -52,11 +52,11 @@ public class S_Achievements : MonoBehaviour
 
     private void SaveStructAchievement(int id)
     {
-        S_StructAchievements achievement = rsoAchievementsSave.Value.listAchievements[id];
+        //S_StructAchievements achievement = rsoAchievementsSave.Value.listAchievements[id];
 
-        achievement.unlocked = true;
+        //achievement.unlocked = true;
 
-        rsoAchievementsSave.Value.listAchievements[id] = achievement;
+        //rsoAchievementsSave.Value.listAchievements[id] = achievement;
         SaveAchievements();
     }
 

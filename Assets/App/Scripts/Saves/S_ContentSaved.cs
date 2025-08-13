@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class S_ContentSaved
@@ -7,5 +8,6 @@ public class S_ContentSaved
     public string currentLevel = "";
 
     public string playerName = "";
-    public string temp = "";
+
+    public List<S_StructAchievements> listAchievements = new();
 }
