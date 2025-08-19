@@ -107,6 +107,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4612303607863735328}
     m_Modifications:
+    - target: {fileID: 885295229077002770, guid: 3f4000cdc81b7c3408111e5e9f9ee2a7, type: 3}
+      propertyPath: rseMove
+      value: 
+      objectReference: {fileID: 11400000, guid: e642f8e5327bf1244b50755bccfeed5e, type: 2}
     - target: {fileID: 4524058618846653252, guid: 3f4000cdc81b7c3408111e5e9f9ee2a7, type: 3}
       propertyPath: m_Name
       value: P_InputsManager

@@ -8,19 +8,23 @@ public class S_Player : MonoBehaviour
     [Header("References")]
     [SerializeField] private Rigidbody2D playerRb;
 
-    //[Header("Input")]
+    [Header("Input")]
+    [SerializeField] private RSE_Move rseMove;
 
     //[Header("Output")]
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            playerRb.linearVelocity = new Vector2(-1 * playerSpeed, 0);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            playerRb.linearVelocity = new Vector2(1 * playerSpeed, 0);
-        }
+        rseMove.action += Move;
+    }
+
+    private void OnDisable()
+    {
+        rseMove.action -= Move;
+    }
+
+    private void Move(float value)
+    {
+        playerRb.linearVelocity = new Vector2(value * playerSpeed, 0);
     }
 }
