@@ -32,6 +32,6 @@ public class S_Interaction : MonoBehaviour
 
     private void Interaction()
     {
-        Debug.Log("1");
+        Debug.Log("Interacted");
     }
 }
