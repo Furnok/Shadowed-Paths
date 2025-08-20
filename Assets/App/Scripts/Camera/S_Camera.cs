@@ -1,4 +1,6 @@
+using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class S_Camera : MonoBehaviour
@@ -10,10 +12,6 @@ public class S_Camera : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Camera cameraMain;
-
-    //[Header("Input")]
-
-    //[Header("Output")]
 
     private Vector3 velocity = Vector3.zero;
     private float halfHeight = 0;
@@ -49,13 +47,13 @@ public class S_Camera : MonoBehaviour
         return new Vector3(clampedX, clampedY, transform.position.z);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (!targetTransform) return;
 
-        Vector3 targetPosition = CameraBound();
+        if (Mathf.Abs(transform.position.x - targetTransform.position.x) < 0.01f) return;
 
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, CameraBound(), ref velocity, smoothTime);
     }
 
     private void OnDrawGizmosSelected()

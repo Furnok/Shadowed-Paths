@@ -130,6 +130,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 01e9ee3f-a4ca-4a85-9840-b1a39360abc7
     m_ActionName: 'Player/Move[/Keyboard/q,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 885295229077002770}
+        m_TargetAssemblyTypeName: S_InputsManager, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 54ad1199-6e0d-40e6-b57e-481b96704144
+    m_ActionName: 'Player/Interaction[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -148,4 +164,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rseEscape: {fileID: 11400000, guid: 06f2723ef3662ec43a35d4293929e07a, type: 2}
-  rseMove: {fileID: 0}
+  rseMove: {fileID: 11400000, guid: e642f8e5327bf1244b50755bccfeed5e, type: 2}
+  rseInteraction: {fileID: 11400000, guid: 0dc49bcdd93dc584a9238e1149f9f6dc, type: 2}

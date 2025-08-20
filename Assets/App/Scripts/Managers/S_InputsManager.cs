@@ -6,6 +6,7 @@ public class S_InputsManager : MonoBehaviour
     [Header("Output")]
     [SerializeField] private RSE_Escape rseEscape;
     [SerializeField] private RSE_Move rseMove;
+    [SerializeField] private RSE_Interaction rseInteraction;
 
     private bool isMoving = false;
     private float moveValue = 0;
@@ -29,6 +30,14 @@ public class S_InputsManager : MonoBehaviour
         else if (ctx.canceled)
         {
             isMoving = false;
+        }
+    }
+
+    public void Interaction(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            rseInteraction.Call();
         }
     }
 

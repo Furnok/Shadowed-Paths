@@ -11,8 +11,6 @@ public class S_Player : MonoBehaviour
     [Header("Input")]
     [SerializeField] private RSE_Move rseMove;
 
-    //[Header("Output")]
-
     private void OnEnable()
     {
         rseMove.action += Move;

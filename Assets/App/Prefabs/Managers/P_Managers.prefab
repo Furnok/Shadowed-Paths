@@ -107,10 +107,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4612303607863735328}
     m_Modifications:
-    - target: {fileID: 885295229077002770, guid: 3f4000cdc81b7c3408111e5e9f9ee2a7, type: 3}
-      propertyPath: rseMove
-      value: 
-      objectReference: {fileID: 11400000, guid: e642f8e5327bf1244b50755bccfeed5e, type: 2}
     - target: {fileID: 4524058618846653252, guid: 3f4000cdc81b7c3408111e5e9f9ee2a7, type: 3}
       propertyPath: m_Name
       value: P_InputsManager
@@ -279,30 +275,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8975236665299854655, guid: 20b21f5a5e4b9fd47a21bf59ef269c9e, type: 3}
-      propertyPath: volumeMax
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975236665299854655, guid: 20b21f5a5e4b9fd47a21bf59ef269c9e, type: 3}
-      propertyPath: rsePlayAudio
-      value: 
-      objectReference: {fileID: 11400000, guid: 17dc8eae39ae5884997ac534f895f59a, type: 2}
-    - target: {fileID: 8975236665299854655, guid: 20b21f5a5e4b9fd47a21bf59ef269c9e, type: 3}
-      propertyPath: rseStopAllAudio
-      value: 
-      objectReference: {fileID: 11400000, guid: e34378c7be9d2a040a4b7f676b952783, type: 2}
-    - target: {fileID: 8975236665299854655, guid: 20b21f5a5e4b9fd47a21bf59ef269c9e, type: 3}
-      propertyPath: timeFadeInAudio
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975236665299854655, guid: 20b21f5a5e4b9fd47a21bf59ef269c9e, type: 3}
-      propertyPath: timeFadeOutAudio
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975236665299854655, guid: 20b21f5a5e4b9fd47a21bf59ef269c9e, type: 3}
-      propertyPath: audioSourcePrefab
-      value: 
-      objectReference: {fileID: 1316490468196509395, guid: f8dcb028c02efe54e9322e619b1944ae, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
