@@ -39,7 +39,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.pixel-perfect": {
-      "version": "5.1.0",
+      "version": "5.1.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -121,7 +121,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.9.2",
+      "version": "2.9.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -152,7 +152,7 @@
       "source": "builtin",
       "dependencies": {
         "com.unity.2d.animation": "10.2.1",
-        "com.unity.2d.pixel-perfect": "5.1.0",
+        "com.unity.2d.pixel-perfect": "5.1.1",
         "com.unity.2d.psdimporter": "9.1.0",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "10.1.0",
@@ -162,7 +162,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.36",
+      "version": "3.0.37",
       "depth": 0,
       "source": "registry",
       "dependencies": {
